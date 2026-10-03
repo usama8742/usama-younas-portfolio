@@ -36,6 +36,8 @@ export default function Navbar({ onOpenContact }) {
     { label: 'Home', href: '#home', id: 'home' },
     { label: 'Services', href: '#services', id: 'services' },
     { label: 'AI Agents', href: '#ai-agents-suite', id: 'ai-agents-suite' },
+    { label: 'Tech Stack', href: '#tech-stack', id: 'tech-stack' },
+    { label: 'Knowledge Hub', href: '#knowledge-hub', id: 'knowledge-hub' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'ROI Calculator', href: '#roi-calculator', id: 'roi-calculator' },
     { label: 'Contact', href: '#contact', id: 'contact' },

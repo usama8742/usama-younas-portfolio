@@ -9,6 +9,7 @@ import AutomationCompare from './components/AutomationCompare';
 import Projects from './components/Projects';
 import CaseStudy from './components/CaseStudy';
 import TechStack from './components/TechStack';
+import KnowledgeHub from './components/KnowledgeHub';
 import Industries from './components/Industries';
 import WhyWorkWithMe from './components/WhyWorkWithMe';
 import Process from './components/Process';
@@ -127,6 +128,11 @@ function AppContent() {
         {/* 7. Technology Stack Section (Master Architecture Blueprint & Interactive Inspector) */}
         <MotionReveal direction="up" distance={40}>
           <TechStack />
+        </MotionReveal>
+
+        {/* 7.1 Interactive AI & ML Knowledge Hub (Beginner to Expert) */}
+        <MotionReveal direction="up" distance={40}>
+          <KnowledgeHub onOpenContact={handleOpenContact} />
         </MotionReveal>
 
         {/* 8. Industries Section (6 Visual Industry Deployments) */}
