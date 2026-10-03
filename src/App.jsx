@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import AiPlatformPillars from './components/AiPlatformPillars';
+import AiCourseAcademy from './components/AiCourseAcademy';
 import AiAgentsShowcase from './components/AiAgentsShowcase';
 import AutomationCompare from './components/AutomationCompare';
 import Projects from './components/Projects';
@@ -105,7 +107,17 @@ function AppContent() {
           <Services />
         </MotionReveal>
 
-        {/* 3.1 AI Agents Showcase (Phone, SMS, Webchat) */}
+        {/* 3.1 AI Platform Architecture (CloudFactory Style in Simple Words) */}
+        <MotionReveal direction="up" distance={40}>
+          <AiPlatformPillars onOpenContact={handleOpenContact} />
+        </MotionReveal>
+
+        {/* 3.2 Full-by-Full AI Masterclass Academy & Course */}
+        <MotionReveal direction="up" distance={40}>
+          <AiCourseAcademy onOpenContact={handleOpenContact} />
+        </MotionReveal>
+
+        {/* 3.3 AI Agents Showcase (Phone, SMS, Webchat) */}
         <MotionReveal direction="up" distance={40}>
           <AiAgentsShowcase onOpenContact={handleOpenContact} />
         </MotionReveal>

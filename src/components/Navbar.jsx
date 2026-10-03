@@ -35,6 +35,8 @@ export default function Navbar({ onOpenContact }) {
   const navLinks = [
     { label: 'Home', href: '#home', id: 'home' },
     { label: 'Services', href: '#services', id: 'services' },
+    { label: 'AI Platform', href: '#ai-platform', id: 'ai-platform' },
+    { label: 'AI Course', href: '#ai-academy', id: 'ai-academy' },
     { label: 'AI Agents', href: '#ai-agents-suite', id: 'ai-agents-suite' },
     { label: 'Tech Stack', href: '#tech-stack', id: 'tech-stack' },
     { label: 'Knowledge Hub', href: '#knowledge-hub', id: 'knowledge-hub' },
