@@ -148,6 +148,22 @@ export default function AiPlatformPillars({ onOpenContact }) {
               </div>
 
               <div className="space-y-3 font-mono text-xs">
+                {/* Visual Architecture Schematic Image */}
+                <div className="rounded-xl overflow-hidden border border-[#C9DFFF] relative group shadow-sm bg-slate-900">
+                  <img 
+                    src="/images/master-architecture.jpg" 
+                    alt="Production AI System Architecture Blueprint"
+                    className="w-full h-36 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2.5">
+                    <span className="text-[10px] font-sans font-bold text-white flex items-center gap-1.5">
+                      <Layers className="w-3 h-3 text-[#0878FE]" />
+                      <span>Enterprise Multi-Tier Architecture Schematic</span>
+                    </span>
+                  </div>
+                </div>
+
                 <div className="p-3 rounded-xl bg-white border border-[#C9DFFF]/70">
                   <span className="text-[10px] text-slate-400 block uppercase">Objective</span>
                   <p className="text-slate-900 font-bold mt-0.5">Eliminate AI Errors &amp; Model Lock-in</p>
@@ -156,11 +172,6 @@ export default function AiPlatformPillars({ onOpenContact }) {
                 <div className="p-3 rounded-xl bg-white border border-[#C9DFFF]/70">
                   <span className="text-[10px] text-slate-400 block uppercase">Target Accuracy SLA</span>
                   <p className="text-emerald-600 font-bold mt-0.5">99.4%+ With Human Oversight</p>
-                </div>
-
-                <div className="p-3 rounded-xl bg-white border border-[#C9DFFF]/70">
-                  <span className="text-[10px] text-slate-400 block uppercase">Integration Speed</span>
-                  <p className="text-[#0878FE] font-bold mt-0.5">Days, Not Quarters · No Replatforming</p>
                 </div>
               </div>
 

@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import TiltCard from './TiltCard';
 import { KNOWLEDGE_CATEGORIES, KNOWLEDGE_TOPICS } from '../data/knowledgeBaseData';
+import VisualDiagramRenderer from './VisualDiagramRenderer';
 
 export default function KnowledgeHub({ onOpenContact }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -181,9 +182,15 @@ export default function KnowledgeHub({ onOpenContact }) {
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0878FE] bg-[#EAF3FF] px-2.5 py-1 rounded-full border border-[#C9DFFF]">
                       {topic.category}
                     </span>
-                    <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                      4 Tiers Ready
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] font-mono font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200 flex items-center gap-1">
+                        <Layers className="w-3 h-3 text-purple-600" />
+                        <span>Diagrams</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                        4 Tiers
+                      </span>
+                    </div>
                   </div>
 
                   {/* Title & Description */}
@@ -369,6 +376,31 @@ export default function KnowledgeHub({ onOpenContact }) {
                         </div>
                       </div>
                     </div>
+
+                    {/* Visual Architecture Diagram */}
+                    {(() => {
+                      const topicDiagramMap = {
+                        python: 'fastapi-backend',
+                        ml: 'neural-network',
+                        dl: 'neural-network',
+                        langgraph: 'langgraph-cycle',
+                        rag: 'rag-architecture',
+                        fastapi: 'fastapi-backend',
+                        n8n: 'n8n-workflow',
+                        scraping: 'web-scraping'
+                      };
+                      const diagType = topicDiagramMap[selectedTopic.id];
+                      if (!diagType) return null;
+
+                      return (
+                        <div className="space-y-2">
+                          <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+                            Visual Architecture &amp; Execution Schematic:
+                          </span>
+                          <VisualDiagramRenderer diagramType={diagType} title={selectedTopic.title} />
+                        </div>
+                      );
+                    })()}
 
                     {/* Code Snippet Playground */}
                     <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 text-slate-200 font-mono text-xs shadow-xl">

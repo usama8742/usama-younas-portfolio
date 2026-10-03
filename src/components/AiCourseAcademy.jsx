@@ -20,6 +20,7 @@ import {
   Zap
 } from 'lucide-react';
 import { FULL_COURSE_MODULES } from '../data/aiCourseData';
+import VisualDiagramRenderer from './VisualDiagramRenderer';
 
 export default function AiCourseAcademy({ onOpenContact }) {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
@@ -209,6 +210,21 @@ export default function AiCourseAcademy({ onOpenContact }) {
                   {completedLessons[`${activeModuleIndex}-${activeLessonIndex}`] ? 'Lesson Completed' : 'Mark As Complete'}
                 </span>
               </button>
+            </div>
+
+            {/* Architecture Flow Diagram for Active Module */}
+            <div className="pt-1">
+              <VisualDiagramRenderer 
+                diagramType={
+                  activeModule.id === 'module-1' ? 'neural-network' :
+                  activeModule.id === 'module-2' ? 'llm-pipeline' :
+                  activeModule.id === 'module-3' ? 'rag-architecture' :
+                  activeModule.id === 'module-4' ? 'langgraph-cycle' :
+                  activeModule.id === 'module-5' ? 'n8n-workflow' :
+                  'hitl-governance'
+                }
+                title={activeLesson.title}
+              />
             </div>
 
             {/* "In Plain English" Explanation Box */}
