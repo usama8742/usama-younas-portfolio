@@ -64,17 +64,17 @@ export default function InteractiveSandbox() {
   };
 
   return (
-    <section className="py-20 bg-transparent border-b border-[#C9DFFF]/70 dark:border-slate-800 transition-colors duration-300 relative">
+    <section className="py-20 bg-transparent border-b border-[#DBD6CF]/70 dark:border-slate-800 transition-colors duration-300 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF3FF] dark:bg-[#0878FE]/15 border border-[#C9DFFF] dark:border-[#0878FE]/30 text-[#0878FE] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] dark:bg-[#FE330A]/15 border border-[#DBD6CF] dark:border-[#FE330A]/30 text-[#FE330A] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Interactive Live Playground</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#111827] dark:text-white tracking-tight mb-4">
-            Test the <span className="text-[#0878FE] dark:text-cyan-400">3X Automation Engine</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#191919] dark:text-white tracking-tight mb-4">
+            Test the <span className="text-[#FE330A] dark:text-cyan-400">3X Automation Engine</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal">
             Select a sample business inquiry below and watch how an intelligent system qualifies and routes data in real time.
@@ -83,7 +83,7 @@ export default function InteractiveSandbox() {
 
         {/* Sandbox Container */}
         <TiltCard glare={true} maxRotation={2} className="max-w-4xl mx-auto">
-          <div className="bg-[#F8FAFE] dark:bg-[#0B101E] rounded-3xl border border-[#C9DFFF] dark:border-slate-800 p-6 sm:p-8 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+          <div className="bg-[#EFEAE3] dark:bg-[#0B101E] rounded-3xl border border-[#DBD6CF] dark:border-slate-800 p-6 sm:p-8 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
             
             {/* Preset Buttons */}
             <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -100,8 +100,8 @@ export default function InteractiveSandbox() {
                   }}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                     selectedPreset === idx
-                      ? 'bg-[#0878FE] text-white shadow-sm'
-                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-[#C9DFFF] dark:border-slate-800 hover:border-[#0878FE] dark:hover:border-cyan-400'
+                      ? 'bg-[#FE330A] text-white shadow-sm'
+                      : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-[#DBD6CF] dark:border-slate-800 hover:border-[#FE330A] dark:hover:border-cyan-400'
                   }`}
                 >
                   {p.name}
@@ -110,11 +110,11 @@ export default function InteractiveSandbox() {
             </div>
 
             {/* Inquiry Input Box */}
-            <div className="bg-white dark:bg-slate-900/90 rounded-2xl p-4 border border-[#C9DFFF] dark:border-slate-800 mb-6">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#0878FE] dark:text-cyan-400 block mb-1">
+            <div className="bg-white dark:bg-slate-900/90 rounded-2xl p-4 border border-[#DBD6CF] dark:border-slate-800 mb-6">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#FE330A] dark:text-cyan-400 block mb-1">
                 Simulated Inbound Message
               </span>
-              <p className="text-sm font-mono text-[#111827] dark:text-slate-200">
+              <p className="text-sm font-mono text-[#191919] dark:text-slate-200">
                 "{current.inquiry}"
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function InteractiveSandbox() {
                 type="button"
                 onClick={handleRunSimulation}
                 disabled={isRunning}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] hover:shadow-glow disabled:opacity-60 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#FE330A] to-[#D62705] hover:shadow-glow disabled:opacity-60 transition-all"
               >
                 {isRunning ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Play className="w-3.5 h-3.5" />}
                 <span>{isRunning ? 'Processing AI Pipeline...' : 'Run Simulation'}</span>
@@ -134,16 +134,16 @@ export default function InteractiveSandbox() {
 
             {/* Real-Time Processing Matrix */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 font-mono text-xs">
-              <div className={`p-4 rounded-xl border transition-all ${activeStep >= 1 ? 'bg-white dark:bg-slate-900 border-[#0878FE] dark:border-cyan-400 shadow-sm' : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 opacity-50'}`}>
+              <div className={`p-4 rounded-xl border transition-all ${activeStep >= 1 ? 'bg-white dark:bg-slate-900 border-[#FE330A] dark:border-cyan-400 shadow-sm' : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 opacity-50'}`}>
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-slate-400 font-bold">1. AI CLASSIFICATION</span>
-                  <Bot className="w-4 h-4 text-[#0878FE] dark:text-cyan-400" />
+                  <Bot className="w-4 h-4 text-[#FE330A] dark:text-cyan-400" />
                 </div>
-                <p className="text-[#111827] dark:text-white font-semibold">{current.analysis.category}</p>
+                <p className="text-[#191919] dark:text-white font-semibold">{current.analysis.category}</p>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Urgency: {current.analysis.urgency}</p>
               </div>
 
-              <div className={`p-4 rounded-xl border transition-all ${activeStep >= 2 ? 'bg-white dark:bg-slate-900 border-[#0878FE] dark:border-cyan-400 shadow-sm' : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 opacity-50'}`}>
+              <div className={`p-4 rounded-xl border transition-all ${activeStep >= 2 ? 'bg-white dark:bg-slate-900 border-[#FE330A] dark:border-cyan-400 shadow-sm' : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 opacity-50'}`}>
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-slate-400 font-bold">2. QUALIFICATION SCORE</span>
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
@@ -152,19 +152,19 @@ export default function InteractiveSandbox() {
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Tier: {current.analysis.budgetTier}</p>
               </div>
 
-              <div className={`p-4 rounded-xl border transition-all ${activeStep >= 3 ? 'bg-white dark:bg-slate-900 border-[#0878FE] dark:border-cyan-400 shadow-sm' : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 opacity-50'}`}>
+              <div className={`p-4 rounded-xl border transition-all ${activeStep >= 3 ? 'bg-white dark:bg-slate-900 border-[#FE330A] dark:border-cyan-400 shadow-sm' : 'bg-white/50 dark:bg-slate-900/30 border-slate-200 dark:border-slate-800 opacity-50'}`}>
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-slate-400 font-bold">3. CRM & DISPATCH</span>
-                  <Database className="w-4 h-4 text-[#0878FE] dark:text-cyan-400" />
+                  <Database className="w-4 h-4 text-[#FE330A] dark:text-cyan-400" />
                 </div>
-                <p className="text-[#111827] dark:text-white font-semibold">{current.analysis.assignedAgent}</p>
+                <p className="text-[#191919] dark:text-white font-semibold">{current.analysis.assignedAgent}</p>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Action: {current.analysis.nextAction}</p>
               </div>
             </div>
 
             {/* Success Banner */}
             {completed && (
-              <div className="mt-5 p-3.5 rounded-xl bg-[#EAF3FF] dark:bg-[#0878FE]/15 border border-[#C9DFFF] dark:border-[#0878FE]/30 flex items-center justify-between text-xs text-[#0878FE] dark:text-cyan-400 font-semibold">
+              <div className="mt-5 p-3.5 rounded-xl bg-[#EFEAE3] dark:bg-[#FE330A]/15 border border-[#DBD6CF] dark:border-[#FE330A]/30 flex items-center justify-between text-xs text-[#FE330A] dark:text-cyan-400 font-semibold">
                 <span className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
                   Pipeline executed in 38ms with zero manual data entry.

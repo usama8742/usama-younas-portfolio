@@ -13,12 +13,12 @@ export default function Projects() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF3FF] dark:bg-[#0878FE]/15 border border-[#C9DFFF] dark:border-[#0878FE]/30 text-[#0878FE] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] dark:bg-[#FE330A]/15 border border-[#DBD6CF] dark:border-[#FE330A]/30 text-[#FE330A] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Production Systems Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] dark:text-white tracking-tight leading-tight mb-4">
-            Things I've <span className="text-[#0878FE] dark:text-cyan-400">Built</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] dark:text-white tracking-tight leading-tight mb-4">
+            Things I've <span className="text-[#FE330A] dark:text-cyan-400">Built</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal">
             Real full-stack platforms, autonomous agent systems, n8n automations, and speech pipelines engineered for businesses.
@@ -30,10 +30,10 @@ export default function Projects() {
           {PROJECTS.map((proj) => (
             <TiltCard key={proj.id} glare={true} maxRotation={4} className="h-full">
               <div
-                className="group relative bg-white dark:bg-[#0B101E] border border-[#C9DFFF] dark:border-slate-800 rounded-3xl overflow-hidden shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] hover:border-[#0878FE] dark:hover:border-cyan-400/80 transition-all duration-300 flex flex-col justify-between h-full"
+                className="group relative bg-white dark:bg-[#0B101E] border border-[#DBD6CF] dark:border-slate-800 rounded-3xl overflow-hidden shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] hover:border-[#FE330A] dark:hover:border-cyan-400/80 transition-all duration-300 flex flex-col justify-between h-full"
               >
                 {/* Blue Top Accent Line */}
-                <div className="h-1.5 w-full bg-gradient-to-r from-[#0878FE] via-cyan-400 to-[#0255FD]"></div>
+                <div className="h-1.5 w-full bg-gradient-to-r from-[#FE330A] via-cyan-400 to-[#D62705]"></div>
 
                 <div>
                   {/* Large Project Image Area with Hover Zoom */}
@@ -53,7 +53,7 @@ export default function Projects() {
 
                     {/* Top Bar Badges */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                      <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-white/95 dark:bg-slate-900/90 text-[#0878FE] dark:text-cyan-400 shadow-sm backdrop-blur-sm border border-[#C9DFFF] dark:border-slate-700">
+                      <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-white/95 dark:bg-slate-900/90 text-[#FE330A] dark:text-cyan-400 shadow-sm backdrop-blur-sm border border-[#DBD6CF] dark:border-slate-700">
                         PROJECT {proj.num}
                       </span>
                       <span className="text-[11px] font-mono text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/20">
@@ -63,7 +63,7 @@ export default function Projects() {
 
                     {/* Hover Inspect Prompt */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 text-[#0878FE] dark:text-cyan-400 font-bold text-xs shadow-lg backdrop-blur-sm border border-[#C9DFFF] dark:border-slate-700">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 text-[#FE330A] dark:text-cyan-400 font-bold text-xs shadow-lg backdrop-blur-sm border border-[#DBD6CF] dark:border-slate-700">
                         <Maximize2 className="w-3.5 h-3.5" />
                         <span>Inspect Architecture</span>
                       </span>
@@ -79,7 +79,7 @@ export default function Projects() {
 
                   {/* Card Content Body */}
                   <div className="p-6 sm:p-7">
-                    <h3 className="text-xl font-bold text-[#111827] dark:text-white mb-2.5 group-hover:text-[#0878FE] dark:group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-xl font-bold text-[#191919] dark:text-white mb-2.5 group-hover:text-[#FE330A] dark:group-hover:text-cyan-400 transition-colors">
                       {proj.title}
                     </h3>
 
@@ -88,8 +88,8 @@ export default function Projects() {
                     </p>
 
                     {/* Technology String Badge */}
-                    <div className="bg-[#F8FAFE] dark:bg-slate-950/80 rounded-xl p-3 border border-[#C9DFFF]/70 dark:border-slate-800 mb-2">
-                      <p className="text-[11px] font-semibold text-[#0878FE] dark:text-cyan-400 font-mono leading-relaxed">
+                    <div className="bg-[#EFEAE3] dark:bg-slate-950/80 rounded-xl p-3 border border-[#DBD6CF]/70 dark:border-slate-800 mb-2">
+                      <p className="text-[11px] font-semibold text-[#FE330A] dark:text-cyan-400 font-mono leading-relaxed">
                         {proj.technology}
                       </p>
                     </div>
@@ -101,7 +101,7 @@ export default function Projects() {
                   <button
                     type="button"
                     onClick={() => setSelectedProject(proj)}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-[#0878FE] dark:text-cyan-400 bg-[#EAF3FF] dark:bg-[#0878FE]/15 hover:bg-[#0878FE] hover:text-white dark:hover:bg-[#0878FE] dark:hover:text-white border border-[#C9DFFF] dark:border-[#0878FE]/30 transition-all duration-200"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-[#FE330A] dark:text-cyan-400 bg-[#EFEAE3] dark:bg-[#FE330A]/15 hover:bg-[#FE330A] hover:text-white dark:hover:bg-[#FE330A] dark:hover:text-white border border-[#DBD6CF] dark:border-[#FE330A]/30 transition-all duration-200"
                   >
                     <span>View Architecture Details</span>
                     <ArrowRight className="w-4 h-4" />

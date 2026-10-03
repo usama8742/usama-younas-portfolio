@@ -28,17 +28,17 @@ export default function CaseStudy() {
   const [showFullDiagram, setShowFullDiagram] = useState(false);
 
   return (
-    <section id="case-study" className="py-20 lg:py-28 bg-[#F8FAFE] dark:bg-[#070B16] border-y border-[#C9DFFF]/70 dark:border-slate-800 transition-colors duration-300 relative">
+    <section id="case-study" className="py-20 lg:py-28 bg-[#EFEAE3] dark:bg-[#070B16] border-y border-[#DBD6CF]/70 dark:border-slate-800 transition-colors duration-300 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF3FF] dark:bg-[#0878FE]/15 border border-[#C9DFFF] dark:border-[#0878FE]/30 text-[#0878FE] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] dark:bg-[#FE330A]/15 border border-[#DBD6CF] dark:border-[#FE330A]/30 text-[#FE330A] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Featured Case Study</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] dark:text-white tracking-tight leading-tight">
-            Real Estate <span className="text-[#0878FE] dark:text-cyan-400">Lead Automation</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] dark:text-white tracking-tight leading-tight">
+            Real Estate <span className="text-[#FE330A] dark:text-cyan-400">Lead Automation</span>
           </h2>
         </div>
 
@@ -47,13 +47,13 @@ export default function CaseStudy() {
           
           {/* Problem Card */}
           <TiltCard glare={true} maxRotation={3} className="h-full">
-            <div className="bg-white dark:bg-slate-900/90 rounded-3xl p-7 sm:p-8 border border-[#C9DFFF] dark:border-slate-800 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col justify-between h-full">
+            <div className="bg-white dark:bg-slate-900/90 rounded-3xl p-7 sm:p-8 border border-[#DBD6CF] dark:border-slate-800 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col justify-between h-full">
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900 flex items-center justify-center">
                     <AlertTriangle className="w-5 h-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#111827] dark:text-white">The Challenge</h3>
+                  <h3 className="text-xl font-bold text-[#191919] dark:text-white">The Challenge</h3>
                 </div>
                 <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                   Real estate teams often receive leads from multiple sources and manually handle qualification, follow-ups, CRM updates, and appointment scheduling.
@@ -69,22 +69,22 @@ export default function CaseStudy() {
 
           {/* Solution Card */}
           <TiltCard glare={true} maxRotation={3} className="h-full">
-            <div className="bg-white dark:bg-[#0C1324] rounded-3xl p-7 sm:p-8 border-2 border-[#0878FE] dark:border-cyan-500/80 shadow-glow dark:shadow-[0_0_35px_rgba(8,120,254,0.35)] flex flex-col justify-between h-full relative overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#0878FE] via-cyan-400 to-[#0255FD]"></div>
+            <div className="bg-white dark:bg-[#0C1324] rounded-3xl p-7 sm:p-8 border-2 border-[#FE330A] dark:border-cyan-500/80 shadow-glow dark:shadow-[0_0_35px_rgba(8,120,254,0.35)] flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FE330A] via-cyan-400 to-[#D62705]"></div>
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#EAF3FF] dark:bg-[#0878FE]/20 text-[#0878FE] dark:text-cyan-400 border border-[#C9DFFF] dark:border-[#0878FE]/40 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[#EFEAE3] dark:bg-[#FE330A]/20 text-[#FE330A] dark:text-cyan-400 border border-[#DBD6CF] dark:border-[#FE330A]/40 flex items-center justify-center">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#111827] dark:text-white">The Engineered Solution</h3>
+                  <h3 className="text-xl font-bold text-[#191919] dark:text-white">The Engineered Solution</h3>
                 </div>
                 <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                   I designed an AI-powered workflow that automatically processes incoming leads, analyzes their requirements, assigns a lead category, updates the CRM, and triggers the appropriate follow-up workflow.
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#C9DFFF] dark:border-slate-800 flex items-center gap-2 text-xs font-semibold text-[#0878FE] dark:text-cyan-400">
-                <CheckCircle2 className="w-4 h-4 text-[#0878FE] dark:text-cyan-400" />
+              <div className="mt-6 pt-4 border-t border-[#DBD6CF] dark:border-slate-800 flex items-center gap-2 text-xs font-semibold text-[#FE330A] dark:text-cyan-400">
+                <CheckCircle2 className="w-4 h-4 text-[#FE330A] dark:text-cyan-400" />
                 <span>Full automated execution from inquiry to agent calendar</span>
               </div>
             </div>
@@ -93,18 +93,18 @@ export default function CaseStudy() {
         </div>
 
         {/* High-Resolution Pipeline Architecture Diagram Showcase */}
-        <div className="bg-white dark:bg-[#0B101E] rounded-3xl p-6 sm:p-8 border border-[#C9DFFF] dark:border-slate-800 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] mb-10 overflow-hidden">
-          <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#C9DFFF] dark:border-slate-800">
+        <div className="bg-white dark:bg-[#0B101E] rounded-3xl p-6 sm:p-8 border border-[#DBD6CF] dark:border-slate-800 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] mb-10 overflow-hidden">
+          <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#DBD6CF] dark:border-slate-800">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#0878FE] dark:bg-cyan-400 animate-pulse"></span>
-              <h4 className="text-sm sm:text-base font-bold text-[#111827] dark:text-white">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FE330A] dark:bg-cyan-400 animate-pulse"></span>
+              <h4 className="text-sm sm:text-base font-bold text-[#191919] dark:text-white">
                 Architectural Blueprint: Automated Ingestion to Broker Dispatch
               </h4>
             </div>
             <button
               type="button"
               onClick={() => setShowFullDiagram(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-[#0878FE] dark:text-cyan-400 bg-[#EAF3FF] dark:bg-[#0878FE]/15 hover:bg-[#0878FE] hover:text-white dark:hover:bg-[#0878FE] dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-[#FE330A] dark:text-cyan-400 bg-[#EFEAE3] dark:bg-[#FE330A]/15 hover:bg-[#FE330A] hover:text-white dark:hover:bg-[#FE330A] dark:hover:text-white transition-colors"
             >
               <Maximize2 className="w-3.5 h-3.5" />
               <span>Enlarge Diagram</span>
@@ -112,7 +112,7 @@ export default function CaseStudy() {
           </div>
 
           <div 
-            className="relative rounded-2xl overflow-hidden border border-[#C9DFFF] dark:border-slate-800 cursor-pointer group"
+            className="relative rounded-2xl overflow-hidden border border-[#DBD6CF] dark:border-slate-800 cursor-pointer group"
             onClick={() => setShowFullDiagram(true)}
           >
             <img
@@ -121,7 +121,7 @@ export default function CaseStudy() {
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-              <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 text-[#0878FE] dark:text-cyan-400 font-bold text-xs shadow-md transition-opacity border border-[#C9DFFF] dark:border-slate-700">
+              <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-xl bg-white/95 dark:bg-slate-900/95 text-[#FE330A] dark:text-cyan-400 font-bold text-xs shadow-md transition-opacity border border-[#DBD6CF] dark:border-slate-700">
                 Click to expand full architecture diagram
               </span>
             </div>
@@ -129,17 +129,17 @@ export default function CaseStudy() {
         </div>
 
         {/* Blue Workflow Visualization Interactive Nodes */}
-        <div className="bg-white dark:bg-[#0B101E] rounded-3xl p-6 sm:p-8 border border-[#C9DFFF] dark:border-slate-800 shadow-card">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-[#C9DFFF] dark:border-slate-800">
+        <div className="bg-white dark:bg-[#0B101E] rounded-3xl p-6 sm:p-8 border border-[#DBD6CF] dark:border-slate-800 shadow-card">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-[#DBD6CF] dark:border-slate-800">
             <div>
-              <h4 className="text-base font-bold text-[#111827] dark:text-white">
+              <h4 className="text-base font-bold text-[#191919] dark:text-white">
                 Interactive Step-by-Step Flow
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400">
                 Click any node to inspect the system flow
               </p>
             </div>
-            <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-[#EAF3FF] dark:bg-[#0878FE]/15 text-[#0878FE] dark:text-cyan-400 border border-[#C9DFFF] dark:border-[#0878FE]/30">
+            <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-[#EFEAE3] dark:bg-[#FE330A]/15 text-[#FE330A] dark:text-cyan-400 border border-[#DBD6CF] dark:border-[#FE330A]/30">
               End-to-End Autonomous Pipeline
             </span>
           </div>
@@ -156,14 +156,14 @@ export default function CaseStudy() {
                   onClick={() => setActiveStep(idx)}
                   className={`cursor-pointer p-4 rounded-2xl border text-center transition-all duration-200 ${
                     isSelected
-                      ? 'bg-gradient-to-b from-[#EAF3FF] to-white dark:from-slate-800 dark:to-slate-900 border-[#0878FE] dark:border-cyan-400 shadow-glow-sm dark:shadow-[0_0_20px_rgba(8,120,254,0.3)] -translate-y-1'
-                      : 'bg-white dark:bg-slate-900/60 border-[#C9DFFF] dark:border-slate-800 hover:border-[#0878FE] hover:bg-[#F8FAFE] dark:hover:bg-slate-800/80'
+                      ? 'bg-gradient-to-b from-[#EFEAE3] to-white dark:from-slate-800 dark:to-slate-900 border-[#FE330A] dark:border-cyan-400 shadow-glow-sm dark:shadow-[0_0_20px_rgba(8,120,254,0.3)] -translate-y-1'
+                      : 'bg-white dark:bg-slate-900/60 border-[#DBD6CF] dark:border-slate-800 hover:border-[#FE330A] hover:bg-[#EFEAE3] dark:hover:bg-slate-800/80'
                   }`}
                 >
                   <div className={`w-10 h-10 mx-auto rounded-xl flex items-center justify-center mb-3 transition-colors ${
                     isSelected
-                      ? 'bg-[#0878FE] text-white shadow-sm'
-                      : 'bg-[#F8FAFE] dark:bg-slate-800 text-[#0878FE] dark:text-cyan-400'
+                      ? 'bg-[#FE330A] text-white shadow-sm'
+                      : 'bg-[#EFEAE3] dark:bg-slate-800 text-[#FE330A] dark:text-cyan-400'
                   }`}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -171,7 +171,7 @@ export default function CaseStudy() {
                   <span className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-500 block mb-0.5">
                     STEP 0{step.id}
                   </span>
-                  <h5 className="text-xs font-bold text-[#111827] dark:text-white leading-tight">
+                  <h5 className="text-xs font-bold text-[#191919] dark:text-white leading-tight">
                     {step.title}
                   </h5>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">
@@ -183,7 +183,7 @@ export default function CaseStudy() {
           </div>
 
           {/* Linear Flow Line String */}
-          <div className="mt-8 pt-5 border-t border-[#C9DFFF]/60 dark:border-slate-800 flex items-center justify-center text-xs font-mono font-bold text-[#0878FE] dark:text-cyan-400 overflow-x-auto py-2">
+          <div className="mt-8 pt-5 border-t border-[#DBD6CF]/60 dark:border-slate-800 flex items-center justify-center text-xs font-mono font-bold text-[#FE330A] dark:text-cyan-400 overflow-x-auto py-2">
             <div className="flex items-center gap-2 whitespace-nowrap">
               <span>Lead</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
@@ -195,7 +195,7 @@ export default function CaseStudy() {
               <ArrowRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
               <span>Automated Follow-up</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
-              <span className="text-[#111827] dark:text-white bg-[#EAF3FF] dark:bg-[#0878FE]/20 px-2 py-0.5 rounded border border-[#C9DFFF] dark:border-slate-700">Sales Team</span>
+              <span className="text-[#191919] dark:text-white bg-[#EFEAE3] dark:bg-[#FE330A]/20 px-2 py-0.5 rounded border border-[#DBD6CF] dark:border-slate-700">Sales Team</span>
             </div>
           </div>
         </div>
@@ -208,9 +208,9 @@ export default function CaseStudy() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
           onClick={() => setShowFullDiagram(false)}
         >
-          <div className="relative max-w-5xl w-full bg-white dark:bg-[#0C1222] border border-[#C9DFFF] dark:border-slate-800 rounded-3xl p-4 overflow-hidden shadow-2xl">
+          <div className="relative max-w-5xl w-full bg-white dark:bg-[#0C1222] border border-[#DBD6CF] dark:border-slate-800 rounded-3xl p-4 overflow-hidden shadow-2xl">
             <div className="flex justify-between items-center mb-3 px-2">
-              <span className="text-sm font-bold text-[#111827] dark:text-white">
+              <span className="text-sm font-bold text-[#191919] dark:text-white">
                 Real Estate Lead Automation Architecture
               </span>
               <button

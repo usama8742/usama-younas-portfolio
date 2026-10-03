@@ -47,17 +47,17 @@ export default function AiAgentsShowcase({ onOpenContact }) {
   };
 
   return (
-    <section id="ai-agents-suite" className="py-20 lg:py-28 bg-[#F8FAFE] border-b border-[#C9DFFF]/70 relative overflow-hidden">
+    <section id="ai-agents-suite" className="py-20 lg:py-28 bg-[#EFEAE3] border-b border-[#DBD6CF]/70 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF3FF] border border-[#C9DFFF] text-[#0878FE] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] border border-[#DBD6CF] text-[#FE330A] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <Bot className="w-3.5 h-3.5" />
             <span>24/7 Autonomous Communication</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight leading-tight mb-4">
-            AI Agents for <span className="text-[#0878FE]">Phone, SMS & Webchat.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] tracking-tight leading-tight mb-4">
+            AI Agents for <span className="text-[#FE330A]">Phone, SMS & Webchat.</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
             Never miss an inbound lead again. We deploy human-grade conversational AI agents that answer phone calls, converse via two-way SMS, and engage website visitors 24/7/365.
@@ -70,8 +70,8 @@ export default function AiAgentsShowcase({ onOpenContact }) {
             onClick={() => setActiveChannel('phone')}
             className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all border ${
               activeChannel === 'phone'
-                ? 'bg-[#0878FE] text-white border-[#0878FE] shadow-md scale-105'
-                : 'bg-white text-slate-700 hover:bg-[#EAF3FF] border-[#C9DFFF]'
+                ? 'bg-[#FE330A] text-white border-[#FE330A] shadow-md scale-105'
+                : 'bg-white text-slate-700 hover:bg-[#EFEAE3] border-[#DBD6CF]'
             }`}
           >
             <PhoneCall className="w-4 h-4" />
@@ -82,8 +82,8 @@ export default function AiAgentsShowcase({ onOpenContact }) {
             onClick={() => setActiveChannel('sms')}
             className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all border ${
               activeChannel === 'sms'
-                ? 'bg-[#0878FE] text-white border-[#0878FE] shadow-md scale-105'
-                : 'bg-white text-slate-700 hover:bg-[#EAF3FF] border-[#C9DFFF]'
+                ? 'bg-[#FE330A] text-white border-[#FE330A] shadow-md scale-105'
+                : 'bg-white text-slate-700 hover:bg-[#EFEAE3] border-[#DBD6CF]'
             }`}
           >
             <MessageSquare className="w-4 h-4" />
@@ -94,8 +94,8 @@ export default function AiAgentsShowcase({ onOpenContact }) {
             onClick={() => setActiveChannel('webchat')}
             className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all border ${
               activeChannel === 'webchat'
-                ? 'bg-[#0878FE] text-white border-[#0878FE] shadow-md scale-105'
-                : 'bg-white text-slate-700 hover:bg-[#EAF3FF] border-[#C9DFFF]'
+                ? 'bg-[#FE330A] text-white border-[#FE330A] shadow-md scale-105'
+                : 'bg-white text-slate-700 hover:bg-[#EFEAE3] border-[#DBD6CF]'
             }`}
           >
             <Globe className="w-4 h-4" />
@@ -109,28 +109,28 @@ export default function AiAgentsShowcase({ onOpenContact }) {
           {/* Left Column: Interactive Simulation Interface (7 cols) */}
           <div className="lg:col-span-7">
             <TiltCard glare={true} maxRotation={2}>
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#C9DFFF] shadow-card">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DBD6CF] shadow-card">
                 
                 {/* 1. PHONE AGENT SIMULATOR */}
                 {activeChannel === 'phone' && (
                   <div className="space-y-5 animate-fadeIn">
-                    <div className="flex items-center justify-between pb-3 border-b border-[#C9DFFF]">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#DBD6CF]">
                       <div className="flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         <span className="text-xs font-bold text-slate-800">Inbound Call Session: LIVE</span>
                       </div>
-                      <span className="text-[11px] font-mono font-bold text-[#0878FE] bg-[#EAF3FF] px-2 py-0.5 rounded">
+                      <span className="text-[11px] font-mono font-bold text-[#FE330A] bg-[#EFEAE3] px-2 py-0.5 rounded">
                         Latency: 140ms
                       </span>
                     </div>
 
                     {/* Audio Waveform Visualizer */}
-                    <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] text-center space-y-3">
-                      <div className="w-12 h-12 rounded-full bg-[#EAF3FF] text-[#0878FE] flex items-center justify-center mx-auto shadow-sm">
+                    <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] text-center space-y-3">
+                      <div className="w-12 h-12 rounded-full bg-[#EFEAE3] text-[#FE330A] flex items-center justify-center mx-auto shadow-sm">
                         <Mic className="w-6 h-6 animate-pulse" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-[#111827]">Conversing with Caller: "Apex Commercial"</h4>
+                        <h4 className="font-bold text-sm text-[#191919]">Conversing with Caller: "Apex Commercial"</h4>
                         <p className="text-xs text-slate-500 mt-0.5">Natural voice synthesis + Whisper transcription</p>
                       </div>
 
@@ -139,7 +139,7 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                         {[40, 75, 90, 50, 85, 100, 65, 45, 80, 60, 95, 70, 55, 85, 40].map((h, i) => (
                           <span
                             key={i}
-                            className="w-1.5 bg-[#0878FE] rounded-full animate-pulse"
+                            className="w-1.5 bg-[#FE330A] rounded-full animate-pulse"
                             style={{ 
                               height: `${h}%`,
                               animationDelay: `${(i * 0.08).toFixed(2)}s`
@@ -155,8 +155,8 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                         <span className="font-bold text-slate-600 block text-[10px] uppercase">Caller:</span>
                         <p className="text-slate-800 mt-0.5">"Hi! I need an emergency estimate on automated HVAC controls for our 4-story facility."</p>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#C9DFFF]">
-                        <span className="font-bold text-[#0878FE] block text-[10px] uppercase flex items-center gap-1">
+                      <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#DBD6CF]">
+                        <span className="font-bold text-[#FE330A] block text-[10px] uppercase flex items-center gap-1">
                           <Sparkles className="w-2.5 h-2.5" /> 3X AI Voice Agent:
                         </span>
                         <p className="text-slate-900 mt-0.5 font-medium">"I can book an on-site engineer visit today at 3:30 PM, or tomorrow at 10:00 AM. Which slot do you prefer?"</p>
@@ -177,7 +177,7 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                 {/* 2. SMS AGENT SIMULATOR */}
                 {activeChannel === 'sms' && (
                   <div className="space-y-4 animate-fadeIn">
-                    <div className="flex items-center justify-between pb-3 border-b border-[#C9DFFF]">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#DBD6CF]">
                       <div className="flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         <span className="text-xs font-bold text-slate-800">Two-Way SMS Lead Speed-to-Lead</span>
@@ -188,14 +188,14 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                     </div>
 
                     {/* Phone Screen Mockup */}
-                    <div className="bg-[#F8FAFE] rounded-2xl p-4 border border-[#C9DFFF] space-y-3 font-sans text-xs max-h-[300px] overflow-y-auto">
+                    <div className="bg-[#EFEAE3] rounded-2xl p-4 border border-[#DBD6CF] space-y-3 font-sans text-xs max-h-[300px] overflow-y-auto">
                       <div className="text-center text-[10px] text-slate-400 font-mono">Today 10:42 AM · Inbound Web Form Trigger</div>
 
                       <div className="bg-slate-200 text-slate-800 p-2.5 rounded-2xl rounded-bl-none max-w-[80%]">
                         "Hey, saw your real estate automation package. Does it support WhatsApp lead intake?"
                       </div>
 
-                      <div className="bg-[#0878FE] text-white p-2.5 rounded-2xl rounded-br-none max-w-[85%] ml-auto font-medium">
+                      <div className="bg-[#FE330A] text-white p-2.5 rounded-2xl rounded-br-none max-w-[85%] ml-auto font-medium">
                         "Hi Mark! Yes, our n8n pipeline auto-captures WhatsApp chats, qualifies buyers, and updates your CRM in real time. Would you like a 10-minute demo today?"
                       </div>
 
@@ -203,14 +203,14 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                         "Yes please! 2pm works."
                       </div>
 
-                      <div className="bg-[#0878FE] text-white p-2.5 rounded-2xl rounded-br-none max-w-[85%] ml-auto font-medium">
+                      <div className="bg-[#FE330A] text-white p-2.5 rounded-2xl rounded-br-none max-w-[85%] ml-auto font-medium">
                         "Locked in! Your calendar invite is sent to mark@apex.com. Looking forward to speaking!"
                       </div>
                     </div>
 
                     <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-center justify-between">
                       <span><strong>Lead Status:</strong> High-Intent Buyer (Tier A)</span>
-                      <span className="font-bold text-[#0878FE]">Synced to HubSpot</span>
+                      <span className="font-bold text-[#FE330A]">Synced to HubSpot</span>
                     </div>
                   </div>
                 )}
@@ -218,25 +218,25 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                 {/* 3. WEBCHAT AGENT SIMULATOR */}
                 {activeChannel === 'webchat' && (
                   <div className="space-y-4 animate-fadeIn">
-                    <div className="flex items-center justify-between pb-3 border-b border-[#C9DFFF]">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#DBD6CF]">
                       <div className="flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         <span className="text-xs font-bold text-slate-800">Live Website Knowledge Assistant</span>
                       </div>
-                      <span className="text-[11px] font-mono font-bold text-[#0878FE] bg-[#EAF3FF] px-2 py-0.5 rounded">
+                      <span className="text-[11px] font-mono font-bold text-[#FE330A] bg-[#EFEAE3] px-2 py-0.5 rounded">
                         RAG Powered
                       </span>
                     </div>
 
                     {/* Chat Messages */}
-                    <div className="bg-[#F8FAFE] rounded-2xl p-4 border border-[#C9DFFF] space-y-3 font-sans text-xs max-h-[220px] overflow-y-auto">
+                    <div className="bg-[#EFEAE3] rounded-2xl p-4 border border-[#DBD6CF] space-y-3 font-sans text-xs max-h-[220px] overflow-y-auto">
                       {webchatMessages.map((msg, i) => (
                         <div
                           key={i}
                           className={`p-2.5 rounded-2xl max-w-[85%] ${
                             msg.sender === 'bot'
-                              ? 'bg-white text-slate-800 border border-[#C9DFFF] rounded-bl-none shadow-sm'
-                              : 'bg-[#0878FE] text-white rounded-br-none ml-auto font-medium'
+                              ? 'bg-white text-slate-800 border border-[#DBD6CF] rounded-bl-none shadow-sm'
+                              : 'bg-[#FE330A] text-white rounded-br-none ml-auto font-medium'
                           }`}
                         >
                           {msg.text}
@@ -251,11 +251,11 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                         value={webchatInput}
                         onChange={(e) => setWebchatInput(e.target.value)}
                         placeholder="Type a question to test the AI agent..."
-                        className="flex-1 px-4 py-2.5 rounded-xl border border-[#C9DFFF] bg-white text-xs text-slate-900 focus:outline-none focus:border-[#0878FE]"
+                        className="flex-1 px-4 py-2.5 rounded-xl border border-[#DBD6CF] bg-white text-xs text-slate-900 focus:outline-none focus:border-[#FE330A]"
                       />
                       <button
                         type="submit"
-                        className="px-4 py-2.5 rounded-xl bg-[#0878FE] text-white hover:bg-[#0255FD] text-xs font-bold flex items-center gap-1.5 shrink-0"
+                        className="px-4 py-2.5 rounded-xl bg-[#FE330A] text-white hover:bg-[#D62705] text-xs font-bold flex items-center gap-1.5 shrink-0"
                       >
                         <span>Send</span>
                         <Send className="w-3 h-3" />
@@ -270,8 +270,8 @@ export default function AiAgentsShowcase({ onOpenContact }) {
 
           {/* Right Column: Capabilities & Technical Value (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#C9DFFF] shadow-card space-y-4">
-              <h3 className="text-xl font-bold text-[#111827]">
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#DBD6CF] shadow-card space-y-4">
+              <h3 className="text-xl font-bold text-[#191919]">
                 Why Multi-Channel AI Agents Win
               </h3>
               
@@ -294,7 +294,7 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                 </li>
               </ul>
 
-              <div className="pt-3 border-t border-[#C9DFFF]">
+              <div className="pt-3 border-t border-[#DBD6CF]">
                 <button
                   type="button"
                   onClick={() => {
@@ -305,7 +305,7 @@ export default function AiAgentsShowcase({ onOpenContact }) {
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] hover:shadow-glow transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#FE330A] to-[#D62705] hover:shadow-glow transition-all"
                 >
                   <span>Deploy An AI Agent for Your Business</span>
                   <ArrowRight className="w-3.5 h-3.5" />

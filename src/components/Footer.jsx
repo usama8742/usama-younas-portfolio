@@ -25,7 +25,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#111827] text-white pt-16 pb-12 border-t border-slate-800 relative">
+    <footer className="bg-[#191919] text-white pt-16 pb-12 border-t border-slate-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
@@ -36,14 +36,14 @@ export default function Footer() {
             <a 
               href="#home" 
               onClick={(e) => handleNavClick(e, '#home')}
-              className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0878FE] rounded-lg"
+              className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A] rounded-lg"
             >
               <Logo dark={true} />
             </a>
 
             <div className="pt-2">
               <h4 className="text-base font-bold text-white">Usama Younas</h4>
-              <p className="text-xs text-[#0878FE] font-semibold mt-0.5">
+              <p className="text-xs text-[#FE330A] font-semibold mt-0.5">
                 AI Engineer · Automation Specialist
               </p>
               <p className="text-sm text-slate-400 mt-2 max-w-sm leading-relaxed font-normal">
@@ -63,7 +63,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-sm text-slate-300 hover:text-[#0878FE] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0878FE] rounded"
+                    className="text-sm text-slate-300 hover:text-[#FE330A] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A] rounded"
                   >
                     {link.label}
                   </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                 href="https://github.com/usama8742"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-[#0878FE] flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-[#FE330A] flex items-center justify-center transition-all"
                 aria-label="GitHub"
               >
                 <GithubIcon className="w-5 h-5" />
@@ -101,14 +101,14 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/usama8742/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-[#0878FE] flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-[#FE330A] flex items-center justify-center transition-all"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
                 href="mailto:contactbyusama@gmail.com"
-                className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-[#0878FE] flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-[#FE330A] flex items-center justify-center transition-all"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function Footer() {
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-[#0878FE] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-[#FE330A] transition-colors"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />
@@ -133,7 +133,7 @@ export default function Footer() {
           <p className="flex items-center gap-2 font-mono text-[11px]">
             <span>3X AI Automation</span>
             <span>·</span>
-            <span className="text-[#0878FE]">Intelligent Systems</span>
+            <span className="text-[#FE330A]">Intelligent Systems</span>
           </p>
         </div>
 

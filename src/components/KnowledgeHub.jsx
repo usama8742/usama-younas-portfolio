@@ -64,7 +64,7 @@ export default function KnowledgeHub({ onOpenContact }) {
   };
 
   return (
-    <section id="knowledge-hub" className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#C9DFFF]/70 relative overflow-hidden">
+    <section id="knowledge-hub" className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#DBD6CF]/70 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/4 right-1/4 w-[700px] h-[500px] bg-[radial-gradient(circle,rgba(8,120,254,0.06)_0%,transparent_70%)] pointer-events-none -z-10"></div>
 
@@ -72,12 +72,12 @@ export default function KnowledgeHub({ onOpenContact }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF3FF] border border-[#C9DFFF] text-[#0878FE] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] border border-[#DBD6CF] text-[#FE330A] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <GraduationCap className="w-3.5 h-3.5" />
             <span>Interactive AI &amp; Engineering Knowledge Base</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight leading-tight mb-4">
-            Mastery From <span className="text-[#0878FE]">Beginner to Expert.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] tracking-tight leading-tight mb-4">
+            Mastery From <span className="text-[#FE330A]">Beginner to Expert.</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
             Search any skill, model, or engineering domain below. Explore clear conceptual roadmaps, practical architecture, and production code snippets from foundational syntax to multi-agent enterprise deployment.
@@ -88,14 +88,14 @@ export default function KnowledgeHub({ onOpenContact }) {
         <div className="max-w-3xl mx-auto mb-8">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 sm:pl-5 flex items-center pointer-events-none text-slate-400">
-              <Search className="w-5 h-5 text-[#0878FE]" />
+              <Search className="w-5 h-5 text-[#FE330A]" />
             </div>
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search any skill (e.g. Python, Machine Learning, Deep Learning, LangGraph, RAG, FastAPI)..."
-              className="w-full pl-12 sm:pl-14 pr-12 py-4 rounded-2xl bg-[#F8FAFE] border-2 border-[#C9DFFF] text-sm sm:text-base text-[#111827] placeholder:text-slate-400 focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-4 focus:ring-[#0878FE]/10 transition-all shadow-sm"
+              className="w-full pl-12 sm:pl-14 pr-12 py-4 rounded-2xl bg-[#EFEAE3] border-2 border-[#DBD6CF] text-sm sm:text-base text-[#191919] placeholder:text-slate-400 focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-4 focus:ring-[#FE330A]/10 transition-all shadow-sm"
             />
             {searchQuery && (
               <button
@@ -116,7 +116,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                 key={term}
                 type="button"
                 onClick={() => setSearchQuery(term)}
-                className="px-2.5 py-1 rounded-lg bg-[#EAF3FF] text-[#0878FE] hover:bg-[#0878FE] hover:text-white font-medium transition-colors border border-[#C9DFFF]"
+                className="px-2.5 py-1 rounded-lg bg-[#EFEAE3] text-[#FE330A] hover:bg-[#FE330A] hover:text-white font-medium transition-colors border border-[#DBD6CF]"
               >
                 {term}
               </button>
@@ -132,8 +132,8 @@ export default function KnowledgeHub({ onOpenContact }) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all border ${
                 selectedCategory === cat
-                  ? 'bg-[#0878FE] text-white border-[#0878FE] shadow-sm scale-105'
-                  : 'bg-[#F8FAFE] text-slate-700 hover:bg-[#EAF3FF] border-[#C9DFFF]'
+                  ? 'bg-[#FE330A] text-white border-[#FE330A] shadow-sm scale-105'
+                  : 'bg-[#EFEAE3] text-slate-700 hover:bg-[#EFEAE3] border-[#DBD6CF]'
               }`}
             >
               {cat}
@@ -147,7 +147,7 @@ export default function KnowledgeHub({ onOpenContact }) {
             Showing {filteredTopics.length} Knowledge Guides
           </span>
           {searchQuery && (
-            <span className="text-xs font-bold text-[#0878FE]">
+            <span className="text-xs font-bold text-[#FE330A]">
               Filtered by: "{searchQuery}"
             </span>
           )}
@@ -155,16 +155,16 @@ export default function KnowledgeHub({ onOpenContact }) {
 
         {/* Topics Cards Grid */}
         {filteredTopics.length === 0 ? (
-          <div className="text-center py-16 bg-[#F8FAFE] rounded-3xl border border-[#C9DFFF] max-w-2xl mx-auto p-8">
+          <div className="text-center py-16 bg-[#EFEAE3] rounded-3xl border border-[#DBD6CF] max-w-2xl mx-auto p-8">
             <BookOpen className="w-12 h-12 text-slate-400 mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-[#111827]">No topics found matching "{searchQuery}"</h3>
+            <h3 className="text-lg font-bold text-[#191919]">No topics found matching "{searchQuery}"</h3>
             <p className="text-xs text-slate-500 mt-1 mb-4">
               Try searching for broader terms like "python", "neural", "agent", or "pipeline".
             </p>
             <button
               type="button"
               onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-              className="px-4 py-2 rounded-xl bg-[#0878FE] text-white text-xs font-bold hover:bg-[#0255FD]"
+              className="px-4 py-2 rounded-xl bg-[#FE330A] text-white text-xs font-bold hover:bg-[#D62705]"
             >
               Reset Filters
             </button>
@@ -174,12 +174,12 @@ export default function KnowledgeHub({ onOpenContact }) {
             {filteredTopics.map((topic) => (
               <div 
                 key={topic.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-[#C9DFFF] shadow-card hover:border-[#0878FE] hover:shadow-lg transition-all duration-200 flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-6 sm:p-7 border border-[#DBD6CF] shadow-card hover:border-[#FE330A] hover:shadow-lg transition-all duration-200 flex flex-col justify-between group"
               >
                 <div>
                   {/* Category Pill */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0878FE] bg-[#EAF3FF] px-2.5 py-1 rounded-full border border-[#C9DFFF]">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#FE330A] bg-[#EFEAE3] px-2.5 py-1 rounded-full border border-[#DBD6CF]">
                       {topic.category}
                     </span>
                     <div className="flex items-center gap-1.5">
@@ -194,7 +194,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-[#111827] group-hover:text-[#0878FE] transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-[#191919] group-hover:text-[#FE330A] transition-colors mb-2">
                     {topic.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
@@ -202,7 +202,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                   </p>
 
                   {/* 4 Skill Tiers Indicator */}
-                  <div className="grid grid-cols-4 gap-1.5 mb-5 p-2 rounded-2xl bg-[#F8FAFE] border border-[#C9DFFF]/70">
+                  <div className="grid grid-cols-4 gap-1.5 mb-5 p-2 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF]/70">
                     <div 
                       onClick={() => handleOpenTopic(topic, 'beginner')}
                       className="cursor-pointer text-center p-1.5 rounded-lg bg-emerald-100/60 hover:bg-emerald-200/80 transition-colors"
@@ -257,7 +257,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                 <button
                   type="button"
                   onClick={() => handleOpenTopic(topic, 'beginner')}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-[#0878FE] bg-[#EAF3FF] hover:bg-[#0878FE] hover:text-white transition-all duration-200 border border-[#C9DFFF]"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-[#FE330A] bg-[#EFEAE3] hover:bg-[#FE330A] hover:text-white transition-all duration-200 border border-[#DBD6CF]"
                 >
                   <span>Explore Beginner ➔ Expert Roadmap</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -276,21 +276,21 @@ export default function KnowledgeHub({ onOpenContact }) {
           onClick={handleCloseTopic}
         >
           <div 
-            className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border border-[#C9DFFF]"
+            className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border border-[#DBD6CF]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-start justify-between p-6 sm:p-7 border-b border-[#C9DFFF] bg-[#F8FAFE]">
+            <div className="flex items-start justify-between p-6 sm:p-7 border-b border-[#DBD6CF] bg-[#EFEAE3]">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0878FE] bg-[#EAF3FF] px-2.5 py-0.5 rounded-full border border-[#C9DFFF]">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#FE330A] bg-[#EFEAE3] px-2.5 py-0.5 rounded-full border border-[#DBD6CF]">
                     {selectedTopic.category}
                   </span>
                   <span className="text-xs font-semibold text-slate-500">
                     Comprehensive Knowledge Roadmap
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#111827]">
+                <h3 className="text-2xl sm:text-3xl font-black text-[#191919]">
                   {selectedTopic.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
@@ -301,14 +301,14 @@ export default function KnowledgeHub({ onOpenContact }) {
               <button
                 type="button"
                 onClick={handleCloseTopic}
-                className="w-9 h-9 rounded-full bg-white text-slate-600 hover:text-black hover:bg-slate-100 flex items-center justify-center font-bold border border-[#C9DFFF] shrink-0"
+                className="w-9 h-9 rounded-full bg-white text-slate-600 hover:text-black hover:bg-slate-100 flex items-center justify-center font-bold border border-[#DBD6CF] shrink-0"
               >
                 ✕
               </button>
             </div>
 
             {/* Modal Level Switcher (4 Tiers) */}
-            <div className="px-6 sm:px-7 pt-4 border-b border-[#C9DFFF] bg-white flex flex-wrap gap-2">
+            <div className="px-6 sm:px-7 pt-4 border-b border-[#DBD6CF] bg-white flex flex-wrap gap-2">
               {[
                 { id: 'beginner', label: '1. Beginner', color: 'emerald', tag: 'Core Fundamentals' },
                 { id: 'intermediate', label: '2. Intermediate', color: 'sky', tag: 'Integration & Workflows' },
@@ -322,8 +322,8 @@ export default function KnowledgeHub({ onOpenContact }) {
                     onClick={() => setActiveLevel(lvl.id)}
                     className={`px-4 py-2.5 rounded-t-xl text-xs font-bold transition-all border-b-2 ${
                       isActive
-                        ? 'text-[#0878FE] border-[#0878FE] bg-[#EAF3FF]/40 font-black'
-                        : 'text-slate-600 border-transparent hover:text-[#0878FE]'
+                        ? 'text-[#FE330A] border-[#FE330A] bg-[#EFEAE3]/40 font-black'
+                        : 'text-slate-600 border-transparent hover:text-[#FE330A]'
                     }`}
                   >
                     <span>{lvl.label}</span>
@@ -345,12 +345,12 @@ export default function KnowledgeHub({ onOpenContact }) {
                   <div className="space-y-6 animate-fadeIn">
                     
                     {/* Level Description & Concepts Covered */}
-                    <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-4">
+                    <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-4">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-base sm:text-lg font-bold text-[#111827]">
+                        <h4 className="text-base sm:text-lg font-bold text-[#191919]">
                           {levelData.title}
                         </h4>
-                        <span className="text-[11px] font-mono font-bold uppercase text-[#0878FE] bg-white px-2.5 py-0.5 rounded border border-[#C9DFFF]">
+                        <span className="text-[11px] font-mono font-bold uppercase text-[#FE330A] bg-white px-2.5 py-0.5 rounded border border-[#DBD6CF]">
                           Tier {activeLevel.toUpperCase()}
                         </span>
                       </div>
@@ -367,7 +367,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                           {levelData.topicsCovered.map((item, idx) => (
                             <div 
                               key={idx}
-                              className="flex items-center gap-2 p-2 rounded-xl bg-white border border-[#C9DFFF]/70 text-xs text-slate-800 font-medium"
+                              className="flex items-center gap-2 p-2 rounded-xl bg-white border border-[#DBD6CF]/70 text-xs text-slate-800 font-medium"
                             >
                               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                               <span>{item}</span>
@@ -429,10 +429,10 @@ export default function KnowledgeHub({ onOpenContact }) {
                     </div>
 
                     {/* How Usama Uses This in Production */}
-                    <div className="p-4 rounded-2xl bg-[#EAF3FF] border border-[#C9DFFF] flex items-start gap-3">
-                      <Sparkles className="w-5 h-5 text-[#0878FE] shrink-0 mt-0.5" />
+                    <div className="p-4 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF] flex items-start gap-3">
+                      <Sparkles className="w-5 h-5 text-[#FE330A] shrink-0 mt-0.5" />
                       <div className="text-xs text-slate-700">
-                        <strong className="text-[#111827] block mb-0.5">How Usama Applies This For Clients:</strong>
+                        <strong className="text-[#191919] block mb-0.5">How Usama Applies This For Clients:</strong>
                         <span>{selectedTopic.businessImpact}</span>
                       </div>
                     </div>
@@ -443,7 +443,7 @@ export default function KnowledgeHub({ onOpenContact }) {
             </div>
 
             {/* Modal Footer with Direct Build CTA */}
-            <div className="p-5 sm:p-6 border-t border-[#C9DFFF] bg-[#F8FAFE] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="p-5 sm:p-6 border-t border-[#DBD6CF] bg-[#EFEAE3] flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-xs text-slate-600 text-center sm:text-left">
                 Need a custom system built with <strong>{selectedTopic.title}</strong>?
               </div>
@@ -452,7 +452,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                 <button
                   type="button"
                   onClick={handleCloseTopic}
-                  className="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-600 bg-white border border-[#C9DFFF] hover:bg-slate-50 transition-all flex-1 sm:flex-initial"
+                  className="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-600 bg-white border border-[#DBD6CF] hover:bg-slate-50 transition-all flex-1 sm:flex-initial"
                 >
                   Close Guide
                 </button>
@@ -467,7 +467,7 @@ export default function KnowledgeHub({ onOpenContact }) {
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] hover:shadow-glow transition-all flex items-center justify-center gap-1.5 flex-1 sm:flex-initial"
+                  className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#FE330A] to-[#D62705] hover:shadow-glow transition-all flex items-center justify-center gap-1.5 flex-1 sm:flex-initial"
                 >
                   <span>Build This System With Usama</span>
                   <ArrowRight className="w-3.5 h-3.5" />

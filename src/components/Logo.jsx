@@ -6,9 +6,9 @@ export default function Logo({ dark = false, className = "", showSubtitle = true
       {/* 3X AI Automation Geometric Vector Mark */}
       <div className="relative group/logo flex items-center justify-center shrink-0">
         {/* Subtle hover glow behind badge */}
-        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#0878FE] to-[#0255FD] opacity-25 blur-md group-hover/logo:opacity-50 transition duration-300"></div>
+        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#FE330A] to-[#D62705] opacity-25 blur-md group-hover/logo:opacity-50 transition duration-300"></div>
 
-        <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#0878FE] to-[#0255FD] p-[1.5px] shadow-sm flex items-center justify-center overflow-hidden">
+        <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#FE330A] to-[#D62705] p-[1.5px] shadow-sm flex items-center justify-center overflow-hidden">
           {/* Subtle glossy glass highlight */}
           <div className="absolute inset-0 bg-white/10 opacity-70"></div>
           
@@ -43,8 +43,8 @@ export default function Logo({ dark = false, className = "", showSubtitle = true
             />
 
             {/* Glowing nodes on the X branches */}
-            <circle cx="35" cy="13" r="2.2" fill="#EAF3FF" className="animate-pulse" />
-            <circle cx="24" cy="31" r="2.2" fill="#EAF3FF" />
+            <circle cx="35" cy="13" r="2.2" fill="#FFE5DF" className="animate-pulse" />
+            <circle cx="24" cy="31" r="2.2" fill="#FFE5DF" />
             <circle cx="29.5" cy="22" r="1.6" fill="#FFFFFF" />
           </svg>
         </div>
@@ -53,17 +53,17 @@ export default function Logo({ dark = false, className = "", showSubtitle = true
       {/* Brand Typography */}
       <div className="flex flex-col justify-center">
         <div className="flex items-center gap-1.5 leading-none">
-          <span className={`text-[19px] sm:text-[21px] font-black tracking-tight ${dark ? 'text-white' : 'text-[#111827]'}`}>
-            3X <span className="text-[#0878FE]">AI</span>
+          <span className={`text-[19px] sm:text-[21px] font-black tracking-tight ${dark ? 'text-white' : 'text-[#191919]'}`}>
+            3X <span className="text-[#FE330A]">AI</span>
           </span>
-          <span className={`text-[13px] sm:text-[14px] font-extrabold tracking-wider ${dark ? 'text-slate-200' : 'text-[#111827]'}`}>
+          <span className={`text-[13px] sm:text-[14px] font-extrabold tracking-wider ${dark ? 'text-slate-200' : 'text-[#191919]'}`}>
             AUTOMATION
           </span>
         </div>
         
         {showSubtitle && (
           <div className="flex items-center gap-1.5 mt-1">
-            <span className="text-[11px] font-semibold tracking-wider uppercase text-[#0878FE]">
+            <span className="text-[11px] font-semibold tracking-wider uppercase text-[#FE330A]">
               Usama Younas
             </span>
             <span className={`text-[10px] ${dark ? 'text-slate-400' : 'text-slate-500'}`}>

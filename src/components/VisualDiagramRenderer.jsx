@@ -24,10 +24,10 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 1. NEURAL NETWORK & MACHINE LEARNING PIPELINE DIAGRAM
     case 'neural-network':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Brain className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Brain className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: Neural Network &amp; Decision Pipeline</span>
             </span>
             <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
@@ -37,7 +37,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 items-center py-4 text-center">
             {/* Stage 1: Raw Inputs */}
-            <div className="p-3 rounded-xl bg-white border border-[#C9DFFF] shadow-sm space-y-1.5">
+            <div className="p-3 rounded-xl bg-white border border-[#DBD6CF] shadow-sm space-y-1.5">
               <span className="text-[10px] font-mono font-bold text-slate-500 uppercase block">1. Feature Inputs</span>
               <div className="space-y-1 text-[11px] font-semibold text-slate-800">
                 <div className="bg-slate-50 p-1 rounded border border-slate-200">Client Signals</div>
@@ -47,12 +47,12 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
 
             {/* Stage 2: Hidden Layers & Activations */}
-            <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#0878FE] shadow-sm space-y-1.5">
-              <span className="text-[10px] font-mono font-bold text-[#0878FE] uppercase block">2. Hidden Neurons</span>
-              <div className="space-y-1 text-[11px] font-semibold text-[#111827]">
-                <div className="bg-white p-1 rounded border border-[#C9DFFF]">Linear (W · x + b)</div>
-                <div className="bg-white p-1 rounded border border-[#C9DFFF]">ReLU / GELU Filter</div>
-                <div className="bg-white p-1 rounded border border-[#C9DFFF]">Self-Attention Head</div>
+            <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#FE330A] shadow-sm space-y-1.5">
+              <span className="text-[10px] font-mono font-bold text-[#FE330A] uppercase block">2. Hidden Neurons</span>
+              <div className="space-y-1 text-[11px] font-semibold text-[#191919]">
+                <div className="bg-white p-1 rounded border border-[#DBD6CF]">Linear (W · x + b)</div>
+                <div className="bg-white p-1 rounded border border-[#DBD6CF]">ReLU / GELU Filter</div>
+                <div className="bg-white p-1 rounded border border-[#DBD6CF]">Self-Attention Head</div>
               </div>
             </div>
 
@@ -77,9 +77,9 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
             <span><strong>How It Works:</strong> Neurons multiply input weights by activation thresholds. Gradients update parameters backwards until error converges to near zero.</span>
-            <span className="text-[#0878FE] font-mono font-semibold shrink-0">Convergence: Loss &lt; 0.003</span>
+            <span className="text-[#FE330A] font-mono font-semibold shrink-0">Convergence: Loss &lt; 0.003</span>
           </div>
         </div>
       );
@@ -87,28 +87,28 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 2. LLM PIPELINE & STRUCTURED OUTPUTS DIAGRAM
     case 'llm-pipeline':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Binary className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Binary className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: LLM Tokenization, Attention &amp; Schema Guarantee</span>
             </span>
-            <span className="text-[10px] font-mono text-[#0878FE] bg-[#EAF3FF] px-2 py-0.5 rounded border border-[#C9DFFF]">
+            <span className="text-[10px] font-mono text-[#FE330A] bg-[#EFEAE3] px-2 py-0.5 rounded border border-[#DBD6CF]">
               Strict Pydantic JSON
             </span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 py-3 text-center">
-            <div className="p-3 rounded-xl bg-white border border-[#C9DFFF] shadow-sm">
+            <div className="p-3 rounded-xl bg-white border border-[#DBD6CF] shadow-sm">
               <span className="text-[10px] font-mono font-bold text-slate-500 uppercase block">1. Inbound Text</span>
               <p className="text-xs font-bold text-slate-900 mt-1">Prompt &amp; Context</p>
               <span className="text-[10px] font-mono text-slate-500 mt-1 block">Byte-Pair Encoding</span>
             </div>
 
-            <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#0878FE] shadow-sm">
-              <span className="text-[10px] font-mono font-bold text-[#0878FE] uppercase block">2. Transformer</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">Multi-Head Attention</p>
-              <span className="text-[10px] font-mono text-[#0878FE] mt-1 block">Q, K, V Matrix Multiplies</span>
+            <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#FE330A] shadow-sm">
+              <span className="text-[10px] font-mono font-bold text-[#FE330A] uppercase block">2. Transformer</span>
+              <p className="text-xs font-bold text-[#191919] mt-1">Multi-Head Attention</p>
+              <span className="text-[10px] font-mono text-[#FE330A] mt-1 block">Q, K, V Matrix Multiplies</span>
             </div>
 
             <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 shadow-sm">
@@ -124,7 +124,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>Key Benefit:</strong> By applying constrained decoding with Pydantic v2 schemas at the logit level, LLMs cannot hallucinate unwanted formatting or corrupt CRM databases.
           </div>
         </div>
@@ -133,36 +133,36 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 3. RAG ARCHITECTURE & VECTOR SEARCH DIAGRAM
     case 'rag-architecture':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Database className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Database className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: RAG Pipeline &amp; Vector Database</span>
             </span>
-            <span className="text-[10px] font-mono text-[#0878FE] bg-[#EAF3FF] px-2 py-0.5 rounded border border-[#C9DFFF]">
+            <span className="text-[10px] font-mono text-[#FE330A] bg-[#EFEAE3] px-2 py-0.5 rounded border border-[#DBD6CF]">
               Zero Hallucinations
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 items-center py-4 text-center">
             {/* Step 1: Raw Knowledge */}
-            <div className="p-2.5 rounded-xl bg-white border border-[#C9DFFF] shadow-sm">
+            <div className="p-2.5 rounded-xl bg-white border border-[#DBD6CF] shadow-sm">
               <span className="text-[10px] font-mono font-bold text-slate-500 block uppercase">1. Raw Files</span>
               <p className="text-xs font-bold text-slate-800 mt-1">PDFs, Contracts, Notion &amp; SQL</p>
             </div>
 
-            <div className="text-[#0878FE] font-bold flex items-center justify-center">
+            <div className="text-[#FE330A] font-bold flex items-center justify-center">
               <span className="hidden sm:inline">➔</span>
               <span className="sm:hidden">↓</span>
             </div>
 
             {/* Step 2: Chunking & Embeddings */}
-            <div className="p-2.5 rounded-xl bg-[#EAF3FF] border border-[#0878FE] shadow-sm">
-              <span className="text-[10px] font-mono font-bold text-[#0878FE] block uppercase">2. Chunk &amp; Embed</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">1536-Dim Floating Point Vectors</p>
+            <div className="p-2.5 rounded-xl bg-[#EFEAE3] border border-[#FE330A] shadow-sm">
+              <span className="text-[10px] font-mono font-bold text-[#FE330A] block uppercase">2. Chunk &amp; Embed</span>
+              <p className="text-xs font-bold text-[#191919] mt-1">1536-Dim Floating Point Vectors</p>
             </div>
 
-            <div className="text-[#0878FE] font-bold flex items-center justify-center">
+            <div className="text-[#FE330A] font-bold flex items-center justify-center">
               <span className="hidden sm:inline">➔</span>
               <span className="sm:hidden">↓</span>
             </div>
@@ -174,7 +174,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>How It Works:</strong> Client question is converted to an embedding vector. High-speed vector search (HNSW index) retrieves the top 3 exact paragraphs, which are injected into the prompt as ground-truth facts.
           </div>
         </div>
@@ -183,10 +183,10 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 4. LANGGRAPH CYCLIC MULTI-AGENT STATE GRAPH DIAGRAM
     case 'langgraph-cycle':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Workflow className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Workflow className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: LangGraph Cyclic Multi-Agent Team</span>
             </span>
             <span className="text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
@@ -194,15 +194,15 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-white border border-[#C9DFFF] relative space-y-4">
+          <div className="p-4 rounded-xl bg-white border border-[#DBD6CF] relative space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 text-center">
               {/* Node 1: Supervisor */}
-              <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#0878FE] flex-1 min-w-[130px]">
-                <span className="text-[10px] font-mono font-bold text-[#0878FE] uppercase block">Supervisor Node</span>
-                <span className="text-xs font-bold text-[#111827]">Task Decomposition</span>
+              <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#FE330A] flex-1 min-w-[130px]">
+                <span className="text-[10px] font-mono font-bold text-[#FE330A] uppercase block">Supervisor Node</span>
+                <span className="text-xs font-bold text-[#191919]">Task Decomposition</span>
               </div>
 
-              <span className="text-[#0878FE] font-bold">➔</span>
+              <span className="text-[#FE330A] font-bold">➔</span>
 
               {/* Node 2: Worker */}
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-300 flex-1 min-w-[130px]">
@@ -210,7 +210,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
                 <span className="text-xs font-bold text-slate-900">Tool &amp; API Calling</span>
               </div>
 
-              <span className="text-[#0878FE] font-bold">➔</span>
+              <span className="text-[#FE330A] font-bold">➔</span>
 
               {/* Node 3: QA Validator */}
               <div className="p-3 rounded-xl bg-amber-50 border border-amber-300 flex-1 min-w-[130px]">
@@ -220,8 +220,8 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
 
             {/* Loopback conditional line */}
-            <div className="p-2.5 rounded-lg bg-slate-50 border border-dashed border-[#0878FE] flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-slate-600 gap-1.5">
-              <span className="flex items-center gap-1.5 text-[#0878FE] font-bold">
+            <div className="p-2.5 rounded-lg bg-slate-50 border border-dashed border-[#FE330A] flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-slate-600 gap-1.5">
+              <span className="flex items-center gap-1.5 text-[#FE330A] font-bold">
                 <RefreshCw className="w-3.5 h-3.5 animate-spin" />
                 Conditional Branch:
               </span>
@@ -230,7 +230,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>Key Advantage:</strong> Unlike linear scripts that break on any anomaly, cyclic state machines inspect intermediate outputs, reflect on mistakes, and autonomously retry until validated.
           </div>
         </div>
@@ -239,10 +239,10 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 5. HUMAN-IN-THE-LOOP & GOVERNANCE DIAGRAM
     case 'hitl-governance':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: Confidence Scoring &amp; Human Approval Gate</span>
             </span>
             <span className="text-[10px] font-mono text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
@@ -286,7 +286,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>Peace of Mind:</strong> The system automates 90% of routine operations while ensuring your company remains 100% compliant, audited, and error-free.
           </div>
         </div>
@@ -295,33 +295,33 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 6. N8N & PRODUCTION WORKFLOW AUTOMATION DIAGRAM
     case 'n8n-workflow':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Workflow className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Workflow className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: n8n Event-Driven Enterprise Pipeline</span>
             </span>
-            <span className="text-[10px] font-mono text-[#0878FE] bg-[#EAF3FF] px-2 py-0.5 rounded border border-[#C9DFFF]">
+            <span className="text-[10px] font-mono text-[#FE330A] bg-[#EFEAE3] px-2 py-0.5 rounded border border-[#DBD6CF]">
               Sub-Second Execution
             </span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 py-3 text-center">
-            <div className="p-3 rounded-xl bg-white border border-[#C9DFFF] shadow-sm">
+            <div className="p-3 rounded-xl bg-white border border-[#DBD6CF] shadow-sm">
               <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">1. Inbound</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">Webhook Trigger</p>
+              <p className="text-xs font-bold text-[#191919] mt-1">Webhook Trigger</p>
               <span className="text-[10px] font-mono text-emerald-600 mt-0.5 block">&lt;20ms latency</span>
             </div>
 
-            <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#0878FE] shadow-sm">
-              <span className="text-[10px] font-mono font-bold text-[#0878FE] block uppercase">2. AI Logic</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">LLM / Agent Node</p>
-              <span className="text-[10px] font-mono text-[#0878FE] mt-0.5 block">Qualify &amp; Score</span>
+            <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#FE330A] shadow-sm">
+              <span className="text-[10px] font-mono font-bold text-[#FE330A] block uppercase">2. AI Logic</span>
+              <p className="text-xs font-bold text-[#191919] mt-1">LLM / Agent Node</p>
+              <span className="text-[10px] font-mono text-[#FE330A] mt-0.5 block">Qualify &amp; Score</span>
             </div>
 
-            <div className="p-3 rounded-xl bg-white border border-[#C9DFFF] shadow-sm">
+            <div className="p-3 rounded-xl bg-white border border-[#DBD6CF] shadow-sm">
               <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">3. Database</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">CRM Sync</p>
+              <p className="text-xs font-bold text-[#191919] mt-1">CRM Sync</p>
               <span className="text-[10px] font-mono text-slate-500 mt-0.5 block">HubSpot / Supabase</span>
             </div>
 
@@ -332,7 +332,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>Total Pipeline Runtime:</strong> ~1.4 seconds from customer submission to full CRM update and sales team push notification.
           </div>
         </div>
@@ -341,28 +341,28 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 7. FASTAPI & ASYNC BACKEND DIAGRAM
     case 'fastapi-backend':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Server className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Server className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: High-Concurrency FastAPI &amp; Async Worker Engine</span>
             </span>
-            <span className="text-[10px] font-mono text-[#0878FE] bg-[#EAF3FF] px-2 py-0.5 rounded border border-[#C9DFFF]">
+            <span className="text-[10px] font-mono text-[#FE330A] bg-[#EFEAE3] px-2 py-0.5 rounded border border-[#DBD6CF]">
               Non-Blocking I/O
             </span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 py-3 text-center">
-            <div className="p-3 rounded-xl bg-white border border-[#C9DFFF] shadow-sm">
+            <div className="p-3 rounded-xl bg-white border border-[#DBD6CF] shadow-sm">
               <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">1. Inbound I/O</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">HTTP / WebSockets</p>
+              <p className="text-xs font-bold text-[#191919] mt-1">HTTP / WebSockets</p>
               <span className="text-[10px] font-mono text-slate-500 mt-0.5 block">Uvicorn ASGI</span>
             </div>
 
-            <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#0878FE] shadow-sm">
-              <span className="text-[10px] font-mono font-bold text-[#0878FE] block uppercase">2. Validation</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">Pydantic v2 Engine</p>
-              <span className="text-[10px] font-mono text-[#0878FE] mt-0.5 block">Compiled Rust Core</span>
+            <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#FE330A] shadow-sm">
+              <span className="text-[10px] font-mono font-bold text-[#FE330A] block uppercase">2. Validation</span>
+              <p className="text-xs font-bold text-[#191919] mt-1">Pydantic v2 Engine</p>
+              <span className="text-[10px] font-mono text-[#FE330A] mt-0.5 block">Compiled Rust Core</span>
             </div>
 
             <div className="p-3 rounded-xl bg-amber-50 border border-amber-300 shadow-sm">
@@ -378,7 +378,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>Production Standard:</strong> FastAPI delivers sub-millisecond route dispatching and handles thousands of concurrent AI agent requests without thread locking.
           </div>
         </div>
@@ -387,10 +387,10 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
     // 8. WEB SCRAPING & DATA HARVESTING DIAGRAM
     case 'web-scraping':
       return (
-        <div className="bg-[#F8FAFE] rounded-2xl p-5 border border-[#C9DFFF] space-y-3 font-sans">
-          <div className="flex items-center justify-between border-b border-[#C9DFFF]/70 pb-2.5">
-            <span className="text-xs font-bold text-[#111827] flex items-center gap-1.5">
-              <Globe className="w-4 h-4 text-[#0878FE]" />
+        <div className="bg-[#EFEAE3] rounded-2xl p-5 border border-[#DBD6CF] space-y-3 font-sans">
+          <div className="flex items-center justify-between border-b border-[#DBD6CF]/70 pb-2.5">
+            <span className="text-xs font-bold text-[#191919] flex items-center gap-1.5">
+              <Globe className="w-4 h-4 text-[#FE330A]" />
               <span>Architecture Diagram: Anti-Detection Scraping &amp; Data Pipeline</span>
             </span>
             <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
@@ -399,16 +399,16 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 py-3 text-center">
-            <div className="p-3 rounded-xl bg-white border border-[#C9DFFF] shadow-sm">
+            <div className="p-3 rounded-xl bg-white border border-[#DBD6CF] shadow-sm">
               <span className="text-[10px] font-mono font-bold text-slate-400 block uppercase">1. Network</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">Residential Proxies</p>
+              <p className="text-xs font-bold text-[#191919] mt-1">Residential Proxies</p>
               <span className="text-[10px] font-mono text-slate-500 mt-0.5 block">IP Rotation Per Request</span>
             </div>
 
-            <div className="p-3 rounded-xl bg-[#EAF3FF] border border-[#0878FE] shadow-sm">
-              <span className="text-[10px] font-mono font-bold text-[#0878FE] block uppercase">2. Browser</span>
-              <p className="text-xs font-bold text-[#111827] mt-1">Playwright &amp; Drission</p>
-              <span className="text-[10px] font-mono text-[#0878FE] mt-0.5 block">Stealth Fingerprints</span>
+            <div className="p-3 rounded-xl bg-[#EFEAE3] border border-[#FE330A] shadow-sm">
+              <span className="text-[10px] font-mono font-bold text-[#FE330A] block uppercase">2. Browser</span>
+              <p className="text-xs font-bold text-[#191919] mt-1">Playwright &amp; Drission</p>
+              <span className="text-[10px] font-mono text-[#FE330A] mt-0.5 block">Stealth Fingerprints</span>
             </div>
 
             <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 shadow-sm">
@@ -424,7 +424,7 @@ export default function VisualDiagramRenderer({ diagramType, title }) {
             </div>
           </div>
 
-          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#C9DFFF]/60">
+          <div className="text-[11px] text-slate-500 bg-white p-2.5 rounded-xl border border-[#DBD6CF]/60">
             <strong>Resilient Data Extraction:</strong> Fingerprint masking, TLS spoofing, and automatic captcha solving bypass Cloudflare and Datadome defenses for 24/7 autonomous data collection.
           </div>
         </div>

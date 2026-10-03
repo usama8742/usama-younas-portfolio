@@ -83,33 +83,33 @@ export default function HeroVisual() {
   return (
     <div className="relative w-full max-w-2xl mx-auto">
       {/* Background Soft Radial Glow */}
-      <div className="absolute -inset-6 bg-[radial-gradient(circle_at_center,rgba(8,120,254,0.12)_0%,rgba(2,85,253,0.02)_60%,transparent_80%)] rounded-3xl blur-2xl pointer-events-none"></div>
+      <div className="absolute -inset-6 bg-[radial-gradient(circle_at_center,rgba(254,51,10,0.15)_0%,rgba(254,51,10,0.02)_60%,transparent_80%)] rounded-3xl blur-2xl pointer-events-none"></div>
 
       {/* Main Container Card */}
-      <div className="relative bg-white/95 dark:bg-[#0C1222]/95 backdrop-blur-md border border-[#C9DFFF] dark:border-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all">
+      <div className="relative bg-white border border-[#DBD6CF] rounded-3xl p-5 sm:p-7 shadow-card transition-all">
         
         {/* Terminal / Live Flow Header */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-[#C9DFFF] dark:border-slate-800">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-[#DBD6CF]">
           <div className="flex items-center gap-2.5">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#0878FE] animate-pulse"></span>
-              <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-              <span className="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FE330A] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#191919]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#DBD6CF]"></span>
             </div>
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#111827] dark:text-slate-200">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#191919]">
               Live 3X Automation Pipeline
             </span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-[#EAF3FF] dark:bg-[#0878FE]/15 text-[#0878FE] dark:text-cyan-400 border border-[#C9DFFF] dark:border-[#0878FE]/30">
-              <Zap className="w-3 h-3 fill-current" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[50px] text-[11px] font-mono font-bold bg-[#EFEAE3] text-[#FE330A] border border-[#DBD6CF]">
+              <Zap className="w-3 h-3 fill-current text-[#FE330A]" />
               Active System
             </span>
             <button
               type="button"
               onClick={() => setIsPlaying(!isPlaying)}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-[#0878FE] dark:hover:text-cyan-400 hover:bg-[#F8FAFE] dark:hover:bg-slate-800 border border-transparent hover:border-[#C9DFFF] dark:hover:border-slate-700 transition-colors"
+              className="p-1.5 rounded-[50px] text-[#555555] hover:text-[#FE330A] hover:bg-[#EFEAE3] border border-transparent hover:border-[#DBD6CF] transition-colors"
               title={isPlaying ? "Pause simulation" : "Play simulation"}
               aria-label={isPlaying ? "Pause simulation" : "Play simulation"}
             >
@@ -132,45 +132,45 @@ export default function HeroVisual() {
                   setActiveStep(idx);
                   setIsPlaying(false);
                 }}
-                className={`group relative cursor-pointer p-3.5 rounded-xl border transition-all duration-300 ${
+                className={`group relative cursor-pointer p-3.5 rounded-2xl border transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-b from-white to-[#EAF3FF] dark:from-slate-800 dark:to-slate-900 border-[#0878FE] shadow-glow-sm dark:shadow-[0_0_20px_rgba(8,120,254,0.35)] -translate-y-1'
+                    ? 'bg-[#EFEAE3] border-[#FE330A] shadow-sm -translate-y-1'
                     : isCompleted
-                    ? 'bg-[#F8FAFE] dark:bg-slate-800/40 border-[#C9DFFF] dark:border-slate-800 text-[#111827] dark:text-slate-200'
-                    : 'bg-white dark:bg-slate-900/60 border-[#C9DFFF]/70 dark:border-slate-800/60 opacity-75 hover:opacity-100 hover:border-[#0878FE]'
+                    ? 'bg-white border-[#DBD6CF] text-[#191919]'
+                    : 'bg-white border-[#DBD6CF]/80 opacity-75 hover:opacity-100 hover:border-[#FE330A]'
                 }`}
               >
                 {/* Node Status Badge */}
                 <div className="flex items-center justify-between mb-2">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
+                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${
                     isActive 
-                      ? 'bg-[#0878FE] text-white shadow-sm' 
+                      ? 'bg-[#FE330A] text-white shadow-sm' 
                       : isCompleted
-                      ? 'bg-[#EAF3FF] dark:bg-[#0878FE]/20 text-[#0878FE] dark:text-cyan-400'
-                      : 'bg-[#F8FAFE] dark:bg-slate-800 text-slate-500 group-hover:text-[#0878FE] dark:group-hover:text-cyan-400'
+                      ? 'bg-[#EFEAE3] text-[#FE330A]'
+                      : 'bg-slate-100 text-slate-600 group-hover:text-[#FE330A]'
                   }`}>
                     <Icon className="w-4 h-4" />
                   </div>
 
-                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-[50px] ${
                     isActive 
-                      ? 'bg-[#0878FE] text-white font-bold' 
-                      : 'text-slate-500 dark:text-slate-400'
+                      ? 'bg-[#191919] text-white font-bold' 
+                      : 'text-slate-500 bg-[#EFEAE3]'
                   }`}>
                     0{node.id}
                   </span>
                 </div>
 
-                <h4 className="text-xs sm:text-sm font-bold text-[#111827] dark:text-slate-200 group-hover:text-[#0878FE] dark:group-hover:text-cyan-400 transition-colors leading-tight">
+                <h4 className="text-xs sm:text-sm font-bold text-[#191919] group-hover:text-[#FE330A] transition-colors leading-tight">
                   {node.label}
                 </h4>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 leading-snug line-clamp-1">
+                <p className="text-[11px] text-slate-500 mt-0.5 leading-snug line-clamp-1">
                   {node.sub}
                 </p>
 
                 {/* Active Indicator Bar */}
                 {isActive && (
-                  <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-r from-[#0878FE] via-cyan-400 to-[#0255FD] rounded-full"></div>
+                  <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#FE330A] rounded-full"></div>
                 )}
               </div>
             );
@@ -178,29 +178,29 @@ export default function HeroVisual() {
         </div>
 
         {/* Live Payload Stream Inspector */}
-        <div className="mt-5 p-4 rounded-xl bg-[#F8FAFE] dark:bg-slate-900/80 border border-[#C9DFFF] dark:border-slate-800 transition-all">
+        <div className="mt-5 p-4 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF] transition-all">
           <div className="flex items-center justify-between mb-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#0878FE] animate-ping"></span>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#0878FE] dark:text-cyan-400">
+              <span className="w-2 h-2 rounded-full bg-[#FE330A] animate-ping"></span>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#FE330A]">
                 Step 0{activeNode.id} Telemetry · {activeNode.label}
               </span>
             </div>
-            <span className="text-[11px] font-mono text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 px-2 py-0.5 rounded border border-[#C9DFFF] dark:border-slate-700">
+            <span className="text-[11px] font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-[#DBD6CF]">
               {activeNode.metric}
             </span>
           </div>
-          <p className="text-xs text-[#111827] dark:text-slate-300 leading-relaxed font-mono">
+          <p className="text-xs text-[#191919] leading-relaxed font-mono">
             {activeNode.detail}
           </p>
         </div>
 
         {/* Flow Footer Status */}
-        <div className="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-2 pt-2">
+        <div className="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2 pt-2">
           <div className="flex items-center gap-1.5">
-            <span className="text-slate-400">Pipeline Flow:</span>
-            <span className="font-medium text-[#111827] dark:text-slate-300 flex items-center gap-1">
-              Lead <ArrowRight className="w-3 h-3 text-[#0878FE]" /> AI Agent <ArrowRight className="w-3 h-3 text-[#0878FE]" /> CRM <ArrowRight className="w-3 h-3 text-[#0878FE]" /> Booking
+            <span className="text-slate-500">Pipeline Flow:</span>
+            <span className="font-medium text-[#191919] flex items-center gap-1">
+              Lead <ArrowRight className="w-3 h-3 text-[#FE330A]" /> AI Agent <ArrowRight className="w-3 h-3 text-[#FE330A]" /> CRM <ArrowRight className="w-3 h-3 text-[#FE330A]" /> Booking
             </span>
           </div>
           <button
@@ -209,7 +209,7 @@ export default function HeroVisual() {
               setActiveStep(0);
               setIsPlaying(true);
             }}
-            className="text-[11px] font-semibold text-[#0878FE] dark:text-cyan-400 hover:underline flex items-center gap-1"
+            className="text-[11px] font-bold text-[#FE330A] hover:underline flex items-center gap-1"
           >
             <Sparkles className="w-3 h-3" />
             Restart Pipeline

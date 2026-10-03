@@ -151,7 +151,7 @@ export default function Contact({ prefillGoal = '' }) {
         particleCount: 120,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#0878FE', '#0255FD', '#FFFFFF', '#38BDF8', '#10B981']
+        colors: ['#FE330A', '#D62705', '#FFFFFF', '#38BDF8', '#10B981']
       });
 
     } catch (error) {
@@ -163,7 +163,7 @@ export default function Contact({ prefillGoal = '' }) {
         particleCount: 70,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ['#0878FE', '#0255FD', '#FFFFFF']
+        colors: ['#FE330A', '#D62705', '#FFFFFF']
       });
     } finally {
       setIsSubmitting(false);
@@ -171,17 +171,17 @@ export default function Contact({ prefillGoal = '' }) {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-[#F8FAFE] border-t border-[#C9DFFF]/70 relative">
+    <section id="contact" className="py-20 lg:py-28 bg-[#EFEAE3] border-t border-[#DBD6CF]/70 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF3FF] border border-[#C9DFFF] text-[#0878FE] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] border border-[#DBD6CF] text-[#FE330A] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Direct Client Engagement</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight leading-tight mb-4">
-            Let's Build Something <span className="text-[#0878FE]">Intelligent.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] tracking-tight leading-tight mb-4">
+            Let's Build Something <span className="text-[#FE330A]">Intelligent.</span>
           </h2>
           <div className="space-y-1 text-base sm:text-lg text-slate-600 font-normal">
             <p>Have an AI idea, automation project, or business process you'd like to improve?</p>
@@ -193,20 +193,20 @@ export default function Contact({ prefillGoal = '' }) {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
           {/* Form Container (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-[#C9DFFF] shadow-card">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-[#DBD6CF] shadow-card">
             
             {/* Live Delivery Guarantee Banner */}
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-[#EAF3FF] border border-[#C9DFFF] text-xs text-[#0878FE]">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF] text-xs text-[#FE330A]">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="font-semibold text-slate-800">Email Destination:</span>
-                <span className="font-mono font-bold text-[#0878FE]">contactbyusama@gmail.com</span>
+                <span className="font-mono font-bold text-[#FE330A]">contactbyusama@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <button
                   type="button"
                   onClick={handleAutoFillTest}
-                  className="text-[11px] font-bold text-slate-600 hover:text-[#0878FE] flex items-center gap-1 bg-white/80 px-2 py-0.5 rounded-md border border-[#C9DFFF]"
+                  className="text-[11px] font-bold text-slate-600 hover:text-[#FE330A] flex items-center gap-1 bg-white/80 px-2 py-0.5 rounded-md border border-[#DBD6CF]"
                   title="Auto-fill with test data to try immediately"
                 >
                   <Zap className="w-3 h-3 text-amber-500" />
@@ -215,7 +215,7 @@ export default function Contact({ prefillGoal = '' }) {
                 <button
                   type="button"
                   onClick={copyEmail}
-                  className="text-[11px] font-bold text-[#0878FE] hover:underline flex items-center gap-1 shrink-0"
+                  className="text-[11px] font-bold text-[#FE330A] hover:underline flex items-center gap-1 shrink-0"
                 >
                   {copiedEmail ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
                   <span>{copiedEmail ? 'Copied' : 'Copy'}</span>
@@ -230,37 +230,37 @@ export default function Contact({ prefillGoal = '' }) {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-[#111827]">
+                  <h3 className="text-2xl font-bold text-[#191919]">
                     Project Request Transmitted!
                   </h3>
-                  <p className="text-xs text-[#0878FE] font-mono font-semibold mt-1">
+                  <p className="text-xs text-[#FE330A] font-mono font-semibold mt-1">
                     Target: contactbyusama@gmail.com
                   </p>
                 </div>
 
                 {/* Submitted Summary Box */}
-                <div className="max-w-md mx-auto p-4 rounded-2xl bg-[#F8FAFE] border border-[#C9DFFF] text-left text-xs space-y-1.5 text-slate-700">
+                <div className="max-w-md mx-auto p-4 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF] text-left text-xs space-y-1.5 text-slate-700">
                   <div className="flex justify-between">
                     <span className="text-slate-500 font-medium">Client Name:</span>
-                    <span className="font-bold text-[#111827]">{formData.name || 'Visitor'}</span>
+                    <span className="font-bold text-[#191919]">{formData.name || 'Visitor'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500 font-medium">Client Email:</span>
-                    <span className="font-bold text-[#111827]">{formData.email}</span>
+                    <span className="font-bold text-[#191919]">{formData.email}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500 font-medium">Service Requested:</span>
-                    <span className="font-bold text-[#0878FE]">{formData.service}</span>
+                    <span className="font-bold text-[#FE330A]">{formData.service}</span>
                   </div>
                   {formData.company && (
                     <div className="flex justify-between">
                       <span className="text-slate-500 font-medium">Company:</span>
-                      <span className="font-bold text-[#111827]">{formData.company}</span>
+                      <span className="font-bold text-[#191919]">{formData.company}</span>
                     </div>
                   )}
-                  <div className="pt-2 border-t border-[#C9DFFF]/70">
+                  <div className="pt-2 border-t border-[#DBD6CF]/70">
                     <span className="text-slate-500 font-medium block mb-0.5">Goal:</span>
-                    <p className="text-slate-800 italic bg-white p-2 rounded-lg border border-[#C9DFFF]/50">
+                    <p className="text-slate-800 italic bg-white p-2 rounded-lg border border-[#DBD6CF]/50">
                       "{formData.automationGoal}"
                     </p>
                   </div>
@@ -281,7 +281,7 @@ export default function Contact({ prefillGoal = '' }) {
                     href={getGmailWebLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] hover:shadow-glow transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#FE330A] to-[#D62705] hover:shadow-glow transition-all"
                   >
                     <Mail className="w-3.5 h-3.5" />
                     <span>Open Pre-filled Draft in Gmail Web</span>
@@ -290,7 +290,7 @@ export default function Contact({ prefillGoal = '' }) {
 
                   <a
                     href={getMailtoLink()}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-[#C9DFFF] transition-all"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-slate-50 border border-[#DBD6CF] transition-all"
                   >
                     <Mail className="w-3.5 h-3.5 text-slate-500" />
                     <span>Open in Mail App</span>
@@ -311,7 +311,7 @@ export default function Contact({ prefillGoal = '' }) {
                         message: ''
                       });
                     }}
-                    className="text-xs font-bold text-[#0878FE] hover:underline inline-flex items-center gap-1.5"
+                    className="text-xs font-bold text-[#FE330A] hover:underline inline-flex items-center gap-1.5"
                   >
                     <RefreshCw className="w-3 h-3" />
                     <span>Send Another Project Request</span>
@@ -325,7 +325,7 @@ export default function Contact({ prefillGoal = '' }) {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                      Name <span className="text-[#0878FE]">*</span>
+                      Name <span className="text-[#FE330A]">*</span>
                     </label>
                     <input
                       type="text"
@@ -333,13 +333,13 @@ export default function Contact({ prefillGoal = '' }) {
                       placeholder="e.g. John Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-[#C9DFFF] bg-[#F8FAFE] text-sm text-[#111827] placeholder:text-slate-400 focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-1 focus:ring-[#0878FE] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-[#DBD6CF] bg-[#EFEAE3] text-sm text-[#191919] placeholder:text-slate-400 focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-1 focus:ring-[#FE330A] transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                      Email <span className="text-[#0878FE]">*</span>
+                      Email <span className="text-[#FE330A]">*</span>
                     </label>
                     <input
                       type="email"
@@ -347,7 +347,7 @@ export default function Contact({ prefillGoal = '' }) {
                       placeholder="john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-[#C9DFFF] bg-[#F8FAFE] text-sm text-[#111827] placeholder:text-slate-400 focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-1 focus:ring-[#0878FE] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-[#DBD6CF] bg-[#EFEAE3] text-sm text-[#191919] placeholder:text-slate-400 focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-1 focus:ring-[#FE330A] transition-colors"
                     />
                   </div>
                 </div>
@@ -363,18 +363,18 @@ export default function Contact({ prefillGoal = '' }) {
                       placeholder="e.g. Apex Realty / Logistics LLC"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-[#C9DFFF] bg-[#F8FAFE] text-sm text-[#111827] placeholder:text-slate-400 focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-1 focus:ring-[#0878FE] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-[#DBD6CF] bg-[#EFEAE3] text-sm text-[#191919] placeholder:text-slate-400 focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-1 focus:ring-[#FE330A] transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                      Service Needed <span className="text-[#0878FE]">*</span>
+                      Service Needed <span className="text-[#FE330A]">*</span>
                     </label>
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-[#C9DFFF] bg-[#F8FAFE] text-sm text-[#111827] focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-1 focus:ring-[#0878FE] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-[#DBD6CF] bg-[#EFEAE3] text-sm text-[#191919] focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-1 focus:ring-[#FE330A] transition-colors"
                     >
                       {SERVICE_OPTIONS.map((opt) => (
                         <option key={opt} value={opt}>
@@ -388,7 +388,7 @@ export default function Contact({ prefillGoal = '' }) {
                 {/* What would you like to automate? */}
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                    What would you like to automate? <span className="text-[#0878FE]">*</span>
+                    What would you like to automate? <span className="text-[#FE330A]">*</span>
                   </label>
                   <input
                     type="text"
@@ -396,7 +396,7 @@ export default function Contact({ prefillGoal = '' }) {
                     placeholder="e.g. Qualify inbound web leads and sync with our CRM & WhatsApp"
                     value={formData.automationGoal}
                     onChange={(e) => setFormData({ ...formData, automationGoal: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#C9DFFF] bg-[#F8FAFE] text-sm text-[#111827] placeholder:text-slate-400 focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-1 focus:ring-[#0878FE] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-[#DBD6CF] bg-[#EFEAE3] text-sm text-[#191919] placeholder:text-slate-400 focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-1 focus:ring-[#FE330A] transition-colors"
                   />
                 </div>
 
@@ -410,7 +410,7 @@ export default function Contact({ prefillGoal = '' }) {
                     placeholder="Describe your current manual bottlenecks, tools you use (n8n, HubSpot, custom DB), and your target timeline..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#C9DFFF] bg-[#F8FAFE] text-sm text-[#111827] placeholder:text-slate-400 focus:outline-none focus:border-[#0878FE] focus:bg-white focus:ring-1 focus:ring-[#0878FE] transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-[#DBD6CF] bg-[#EFEAE3] text-sm text-[#191919] placeholder:text-slate-400 focus:outline-none focus:border-[#FE330A] focus:bg-white focus:ring-1 focus:ring-[#FE330A] transition-colors resize-none"
                   ></textarea>
                 </div>
 
@@ -420,7 +420,7 @@ export default function Contact({ prefillGoal = '' }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 disabled:opacity-50"
+                    className="btn-azzle-primary w-full py-4 text-sm uppercase tracking-wider font-bold shadow-md"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
@@ -441,7 +441,7 @@ export default function Contact({ prefillGoal = '' }) {
                       href={getGmailWebLink()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-bold text-[#0878FE] bg-[#EAF3FF] hover:bg-[#0878FE] hover:text-white transition-all border border-[#C9DFFF]"
+                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[50px] text-xs font-bold text-[#191919] bg-[#EFEAE3] hover:bg-[#FE330A] hover:text-white transition-all border border-[#DBD6CF]"
                       title="Open draft in Gmail with fields pre-filled"
                     >
                       <Mail className="w-3.5 h-3.5" />
@@ -451,10 +451,10 @@ export default function Contact({ prefillGoal = '' }) {
 
                     <a
                       href={getMailtoLink()}
-                      className="inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 transition-all border border-[#C9DFFF]"
+                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[50px] text-xs font-bold text-[#191919] bg-white hover:bg-black hover:text-white transition-all border border-[#DBD6CF]"
                       title="Open in your default mail app"
                     >
-                      <MessageSquare className="w-3.5 h-3.5 text-slate-500" />
+                      <MessageSquare className="w-3.5 h-3.5" />
                       <span>Open in Mail App</span>
                     </a>
                   </div>
@@ -466,7 +466,7 @@ export default function Contact({ prefillGoal = '' }) {
                     <button
                       type="button"
                       onClick={copyEmail}
-                      className="font-bold text-[#0878FE] hover:underline"
+                      className="font-bold text-[#FE330A] hover:underline"
                     >
                       contactbyusama@gmail.com
                     </button>
@@ -481,12 +481,12 @@ export default function Contact({ prefillGoal = '' }) {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Direct Channels Card */}
-            <div className="bg-white rounded-3xl p-7 border border-[#C9DFFF] shadow-card space-y-6">
-              <div className="flex items-center justify-between border-b border-[#C9DFFF] pb-4">
-                <h3 className="text-xl font-bold text-[#111827]">
+            <div className="bg-white rounded-3xl p-7 border border-[#DBD6CF] shadow-card space-y-6">
+              <div className="flex items-center justify-between border-b border-[#DBD6CF] pb-4">
+                <h3 className="text-xl font-bold text-[#191919]">
                   Direct Channels
                 </h3>
-                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#EAF3FF] text-[#0878FE] border border-[#C9DFFF] flex items-center gap-1">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#EFEAE3] text-[#FE330A] border border-[#DBD6CF] flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                   Verified Live
                 </span>
@@ -494,10 +494,10 @@ export default function Contact({ prefillGoal = '' }) {
 
               <div className="space-y-4">
                 {/* Primary Email */}
-                <div className="p-4 rounded-2xl bg-[#F8FAFE] border border-[#C9DFFF] space-y-3">
+                <div className="p-4 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF] space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-xl bg-[#EAF3FF] text-[#0878FE] flex items-center justify-center shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-[#EFEAE3] text-[#FE330A] flex items-center justify-center shrink-0">
                         <Mail className="w-4 h-4" />
                       </div>
                       <div>
@@ -506,7 +506,7 @@ export default function Contact({ prefillGoal = '' }) {
                         </span>
                         <a 
                           href="mailto:contactbyusama@gmail.com"
-                          className="text-sm font-bold text-[#111827] hover:text-[#0878FE] transition-colors"
+                          className="text-sm font-bold text-[#191919] hover:text-[#FE330A] transition-colors"
                         >
                           contactbyusama@gmail.com
                         </a>
@@ -519,7 +519,7 @@ export default function Contact({ prefillGoal = '' }) {
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=contactbyusama@gmail.com&su=AI%20Automation%20Inquiry"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-bold text-white bg-[#0878FE] hover:bg-[#0255FD] transition-all shadow-sm"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-bold text-white bg-[#FE330A] hover:bg-[#D62705] transition-all shadow-sm"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>Email via Gmail</span>
@@ -527,7 +527,7 @@ export default function Contact({ prefillGoal = '' }) {
                     <button
                       type="button"
                       onClick={copyEmail}
-                      className="inline-flex items-center gap-1 py-2 px-3 rounded-lg text-xs font-bold bg-white text-[#111827] border border-[#C9DFFF] hover:border-[#0878FE] transition-all"
+                      className="inline-flex items-center gap-1 py-2 px-3 rounded-lg text-xs font-bold bg-white text-[#191919] border border-[#DBD6CF] hover:border-[#FE330A] transition-all"
                       title="Copy email address"
                     >
                       {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
@@ -541,14 +541,14 @@ export default function Contact({ prefillGoal = '' }) {
                   href="https://www.instagram.com/3xaiautomation/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-[#F8FAFE] border border-transparent hover:border-[#C9DFFF] transition-all group"
+                  className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-[#EFEAE3] border border-transparent hover:border-[#DBD6CF] transition-all group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#f09433]/15 via-[#dc2743]/15 to-[#bc1888]/15 text-[#dc2743] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <InstagramIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 font-medium block">Instagram Official</span>
-                    <span className="text-sm font-bold text-[#111827] group-hover:text-[#0878FE] transition-colors">
+                    <span className="text-sm font-bold text-[#191919] group-hover:text-[#FE330A] transition-colors">
                       @3xaiautomation
                     </span>
                   </div>
@@ -559,14 +559,14 @@ export default function Contact({ prefillGoal = '' }) {
                   href="https://www.linkedin.com/in/usama8742/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-[#F8FAFE] border border-transparent hover:border-[#C9DFFF] transition-all group"
+                  className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-[#EFEAE3] border border-transparent hover:border-[#DBD6CF] transition-all group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#EAF3FF] text-[#0878FE] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-[#EFEAE3] text-[#FE330A] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <LinkedinIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 font-medium block">LinkedIn Profile</span>
-                    <span className="text-sm font-bold text-[#111827] group-hover:text-[#0878FE] transition-colors">
+                    <span className="text-sm font-bold text-[#191919] group-hover:text-[#FE330A] transition-colors">
                       linkedin.com/in/usama8742
                     </span>
                   </div>
@@ -577,14 +577,14 @@ export default function Contact({ prefillGoal = '' }) {
                   href="https://github.com/usama8742"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-[#F8FAFE] border border-transparent hover:border-[#C9DFFF] transition-all group"
+                  className="flex items-start gap-4 p-3.5 rounded-xl hover:bg-[#EFEAE3] border border-transparent hover:border-[#DBD6CF] transition-all group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <GithubIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 font-medium block">GitHub Repositories</span>
-                    <span className="text-sm font-bold text-[#111827] group-hover:text-[#0878FE] transition-colors">
+                    <span className="text-sm font-bold text-[#191919] group-hover:text-[#FE330A] transition-colors">
                       github.com/usama8742
                     </span>
                   </div>
@@ -593,9 +593,9 @@ export default function Contact({ prefillGoal = '' }) {
               </div>
 
               {/* SLA Guarantee Box */}
-              <div className="pt-4 border-t border-[#C9DFFF]/70">
-                <div className="flex items-center gap-3 text-xs text-slate-600 bg-[#F8FAFE] p-3 rounded-xl border border-[#C9DFFF]/60">
-                  <Clock className="w-4 h-4 text-[#0878FE] shrink-0" />
+              <div className="pt-4 border-t border-[#DBD6CF]/70">
+                <div className="flex items-center gap-3 text-xs text-slate-600 bg-[#EFEAE3] p-3 rounded-xl border border-[#DBD6CF]/60">
+                  <Clock className="w-4 h-4 text-[#FE330A] shrink-0" />
                   <span>
                     <strong>Response Guarantee:</strong> Inquiries replied to within <strong>24 business hours</strong>.
                   </span>

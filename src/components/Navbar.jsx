@@ -58,8 +58,8 @@ export default function Navbar({ onOpenContact }) {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#C9DFFF]' 
-          : 'bg-white/80 backdrop-blur-sm border-b border-transparent'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#DBD6CF]' 
+          : 'bg-white/85 backdrop-blur-sm border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +69,7 @@ export default function Navbar({ onOpenContact }) {
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0878FE] rounded-lg"
+            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A] rounded-lg"
             aria-label="3X AI Automation Home"
           >
             <Logo dark={false} />
@@ -84,11 +84,11 @@ export default function Navbar({ onOpenContact }) {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
+                  className={`px-3.5 py-1.5 rounded-[50px] text-xs xl:text-sm font-semibold transition-all ${
                     isActive 
-                      ? 'text-[#0878FE] bg-[#EAF3FF] font-semibold' 
-                      : 'text-[#111827] hover:text-[#0878FE] hover:bg-[#F8FAFE]'
-                  } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0878FE]`}
+                      ? 'text-white bg-black' 
+                      : 'text-[#191919] hover:text-[#FE330A] hover:bg-[#EFEAE3]'
+                  } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A]`}
                 >
                   {link.label}
                 </a>
@@ -103,15 +103,15 @@ export default function Navbar({ onOpenContact }) {
               href="https://www.instagram.com/3xaiautomation/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs font-bold transition-all group duration-300 bg-white text-[#111827] border-[#C9DFFF] hover:border-[#0878FE] hover:bg-[#F8FAFE] hover:shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-[50px] border text-xs font-bold transition-all group duration-300 bg-white text-[#191919] border-[#DBD6CF] hover:border-[#FE330A] hover:text-[#FE330A] shadow-sm"
               title="Follow @3xaiautomation on Instagram"
               aria-label="Instagram Profile"
             >
-              <InstagramIcon className="w-4 h-4 text-[#dc2743] group-hover:scale-110 transition-transform" />
+              <InstagramIcon className="w-3.5 h-3.5 text-[#FE330A] group-hover:scale-110 transition-transform" />
               <span>Instagram</span>
             </a>
 
-            {/* Let's Talk CTA */}
+            {/* Let's Talk CTA - Azzle Signature Pill Button */}
             <a
               href="#contact"
               onClick={(e) => {
@@ -122,10 +122,10 @@ export default function Navbar({ onOpenContact }) {
                   handleNavClick(e, '#contact');
                 }
               }}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0878FE] focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[50px] border-2 border-black bg-black text-white hover:bg-[#FE330A] hover:border-[#FE330A] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider shadow-sm"
             >
               <span>Let's Talk</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
@@ -134,7 +134,7 @@ export default function Navbar({ onOpenContact }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-[#111827] hover:text-[#0878FE] bg-white border border-[#C9DFFF] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0878FE]"
+              className="p-2.5 rounded-[50px] text-[#191919] hover:text-[#FE330A] bg-white border border-[#DBD6CF] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A]"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle Navigation Menu"
             >
