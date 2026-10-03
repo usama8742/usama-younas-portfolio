@@ -11,7 +11,7 @@ export const BRAND = {
   portfolioUrl: "https://usama-ai-portfolio.vercel.app/",
   location: "Available for Global Remote & Contract Projects",
   status: "Open for AI Automation & Engineering Projects",
-  techLine: "AI Agents · n8n Automation · Python · APIs · CRM · Voice AI"
+  techLine: "Multi-Agent Systems · LangGraph · LLMs · FastAPI · React & Next.js · n8n Automation"
 };
 
 export const SERVICES = [
@@ -195,40 +195,50 @@ export const PROJECTS = [
 ];
 
 export const TECH_STACK = {
-  AI: [
-    { name: "Python", role: "Core Language for AI & Scripting", level: "Expert" },
-    { name: "AI Agents", role: "Autonomous Decision & Tool Use", level: "Specialist" },
-    { name: "LLMs", role: "Prompting, RAG & Fine-Tuning", level: "Advanced" },
-    { name: "Prompt Engineering", role: "Structured System Prompts", level: "Expert" },
-    { name: "Ollama", role: "Local & Private Model Deployment", level: "Advanced" }
+  "AI & Multi-Agent Systems": [
+    { name: "LangGraph", role: "Stateful Multi-Agent Cyclic Graphs", level: "Production Core" },
+    { name: "LangChain", role: "LLM Chaining, Tool Calling & Structured Parsers", level: "Expert" },
+    { name: "CrewAI", role: "Role-Based Autonomous Multi-Agent Teams", level: "Specialist" },
+    { name: "RAG Pipelines", role: "Vector Search, Hybrid Retrieval & Chunking", level: "Production Core" },
+    { name: "Multi-Agent Orchestration", role: "Supervisor, Router & Sub-Agent Topologies", level: "Advanced" },
+    { name: "Human-in-the-Loop", role: "Approval Gates & Review Checkpoints", level: "Advanced" },
+    { name: "Prompt Engineering", role: "Few-Shot Prompts & Deterministic System Instructions", level: "Expert" },
+    { name: "Sentiment & Intent Analysis", role: "Real-Time Conversation & Urgency Scoring", level: "Specialist" },
+    { name: "Structured Outputs", role: "Pydantic Schemas & Guaranteed JSON", level: "Expert" }
   ],
-  Automation: [
-    { name: "n8n", role: "Visual Workflow Orchestration", level: "Expert" },
-    { name: "Webhooks", role: "Real-Time Event Triggers", level: "Expert" },
-    { name: "Workflow Automation", role: "End-to-End Business Logic", level: "Specialist" },
-    { name: "API Integrations", role: "Cross-Platform Interoperability", level: "Expert" }
+  "LLMs & AI APIs": [
+    { name: "OpenAI (GPT-4o / mini)", role: "Multimodal Reasoning & Function Calling", level: "Production Core" },
+    { name: "Anthropic Claude", role: "Long-Context Coding & Complex Logic", level: "Advanced" },
+    { name: "Google Gemini", role: "High-Throughput Multimodal Processing", level: "Advanced" },
+    { name: "ElevenLabs", role: "Conversational Low-Latency Voice AI", level: "Specialist" }
   ],
-  Backend: [
-    { name: "FastAPI", role: "High-Performance Python APIs", level: "Advanced" },
-    { name: "Node.js", role: "Server Runtime & Microservices", level: "Advanced" },
-    { name: "Express", role: "RESTful Backend Framework", level: "Advanced" },
-    { name: "REST APIs", role: "API Design & Documentation", level: "Expert" }
+  "Backend Development": [
+    { name: "FastAPI", role: "Async Python REST Microservices & OpenAPI", level: "Production Core" },
+    { name: "Flask", role: "Lightweight Python Services & Webhooks", level: "Advanced" },
+    { name: "Node.js & Fastify / Express", role: "Event-Driven Microservices & High-Concurrency I/O", level: "Advanced" },
+    { name: "WebSockets & WebRTC", role: "Bidirectional Real-Time Communication & Voice Streams", level: "Specialist" },
+    { name: "asyncio & Pydantic v2", role: "Concurrent Python Tasks & Strict Data Validation", level: "Expert" },
+    { name: "SQLAlchemy 2.0 & Alembic", role: "Async ORM & Reliable Schema Migrations", level: "Advanced" },
+    { name: "PostgreSQL & Supabase", role: "Relational Storage, pgvector & Realtime Triggers", level: "Production Core" },
+    { name: "SQLite", role: "Embedded Edge Storage & Local Vector Indexing", level: "Advanced" }
   ],
-  Frontend: [
-    { name: "React", role: "Modern Component Architecture", level: "Advanced" },
-    { name: "JavaScript", role: "ES6+, Async, DOM & Logic", level: "Expert" },
-    { name: "HTML", role: "Semantic Accessible Markup", level: "Expert" },
-    { name: "CSS", role: "Tailwind, Responsive & UI Styling", level: "Expert" }
+  "Frontend & Extension Dev": [
+    { name: "React.js & Next.js", role: "Modern Component Architecture & App Router", level: "Production Core" },
+    { name: "TypeScript", role: "Strict Compile-Time Data Contracts", level: "Expert" },
+    { name: "Tailwind CSS & Radix UI", role: "Accessible, High-Conversion Responsive UI", level: "Expert" },
+    { name: "Recharts", role: "Interactive Telemetry & ROI Charts", level: "Advanced" },
+    { name: "TanStack Query", role: "Server State Caching & Optimistic UI", level: "Advanced" },
+    { name: "Chrome Extensions", role: "Manifest V3 In-Browser Automation Tools", level: "Specialist" },
+    { name: "Vite", role: "Ultra-Fast HMR & Production Bundler", level: "Expert" }
   ],
-  Database: [
-    { name: "Supabase", role: "Managed Postgres, Auth & Realtime", level: "Advanced" },
-    { name: "PostgreSQL", role: "Relational Queries & Schema Design", level: "Advanced" }
-  ],
-  Other: [
-    { name: "Git", role: "Version Control & Branching", level: "Expert" },
-    { name: "GitHub", role: "CI/CD & Repository Management", level: "Expert" },
-    { name: "Authentication", role: "JWT, OAuth & Role-Based Access", level: "Advanced" },
-    { name: "CRM Systems", role: "HubSpot, GoHighLevel, Custom CRM", level: "Specialist" }
+  "Automation, Scraping & Cloud": [
+    { name: "n8n & Make", role: "Visual Workflow Pipelines, Multi-Step Logic & Webhooks", level: "Expert" },
+    { name: "Selenium, Playwright & DrissionPage", role: "Headless Browser Automation & Anti-Bot Bypass", level: "Specialist" },
+    { name: "Twilio & HubSpot", role: "Programmable SMS/Voice & Enterprise CRM Integration", level: "Advanced" },
+    { name: "Google APIs", role: "Calendar, Gmail, Drive & Sheets Integrations", level: "Expert" },
+    { name: "Docker", role: "Containerized Microservices & Reproducible Environments", level: "Advanced" },
+    { name: "AWS (EC2, S3)", role: "Cloud Compute, File Storage & Scalable Infrastructure", level: "Advanced" },
+    { name: "Vercel, Render & GitHub Actions", role: "Continuous Integration, Automated Builds & Edge Deployments", level: "Production Core" }
   ]
 };
 
