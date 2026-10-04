@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { InstagramIcon } from './SocialIcons';
 
 export default function Navbar({ onOpenContact }) {
@@ -12,7 +12,7 @@ export default function Navbar({ onOpenContact }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'services', 'automation', 'projects', 'how-it-works', 'contact'];
+      const sections = ['home', 'services', 'solutions', 'process', 'about', 'knowledge-hub', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -35,13 +35,10 @@ export default function Navbar({ onOpenContact }) {
   const navLinks = [
     { label: 'Home', href: '#home', id: 'home' },
     { label: 'Services', href: '#services', id: 'services' },
-    { label: 'AI Platform', href: '#ai-platform', id: 'ai-platform' },
-    { label: 'AI Course', href: '#ai-academy', id: 'ai-academy' },
-    { label: 'AI Agents', href: '#ai-agents-suite', id: 'ai-agents-suite' },
-    { label: 'Tech Stack', href: '#tech-stack', id: 'tech-stack' },
+    { label: 'Solutions', href: '#solutions', id: 'solutions' },
+    { label: 'Process', href: '#process', id: 'process' },
     { label: 'Knowledge Hub', href: '#knowledge-hub', id: 'knowledge-hub' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'ROI Calculator', href: '#roi-calculator', id: 'roi-calculator' },
+    { label: 'About', href: '#about', id: 'about' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -58,21 +55,21 @@ export default function Navbar({ onOpenContact }) {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#DBD6CF]' 
-          : 'bg-white/85 backdrop-blur-sm border-b border-transparent'
+          ? 'bg-[#070C18]/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.6)] border-b border-white/10' 
+          : 'bg-[#030712]/60 backdrop-blur-md border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo on Left (Clean Light Mode) */}
+          {/* Logo on Left */}
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A] rounded-lg"
+            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg group"
             aria-label="3X AI Automation Home"
           >
-            <Logo dark={false} />
+            <Logo dark={true} />
           </a>
 
           {/* Desktop Navigation Links */}
@@ -84,11 +81,11 @@ export default function Navbar({ onOpenContact }) {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3.5 py-1.5 rounded-[50px] text-xs xl:text-sm font-semibold transition-all ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-medium transition-all duration-200 ${
                     isActive 
-                      ? 'text-white bg-black' 
-                      : 'text-[#191919] hover:text-[#FE330A] hover:bg-[#EFEAE3]'
-                  } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A]`}
+                      ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-400/30 shadow-[0_0_15px_rgba(6,182,212,0.2)] font-semibold' 
+                      : 'text-slate-300 hover:text-white hover:bg-white/5 hover:border hover:border-white/10'
+                  } focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400`}
                 >
                   {link.label}
                 </a>
@@ -103,15 +100,15 @@ export default function Navbar({ onOpenContact }) {
               href="https://www.instagram.com/3xaiautomation/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-[50px] border text-xs font-bold transition-all group duration-300 bg-white text-[#191919] border-[#DBD6CF] hover:border-[#FE330A] hover:text-[#FE330A] shadow-sm"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border text-xs font-semibold transition-all group duration-300 bg-white/5 text-slate-300 border-white/10 hover:border-cyan-400/40 hover:text-cyan-300 hover:bg-white/10"
               title="Follow @3xaiautomation on Instagram"
               aria-label="Instagram Profile"
             >
-              <InstagramIcon className="w-3.5 h-3.5 text-[#FE330A] group-hover:scale-110 transition-transform" />
+              <InstagramIcon className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
               <span>Instagram</span>
             </a>
 
-            {/* Let's Talk CTA - Azzle Signature Pill Button */}
+            {/* Primary Action Button - Modern Blue/Cyan Gradient with subtle glow */}
             <a
               href="#contact"
               onClick={(e) => {
@@ -122,9 +119,9 @@ export default function Navbar({ onOpenContact }) {
                   handleNavClick(e, '#contact');
                 }
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[50px] border-2 border-black bg-black text-white hover:bg-[#FE330A] hover:border-[#FE330A] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider shadow-sm"
+              className="btn-primary !py-2.5 !px-5 text-xs uppercase tracking-wider font-bold !rounded-full shadow-glow-cyan"
             >
-              <span>Let's Talk</span>
+              <span>Get Free Consultation</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
@@ -134,19 +131,19 @@ export default function Navbar({ onOpenContact }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-[50px] text-[#191919] hover:text-[#FE330A] bg-white border border-[#DBD6CF] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A]"
+              className="p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/5 border border-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Slide-down Drawer */}
+      {/* Mobile Slide-down Glass Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#C9DFFF] bg-white px-4 pt-3 pb-6 shadow-xl animate-fadeIn">
+        <div className="lg:hidden border-b border-white/10 bg-[#070C18]/95 backdrop-blur-2xl px-4 pt-3 pb-6 shadow-2xl animate-fadeIn">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -155,24 +152,24 @@ export default function Navbar({ onOpenContact }) {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                     isActive
-                      ? 'text-[#0878FE] bg-[#EAF3FF] font-semibold'
-                      : 'text-[#111827] hover:text-[#0878FE] hover:bg-[#F8FAFE]'
+                      ? 'text-cyan-300 bg-cyan-500/10 font-semibold border border-cyan-500/20'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {link.label}
                 </a>
               );
             })}
-            <div className="pt-3 flex flex-col gap-2">
+            <div className="pt-4 flex flex-col gap-2.5">
               <a
                 href="https://www.instagram.com/3xaiautomation/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-[#111827] bg-[#F8FAFE] border border-[#C9DFFF] hover:border-[#0878FE] transition-all"
+                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs text-slate-300 bg-white/5 border border-white/10 hover:border-cyan-400/40 transition-all"
               >
-                <InstagramIcon className="w-4 h-4 text-[#dc2743]" />
+                <InstagramIcon className="w-4 h-4 text-cyan-400" />
                 <span>Follow @3xaiautomation on Instagram</span>
               </a>
               <a
@@ -181,9 +178,9 @@ export default function Navbar({ onOpenContact }) {
                   setMobileMenuOpen(false);
                   handleNavClick(e, '#contact');
                 }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] shadow-md hover:shadow-glow transition-all"
+                className="btn-primary w-full justify-center !py-3 text-xs uppercase tracking-wider"
               >
-                <span>Let's Talk</span>
+                <span>Get Free Consultation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TiltCard from './TiltCard';
-import { DollarSign, Clock, Users, Sparkles, ArrowRight, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { DollarSign, Clock, Users, Sparkles, ArrowRight, Zap, TrendingUp, CheckCircle2, Activity } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function RoiCalculator({ onAutomate }) {
@@ -15,12 +15,12 @@ export default function RoiCalculator({ onAutomate }) {
   const turnaroundSpeedup = "18X Faster";
 
   const handleClaim = () => {
-    // Fire celebratory confetti in brand blue & white
+    // Fire celebratory confetti in cyan, electric blue, and white
     confetti({
-      particleCount: 80,
-      spread: 70,
+      particleCount: 90,
+      spread: 75,
       origin: { y: 0.6 },
-      colors: ['#FE330A', '#D62705', '#FFFFFF', '#DBD6CF']
+      colors: ['#06B6D4', '#0878FE', '#FFFFFF', '#38BDF8', '#10B981']
     });
 
     if (onAutomate) {
@@ -36,19 +36,25 @@ export default function RoiCalculator({ onAutomate }) {
   };
 
   return (
-    <section id="roi-calculator" className="py-20 lg:py-28 bg-[#EFEAE3] dark:bg-[#070B16] border-y border-[#DBD6CF]/70 dark:border-slate-800 transition-colors duration-300 relative overflow-hidden">
+    <section id="roi-calculator" className="py-24 lg:py-32 bg-[#030712] border-y border-white/5 relative overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-transparent blur-[160px] pointer-events-none rounded-full" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] dark:bg-[#FE330A]/15 border border-[#DBD6CF] dark:border-[#FE330A]/30 text-[#FE330A] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
-            <TrendingUp className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+            <Activity className="w-3.5 h-3.5 fill-current" />
             <span>Interactive Business Impact Calculator</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] dark:text-white tracking-tight leading-tight mb-4">
-            How Much Time & Money Will <span className="text-[#FE330A] dark:text-cyan-400">Automation Save You?</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            How Much Time &amp; Capital Will <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              Automation Reclaim for You?
+            </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal">
+          <p className="text-base sm:text-lg text-slate-300 font-normal">
             Adjust the sliders below to see the realistic annual financial and operational hours your business can reclaim by eliminating manual busywork.
           </p>
         </div>
@@ -58,18 +64,18 @@ export default function RoiCalculator({ onAutomate }) {
           
           {/* Controls Panel (7 cols) */}
           <div className="lg:col-span-7">
-            <TiltCard glare={true} maxRotation={3} className="h-full">
-              <div className="bg-white dark:bg-[#0B101E] rounded-3xl p-7 sm:p-9 border border-[#DBD6CF] dark:border-slate-800 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col justify-between h-full">
+            <TiltCard glare={true} maxRotation={2} className="h-full">
+              <div className="bg-[#0B1325]/90 rounded-3xl p-7 sm:p-9 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col justify-between h-full backdrop-blur-xl">
                 <div className="space-y-7">
                   
                   {/* Slider 1: Team Members */}
                   <div>
                     <div className="flex justify-between items-center mb-2.5">
-                      <label className="text-xs sm:text-sm font-bold text-[#191919] dark:text-white flex items-center gap-2">
-                        <Users className="w-4 h-4 text-[#FE330A] dark:text-cyan-400" />
+                      <label className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                        <Users className="w-4 h-4 text-cyan-400" />
                         <span>Team Members Handling Repetitive Tasks</span>
                       </label>
-                      <span className="font-mono text-base font-bold text-[#FE330A] dark:text-cyan-400 bg-[#EFEAE3] dark:bg-[#FE330A]/20 px-3 py-0.5 rounded-lg border border-[#DBD6CF] dark:border-[#FE330A]/30">
+                      <span className="font-mono text-sm font-bold text-cyan-300 bg-cyan-500/10 px-3 py-1 rounded-lg border border-cyan-500/30">
                         {teamSize} {teamSize === 1 ? 'person' : 'people'}
                       </span>
                     </div>
@@ -79,9 +85,9 @@ export default function RoiCalculator({ onAutomate }) {
                       max="40" 
                       value={teamSize}
                       onChange={(e) => setTeamSize(Number(e.target.value))}
-                      className="w-full h-2 bg-[#EFEAE3] dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#FE330A] dark:accent-cyan-400"
+                      className="w-full h-2 bg-[#070C18] rounded-lg appearance-none cursor-pointer accent-cyan-400"
                     />
-                    <div className="flex justify-between text-[11px] text-slate-400 dark:text-slate-500 font-mono mt-1">
+                    <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
                       <span>1 person</span>
                       <span>40+ staff</span>
                     </div>
@@ -90,11 +96,11 @@ export default function RoiCalculator({ onAutomate }) {
                   {/* Slider 2: Weekly Hours */}
                   <div>
                     <div className="flex justify-between items-center mb-2.5">
-                      <label className="text-xs sm:text-sm font-bold text-[#191919] dark:text-white flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-[#FE330A] dark:text-cyan-400" />
+                      <label className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-cyan-400" />
                         <span>Hours Spent Weekly per Person on Manual Tasks</span>
                       </label>
-                      <span className="font-mono text-base font-bold text-[#FE330A] dark:text-cyan-400 bg-[#EFEAE3] dark:bg-[#FE330A]/20 px-3 py-0.5 rounded-lg border border-[#DBD6CF] dark:border-[#FE330A]/30">
+                      <span className="font-mono text-sm font-bold text-cyan-300 bg-cyan-500/10 px-3 py-1 rounded-lg border border-cyan-500/30">
                         {hoursPerWeek} hrs / week
                       </span>
                     </div>
@@ -104,9 +110,9 @@ export default function RoiCalculator({ onAutomate }) {
                       max="30" 
                       value={hoursPerWeek}
                       onChange={(e) => setHoursPerWeek(Number(e.target.value))}
-                      className="w-full h-2 bg-[#EFEAE3] dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#FE330A] dark:accent-cyan-400"
+                      className="w-full h-2 bg-[#070C18] rounded-lg appearance-none cursor-pointer accent-cyan-400"
                     />
-                    <div className="flex justify-between text-[11px] text-slate-400 dark:text-slate-500 font-mono mt-1">
+                    <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
                       <span>3 hrs/wk</span>
                       <span>30 hrs/wk</span>
                     </div>
@@ -115,11 +121,11 @@ export default function RoiCalculator({ onAutomate }) {
                   {/* Slider 3: Hourly Rate */}
                   <div>
                     <div className="flex justify-between items-center mb-2.5">
-                      <label className="text-xs sm:text-sm font-bold text-[#191919] dark:text-white flex items-center gap-2">
-                        <DollarSign className="w-4 h-4 text-[#FE330A] dark:text-cyan-400" />
+                      <label className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                        <DollarSign className="w-4 h-4 text-cyan-400" />
                         <span>Average Hourly Cost / Wage</span>
                       </label>
-                      <span className="font-mono text-base font-bold text-[#FE330A] dark:text-cyan-400 bg-[#EFEAE3] dark:bg-[#FE330A]/20 px-3 py-0.5 rounded-lg border border-[#DBD6CF] dark:border-[#FE330A]/30">
+                      <span className="font-mono text-sm font-bold text-cyan-300 bg-cyan-500/10 px-3 py-1 rounded-lg border border-cyan-500/30">
                         ${hourlyRate} / hr
                       </span>
                     </div>
@@ -130,9 +136,9 @@ export default function RoiCalculator({ onAutomate }) {
                       step="5"
                       value={hourlyRate}
                       onChange={(e) => setHourlyRate(Number(e.target.value))}
-                      className="w-full h-2 bg-[#EFEAE3] dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#FE330A] dark:accent-cyan-400"
+                      className="w-full h-2 bg-[#070C18] rounded-lg appearance-none cursor-pointer accent-cyan-400"
                     />
-                    <div className="flex justify-between text-[11px] text-slate-400 dark:text-slate-500 font-mono mt-1">
+                    <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
                       <span>$20/hr</span>
                       <span>$150/hr</span>
                     </div>
@@ -140,8 +146,8 @@ export default function RoiCalculator({ onAutomate }) {
 
                 </div>
 
-                <div className="mt-8 pt-5 border-t border-[#DBD6CF]/60 dark:border-slate-800 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <div className="mt-8 pt-5 border-t border-white/10 flex items-center gap-2 text-xs text-slate-400 font-mono">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>Conservative 75% repetitive task automation rate applied</span>
                 </div>
               </div>
@@ -150,18 +156,18 @@ export default function RoiCalculator({ onAutomate }) {
 
           {/* Results Showcase Box (5 cols) */}
           <div className="lg:col-span-5">
-            <TiltCard glare={true} maxRotation={3} className="h-full">
-              <div className="bg-gradient-to-br from-[#191919] to-[#0A0F1D] dark:from-[#0D1424] dark:to-[#050811] rounded-3xl p-7 sm:p-9 text-white border border-slate-800 shadow-2xl flex flex-col justify-between relative overflow-hidden h-full">
+            <TiltCard glare={true} maxRotation={2} className="h-full">
+              <div className="bg-[#070C18] rounded-3xl p-7 sm:p-9 text-white border border-cyan-500/40 shadow-[0_0_35px_rgba(6,182,212,0.25)] flex flex-col justify-between relative overflow-hidden h-full">
                 {/* Top Accent Strip */}
-                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#FE330A] via-cyan-400 to-[#D62705]"></div>
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600"></div>
 
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#FE330A] dark:text-cyan-400">
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
                       Estimated ROI Impact
                     </span>
-                    <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                      High Yield
+                    <span className="text-[11px] font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                      High Yield Return
                     </span>
                   </div>
 
@@ -171,7 +177,7 @@ export default function RoiCalculator({ onAutomate }) {
                       Estimated Annual Savings:
                     </span>
                     <div className="text-4xl sm:text-5xl font-black text-white tracking-tight flex items-baseline gap-1">
-                      <span className="text-[#FE330A] dark:text-cyan-400">$</span>
+                      <span className="text-cyan-400">$</span>
                       <span>{annualSavings.toLocaleString()}</span>
                       <span className="text-xs font-mono font-normal text-slate-400">/ yr</span>
                     </div>
@@ -179,31 +185,31 @@ export default function RoiCalculator({ onAutomate }) {
 
                   {/* Two Column Metric Badges */}
                   <div className="grid grid-cols-2 gap-3 mb-6">
-                    <div className="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
-                      <span className="text-[11px] font-mono text-slate-400 block">Annual Hours Saved</span>
-                      <span className="text-xl sm:text-2xl font-black text-[#FE330A] dark:text-cyan-400">
+                    <div className="bg-white/5 p-3.5 rounded-2xl border border-white/10 font-mono">
+                      <span className="text-[11px] text-slate-400 block">Annual Hours Saved</span>
+                      <span className="text-xl sm:text-2xl font-black text-cyan-300">
                         {annualHoursSaved.toLocaleString()}h
                       </span>
                     </div>
-                    <div className="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
-                      <span className="text-[11px] font-mono text-slate-400 block">Speed Increase</span>
+                    <div className="bg-white/5 p-3.5 rounded-2xl border border-white/10 font-mono">
+                      <span className="text-[11px] text-slate-400 block">Speed Increase</span>
                       <span className="text-xl sm:text-2xl font-black text-emerald-400">
                         {turnaroundSpeedup}
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                    Based on custom n8n pipelines, AI agents, and automated CRM routing replacing repetitive manual coordination.
+                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                    Calculated from custom n8n pipelines, autonomous AI agents, and bi-directional CRM synchronizations replacing manual operations.
                   </p>
                 </div>
 
                 {/* Action Button */}
-                <div className="mt-8 pt-5 border-t border-slate-800">
+                <div className="mt-8 pt-5 border-t border-white/10">
                   <button
                     type="button"
                     onClick={handleClaim}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-[#FE330A] to-[#D62705] hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold uppercase tracking-wider text-sm text-[#030712] bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 shadow-[0_0_25px_rgba(6,182,212,0.35)] transition-all duration-200"
                   >
                     <span>Automate This For My Team</span>
                     <ArrowRight className="w-4 h-4" />

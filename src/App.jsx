@@ -71,7 +71,7 @@ function AppContent() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white text-[#191919] selection:bg-[#FE330A] selection:text-white transition-colors duration-300 ease-out font-sans">
+    <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500 selection:text-[#030712] transition-colors duration-300 ease-out font-sans overflow-x-hidden">
       {/* Dynamic Ambient Aurora Motion Glow */}
       <AuroraGlow />
 
@@ -81,10 +81,10 @@ function AppContent() {
       {/* Desktop Spotlight Cursor Glow */}
       {isDesktop && (
         <div 
-          className="fixed w-96 h-96 rounded-full pointer-events-none z-0 transition-transform duration-75 ease-out opacity-25"
+          className="fixed w-96 h-96 rounded-full pointer-events-none z-0 transition-transform duration-75 ease-out opacity-20"
           style={{
             transform: `translate3d(${cursorPos.x - 192}px, ${cursorPos.y - 192}px, 0)`,
-            background: 'radial-gradient(circle, rgba(254, 51, 10, 0.16) 0%, rgba(214, 39, 5, 0.04) 50%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(8, 120, 254, 0.05) 50%, transparent 70%)',
           }}
         />
       )}

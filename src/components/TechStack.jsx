@@ -255,14 +255,14 @@ export const DOMAIN_STACKS = [
         role: "Accessible, Modern & Custom Design Systems",
         level: "Expert",
         highlight: true,
-        snippet: `<div className="bg-white border border-[#DBD6CF] rounded-3xl p-6 shadow-card hover:border-[#FE330A] transition-all">\n  <!-- High-contrast accessible interface -->\n</div>`
+        snippet: `<div className="bg-[#0B1325] border border-cyan-500/30 rounded-3xl p-6 shadow-[0_0_25px_rgba(6,182,212,0.2)] hover:border-cyan-400 transition-all">\n  <!-- High-contrast accessible interface -->\n</div>`
       },
       {
         name: "Recharts",
         role: "Real-Time Telemetry & Financial ROI Data Visualizations",
         level: "Advanced",
         highlight: false,
-        snippet: `<ResponsiveContainer width="100%" height={260}>\n  <AreaChart data={savingsData}>\n    <Area type="monotone" dataKey="savings" stroke="#FE330A" fill="#EFEAE3" />\n  </AreaChart>\n</ResponsiveContainer>`
+        snippet: `<ResponsiveContainer width="100%" height={260}>\n  <AreaChart data={savingsData}>\n    <Area type="monotone" dataKey="savings" stroke="#06B6D4" fill="#0878FE" fillOpacity={0.2} />\n  </AreaChart>\n</ResponsiveContainer>`
       },
       {
         name: "TanStack Query",
@@ -364,23 +364,23 @@ export default function TechStack() {
   };
 
   return (
-    <section id="tech-stack" className="py-20 lg:py-28 bg-transparent relative overflow-hidden">
+    <section id="tech-stack" className="py-24 lg:py-32 bg-[#030712] relative overflow-hidden">
       {/* Background Soft Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(circle,rgba(8,120,254,0.08)_0%,transparent_70%)] pointer-events-none -z-0"></div>
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-transparent blur-[160px] pointer-events-none -z-0"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFEAE3] border border-[#DBD6CF] text-[#FE330A] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 fill-current" />
               <span>Production AI Engineering &amp; Full-Stack Architecture</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] tracking-tight leading-tight mb-4">
-              Engineered With <span className="text-[#FE330A]">Modern Tools.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+              Engineered With <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Modern Tools.</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 font-normal">
+            <p className="text-base sm:text-lg text-slate-300 font-normal">
               A battle-tested technology stack spanning autonomous multi-agent systems, frontier LLM APIs, async backends, high-performance web extensions, and robust cloud automation.
             </p>
           </div>
@@ -390,9 +390,9 @@ export default function TechStack() {
             <button
               type="button"
               onClick={() => setShowArchitectureDiagram(true)}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#EFEAE3] text-[#FE330A] hover:bg-[#FE330A] hover:text-white border border-[#DBD6CF] transition-all font-bold text-xs sm:text-sm shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 text-cyan-300 hover:bg-cyan-500/20 hover:text-white border border-cyan-500/30 transition-all font-bold text-xs sm:text-sm shadow-sm"
             >
-              <Layers className="w-4 h-4" />
+              <Layers className="w-4 h-4 text-cyan-400" />
               <span>View Full Architecture Blueprint</span>
             </button>
           </div>
@@ -412,19 +412,19 @@ export default function TechStack() {
                 }}
                 className={`flex flex-col items-start p-4 rounded-2xl border text-left transition-all duration-200 relative ${
                   isActive
-                    ? 'bg-white border-[#FE330A] shadow-card scale-[1.02] ring-2 ring-[#FE330A]/20'
-                    : 'bg-[#EFEAE3] border-[#DBD6CF] hover:bg-white text-slate-700'
+                    ? 'bg-[#0B1325] border-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.3)] scale-[1.02]'
+                    : 'bg-[#0B1325]/50 border-white/10 hover:border-cyan-500/40 text-slate-300 hover:bg-[#0B1325]/80'
                 }`}
               >
                 <div className={`w-8 h-8 rounded-xl flex items-center justify-center mb-2.5 ${
-                  isActive ? 'bg-[#EFEAE3] text-[#FE330A]' : 'bg-slate-200/60 text-slate-600'
+                  isActive ? 'bg-gradient-to-br from-blue-600 to-cyan-500 text-white' : 'bg-white/5 text-cyan-400'
                 }`}>
                   <Icon className="w-4 h-4" />
                 </div>
-                <span className="text-xs font-bold text-[#191919] line-clamp-1">
+                <span className="text-xs font-bold text-white line-clamp-1">
                   {domain.title}
                 </span>
-                <span className="text-[10px] text-slate-500 font-mono mt-0.5 line-clamp-1">
+                <span className="text-[10px] text-slate-400 font-mono mt-0.5 line-clamp-1">
                   {domain.skills.length} core tools
                 </span>
               </button>
@@ -433,25 +433,25 @@ export default function TechStack() {
         </div>
 
         {/* Active Domain Overview Banner */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DBD6CF] shadow-card mb-10">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-[#DBD6CF]">
+        <div className="bg-[#0B1325]/90 rounded-3xl p-6 sm:p-8 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)] mb-10 backdrop-blur-xl">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/10">
             <div className="space-y-1.5 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFEAE3] text-[#FE330A] text-xs font-bold font-mono">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 text-xs font-bold font-mono">
                 <span>{activeDomain.badge}</span>
                 <span>•</span>
                 <span>{activeDomain.tagline}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-[#191919]">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                 {activeDomain.title}
               </h3>
-              <p className="text-sm sm:text-base text-slate-600">
+              <p className="text-sm sm:text-base text-slate-300">
                 {activeDomain.description}
               </p>
             </div>
             
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xs font-mono font-bold text-slate-500 bg-[#EFEAE3] px-3 py-1.5 rounded-xl border border-[#DBD6CF]">
-                Production Grade
+              <span className="text-xs font-mono font-bold text-cyan-300 bg-cyan-500/10 px-3 py-1.5 rounded-xl border border-cyan-500/30">
+                Production Standard
               </span>
             </div>
           </div>
@@ -469,22 +469,22 @@ export default function TechStack() {
                     onClick={() => setSelectedSkill(skill)}
                     className={`p-4 rounded-2xl border cursor-pointer transition-all duration-200 text-left ${
                       isSelected
-                        ? 'bg-[#EFEAE3] border-[#FE330A] shadow-sm ring-1 ring-[#FE330A]'
-                        : 'bg-[#EFEAE3] border-[#DBD6CF] hover:border-[#FE330A] hover:bg-white'
+                        ? 'bg-[#070C18] border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.25)] ring-1 ring-cyan-400'
+                        : 'bg-[#070C18]/60 border-white/10 hover:border-cyan-400/50 hover:bg-[#070C18]'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <h4 className="font-bold text-sm text-[#191919] flex items-center gap-1.5">
+                      <h4 className="font-bold text-sm text-white flex items-center gap-1.5">
                         {skill.name}
                         {skill.highlight && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
                         )}
                       </h4>
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white text-[#FE330A] border border-[#DBD6CF]">
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white/5 text-cyan-300 border border-white/10">
                         {skill.level}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 leading-snug line-clamp-2">
+                    <p className="text-xs text-slate-400 leading-snug line-clamp-2">
                       {skill.role}
                     </p>
                   </div>
@@ -493,13 +493,13 @@ export default function TechStack() {
             </div>
 
             {/* Live Implementation Code Inspector (5 cols) */}
-            <div className="lg:col-span-5 bg-slate-900 rounded-2xl border border-slate-800 p-5 text-slate-200 shadow-xl font-mono text-xs flex flex-col justify-between min-h-[360px]">
+            <div className="lg:col-span-5 bg-[#030712] rounded-2xl border border-white/10 p-5 text-slate-200 shadow-xl font-mono text-xs flex flex-col justify-between min-h-[360px]">
               <div>
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
                     <span className="text-[11px] text-slate-400 font-bold ml-1">
                       {selectedSkill.name}.implementation
                     </span>
@@ -507,28 +507,28 @@ export default function TechStack() {
                   <button
                     type="button"
                     onClick={() => handleCopy(selectedSkill.snippet)}
-                    className="flex items-center gap-1 text-[10px] text-slate-400 hover:text-white transition-colors bg-slate-800/80 px-2.5 py-1 rounded-md"
+                    className="flex items-center gap-1 text-[10px] text-slate-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-2.5 py-1 rounded-md border border-white/10"
                   >
                     {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                     <span>{copied ? 'Copied' : 'Copy'}</span>
                   </button>
                 </div>
 
-                <div className="text-[11px] text-sky-400 font-semibold mb-2">
+                <div className="text-[11px] text-cyan-400 font-semibold mb-2">
                   // {selectedSkill.role}
                 </div>
 
-                <pre className="overflow-x-auto text-[11px] leading-relaxed text-slate-300 font-mono py-1 max-h-[240px]">
+                <pre className="overflow-x-auto text-[11px] leading-relaxed text-cyan-200/90 font-mono py-1 max-h-[240px]">
                   <code>{selectedSkill.snippet}</code>
                 </pre>
               </div>
 
-              <div className="pt-3 border-t border-slate-800 mt-4 flex items-center justify-between text-[10px] text-slate-400">
-                <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <div className="pt-3 border-t border-white/10 mt-4 flex items-center justify-between text-[10px] text-slate-400">
+                <span className="flex items-center gap-1 text-slate-300">
+                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                   Type-Safe &amp; Tested
                 </span>
-                <span className="text-slate-500">3X Automation Architecture</span>
+                <span className="text-cyan-400 font-mono">3X AI Architecture</span>
               </div>
             </div>
 
@@ -541,34 +541,34 @@ export default function TechStack() {
       {/* Modal for Full Architecture Blueprint */}
       {showArchitectureDiagram && (
         <div 
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
           onClick={() => setShowArchitectureDiagram(false)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-5xl w-full max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border border-[#DBD6CF]"
+            className="bg-[#0B1325] rounded-3xl max-w-5xl w-full max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border border-white/20 text-white"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-5 border-b border-[#DBD6CF]">
+            <div className="flex items-center justify-between p-5 border-b border-white/10">
               <div className="flex items-center gap-2">
-                <Layers className="w-5 h-5 text-[#FE330A]" />
-                <h3 className="font-bold text-base text-[#191919]">
+                <Layers className="w-5 h-5 text-cyan-400" />
+                <h3 className="font-bold text-base text-white">
                   Master System Architecture Blueprint
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setShowArchitectureDiagram(false)}
-                className="w-8 h-8 rounded-full bg-[#EFEAE3] text-slate-600 hover:text-black flex items-center justify-center font-bold"
+                className="w-8 h-8 rounded-full bg-white/10 text-slate-300 hover:text-white flex items-center justify-center font-bold"
               >
                 ✕
               </button>
             </div>
 
-            <div className="p-4 overflow-auto flex-1">
+            <div className="p-4 overflow-auto flex-1 bg-[#030712]">
               <img 
                 src="/images/master-architecture.jpg" 
                 alt="Full Master Architecture Blueprint" 
-                className="w-full h-auto rounded-xl object-contain"
+                className="w-full h-auto rounded-xl object-contain opacity-90"
               />
             </div>
           </div>

@@ -3,178 +3,158 @@
 @tailwind utilities;
 
 :root {
-  --primary-accent: #FE330A;
-  --color-orangy-red: #FE330A;
-  --color-linen-ruffle: #EFEAE3;
-  --color-cod-gray: #191919;
-  --linen-border: #DBD6CF;
-  --pure-white: #FFFFFF;
-  --bg-main: #FFFFFF;
-  --text-main: #191919;
-  --text-muted: #555555;
-  --card-bg: #FFFFFF;
-  --card-border: #DBD6CF;
+  --lab-bg: #030712;
+  --lab-surface: #070C18;
+  --lab-card: #0D172E;
+  --lab-border: rgba(255, 255, 255, 0.08);
+  --electric-blue: #0878FE;
+  --lab-cyan: #06B6D4;
+  --subtle-violet: #8B5CF6;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: light;
+    color-scheme: dark;
+    background-color: #030712;
   }
 
   body {
-    font-family: 'Inter', 'DM Sans', -apple-system, sans-serif;
-    color: var(--text-main);
-    background-color: var(--bg-main);
+    font-family: 'Inter', 'Manrope', -apple-system, sans-serif;
+    color: #F8FAFC;
+    background-color: #030712;
     overflow-x: hidden;
     letter-spacing: -0.015em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'DM Sans', 'Inter', sans-serif;
-    letter-spacing: -0.03em;
-    font-weight: 800;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    letter-spacing: -0.025em;
+    color: #F8FAFC;
   }
 }
 
-/* Azzle Signature Ambient Orange Rotating Glow Shapes */
-.orange-gradient-1 {
-  background: radial-gradient(circle, rgba(254, 51, 10, 0.35) 0%, rgba(255, 120, 40, 0.18) 50%, transparent 70%);
-  filter: blur(60px);
-  animation: spin 30s linear infinite;
+/* Subtle Technical AI Lab Grid Background */
+.bg-lab-grid {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
-.orange-gradient-2 {
-  background: radial-gradient(circle, rgba(254, 51, 10, 0.25) 0%, rgba(254, 200, 50, 0.15) 50%, transparent 70%);
-  filter: blur(50px);
-  animation: spin-reverse 25s linear infinite;
+.bg-lab-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(6, 182, 212, 0.12) 1px, transparent 1px);
 }
 
-@keyframes spin-reverse {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-/* Custom interactive card styling with smooth spring physics */
-.premium-card {
-  background-color: #FFFFFF;
-  border: 1px solid #DBD6CF;
-  border-radius: 1.5rem;
+/* Glassmorphic Lab Cards */
+.lab-card {
+  background: rgba(11, 19, 38, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px -2px rgba(25, 25, 25, 0.04);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
 }
 
-.premium-card:hover {
+.lab-card:hover {
   transform: translateY(-4px);
-  border-color: #FE330A;
-  box-shadow: 0 16px 36px -6px rgba(254, 51, 10, 0.18), 0 4px 12px -2px rgba(25, 25, 25, 0.04);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.18), 0 0 30px -4px rgba(8, 120, 254, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  background: rgba(13, 23, 46, 0.85);
 }
 
-/* Azzle Pill Buttons */
-.btn-azzle-primary {
+/* Modern Rounded Buttons */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 50px;
-  border: 2px solid #000000;
-  background-color: #000000;
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 0.875rem;
   padding: 0.875rem 1.75rem;
+  border-radius: 0.875rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #0878FE 0%, #06B6D4 100%);
+  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.45);
   transition: all 0.25s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
-.btn-azzle-primary:hover {
-  background-color: #FE330A;
-  border-color: #FE330A;
-  color: #FFFFFF;
-  box-shadow: 0 10px 25px -5px rgba(254, 51, 10, 0.35);
+.btn-primary:hover {
   transform: translateY(-2px);
+  background: linear-gradient(135deg, #005ce6 0%, #22D3EE 100%);
+  box-shadow: 0 0 35px -2px rgba(6, 182, 212, 0.7);
+  color: #FFFFFF;
 }
 
-.btn-azzle-secondary {
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 50px;
-  border: 2px solid #000000;
-  background-color: transparent;
-  color: #191919;
-  font-weight: 700;
-  font-size: 0.875rem;
   padding: 0.875rem 1.75rem;
+  border-radius: 0.875rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
   transition: all 0.25s ease-in-out;
   cursor: pointer;
 }
 
-.btn-azzle-secondary:hover {
-  background-color: #FE330A;
-  border-color: #FE330A;
-  color: #FFFFFF;
-  box-shadow: 0 10px 25px -5px rgba(254, 51, 10, 0.35);
+.btn-secondary:hover {
   transform: translateY(-2px);
-}
-
-.btn-azzle-white {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 50px;
-  border: 2px solid #DBD6CF;
-  background-color: #FFFFFF;
-  color: #191919;
-  font-weight: 700;
-  font-size: 0.875rem;
-  padding: 0.875rem 1.75rem;
-  transition: all 0.25s ease-in-out;
-  cursor: pointer;
-}
-
-.btn-azzle-white:hover {
-  background-color: #FE330A;
-  border-color: #FE330A;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(6, 182, 212, 0.5);
   color: #FFFFFF;
-  box-shadow: 0 10px 25px -5px rgba(254, 51, 10, 0.35);
-  transform: translateY(-2px);
+  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.25);
 }
 
-/* Azzle Pill Eyebrow Badge */
-.pill-badge {
+/* Eyebrow Badge */
+.lab-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.375rem 1rem;
-  border-radius: 50px;
-  background-color: #FFFFFF;
-  border: 1px solid #DBD6CF;
-  color: #191919;
+  padding: 0.35rem 0.875rem;
+  border-radius: 9999px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  color: #22D3EE;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.2);
 }
 
-/* Custom Scrollbar */
+/* Flow Line Animation */
+@keyframes flowLight {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+
+.animate-flow-light {
+  animation: flowLight 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #EFEAE3;
+  background: #030712;
 }
 ::-webkit-scrollbar-thumb {
-  background: #DBD6CF;
-  border-radius: 50px;
+  background: #1E293B;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FE330A;
+  background: #06B6D4;
 }
