@@ -24,6 +24,7 @@ import ParticleCanvas from './components/ParticleCanvas';
 import LiveSystemStatus from './components/LiveSystemStatus';
 import AuroraGlow from './components/AuroraGlow';
 import MotionReveal from './components/MotionReveal';
+import ScrollProgress from './components/ScrollProgress';
 
 function AppContent() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -72,6 +73,9 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500 selection:text-[#030712] transition-colors duration-300 ease-out font-sans overflow-x-hidden">
+      {/* Scroll-Linked Global Progress Indicator (Powered by motion: animate & scroll) */}
+      <ScrollProgress />
+
       {/* Dynamic Ambient Aurora Motion Glow */}
       <AuroraGlow />
 
