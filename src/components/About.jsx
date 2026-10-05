@@ -36,23 +36,17 @@ const ABOUT_CARDS = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-[#070C18] border-y border-white/5 relative overflow-hidden">
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-cyan-500/5 blur-[160px] pointer-events-none rounded-full" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="about" className="py-20 lg:py-28 bg-[#EFEAE3] dark:bg-[#080D1A]/60 border-y border-[#DBD6CF]/60 dark:border-slate-800/80 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
-            <span>Engineering Leadership</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFEAE3] dark:bg-[#FE330A]/15 border border-[#DBD6CF] dark:border-[#FE330A]/30 text-[#FE330A] dark:text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>About Usama Younas</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Turning Operational Complexity Into <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              Autonomous Systems.
-            </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#191919] dark:text-white tracking-tight leading-tight">
+            I Turn Business Problems Into <span className="text-[#FE330A] dark:text-cyan-400">Intelligent Systems.</span>
           </h2>
         </div>
 
@@ -60,89 +54,92 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-16">
           
           {/* Main Narrative Text (7 cols) */}
-          <div className="lg:col-span-7 space-y-5 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+          <div className="lg:col-span-7 space-y-5 text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             <p>
-              I’m <strong className="font-bold text-white">Usama Younas</strong>, Lead AI Automation Engineer and founder of <strong className="text-cyan-300">3X AI Automation</strong>. I specialize in architecting production-grade AI agents, workflow orchestrations, and full-stack automation pipelines for modern enterprises.
+              I’m <strong className="font-semibold text-[#191919] dark:text-white">Usama Younas</strong>, an AI Engineer focused on building practical AI and automation solutions for modern businesses.
             </p>
             <p>
-              Our engineering scope spans multi-agent swarms (LangGraph, CrewAI), visual automation engines (n8n, Make), real-time voice agents (Twilio, ElevenLabs), intelligent RAG pipelines, and deep CRM synchronizations.
+              I work across AI agents, workflow automation, backend development, APIs, CRM systems, chatbots, voice agents, and AI-powered applications.
             </p>
             <p>
-              Our core methodology is simple: dissect the manual bottlenecks in your business, eliminate human latency with fault-tolerant automated logic, and scale your operational throughput 3X without increasing payroll overhead.
+              My approach is simple: understand the business process, identify what can be automated, and build a reliable system that connects the right tools together.
+            </p>
+            <p className="text-slate-600 dark:text-slate-400">
+              Whether it’s qualifying leads, responding to customers, managing appointments, updating a CRM, or connecting multiple platforms, I build systems designed around real business needs.
             </p>
 
             <div className="pt-3 flex flex-wrap gap-2 text-xs font-semibold">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-200 shadow-sm">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Zero Generic Templates
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-[#DBD6CF] dark:border-slate-800 text-[#191919] dark:text-slate-200 shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#FE330A] dark:text-cyan-400" /> No Generic Templates
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-200 shadow-sm">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> 24/7 Production Reliability
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-[#DBD6CF] dark:border-slate-800 text-[#191919] dark:text-slate-200 shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#FE330A] dark:text-cyan-400" /> Production-Grade Reliability
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-200 shadow-sm">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Business-First ROI Architecture
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-[#DBD6CF] dark:border-slate-800 text-[#191919] dark:text-slate-200 shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#FE330A] dark:text-cyan-400" /> Business-First Engineering
               </span>
             </div>
           </div>
 
           {/* Profile Card / Technical Specs (5 cols) */}
           <div className="lg:col-span-5">
-            <TiltCard glare={true} maxRotation={3}>
-              <div className="bg-[#0B1325]/90 rounded-3xl border border-white/10 p-6 sm:p-7 shadow-[0_15px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl relative overflow-hidden">
+            <TiltCard glare={true} maxRotation={5}>
+              <div className="bg-white dark:bg-[#0D1424] rounded-3xl border border-[#DBD6CF] dark:border-slate-800 p-6 shadow-card dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all relative overflow-hidden">
                 {/* Top Accent Strip */}
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600"></div>
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FE330A] via-cyan-400 to-[#D62705]"></div>
 
-                <div className="flex items-center gap-4 pb-5 border-b border-white/10">
+                <div className="flex items-center gap-4 pb-5 border-b border-[#DBD6CF] dark:border-slate-800">
                   <div className="relative shrink-0">
                     <img 
                       src="/profile-photo.png" 
                       alt="Usama Younas - AI Engineer" 
-                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-cyan-400/60 shadow-lg"
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-[#FE330A] shadow-md"
                       onError={(e) => {
                         e.target.style.display = 'none';
                       }}
                     />
-                    <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 border-2 border-[#0B1325] rounded-full animate-pulse"></span>
+                    <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full animate-pulse"></span>
                   </div>
                   <div>
-                    <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 text-[10px] font-mono font-bold mb-1 border border-cyan-500/20">
+                    <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#EFEAE3] dark:bg-[#FE330A]/20 text-[#FE330A] dark:text-cyan-400 text-[10px] font-mono font-bold mb-1">
                       <Zap className="w-3 h-3 fill-current" />
-                      ACTIVE PRODUCTION ENGINEER
+                      ACTIVE ENGINEER
                     </div>
-                    <h3 className="text-xl font-bold text-white">Usama Younas</h3>
-                    <p className="text-xs font-semibold text-cyan-400">Founder & AI Engineer · 3X AI</p>
-                    <p className="text-xs text-slate-400 mt-1 font-mono">contactbyusama@gmail.com</p>
+                    <h3 className="text-xl font-bold text-[#191919] dark:text-white">Usama Younas</h3>
+                    <p className="text-xs font-semibold text-[#FE330A] dark:text-cyan-400">AI Engineer · 3X AI Automation</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Available for Remote & Contract Systems</p>
                   </div>
                 </div>
 
                 {/* Engineering Blueprint Snippet */}
-                <div className="mt-4 bg-[#070C18] rounded-2xl p-4 font-mono text-xs space-y-2 border border-white/10">
-                  <div className="flex justify-between items-center pb-1.5 border-b border-white/5">
+                <div className="mt-4 bg-[#EFEAE3] dark:bg-slate-950/80 rounded-2xl p-4 font-mono text-xs space-y-2.5 border border-[#DBD6CF]/70 dark:border-slate-800/80">
+                  <div className="flex justify-between items-center pb-1.5 border-b border-[#DBD6CF]/40 dark:border-slate-800">
                     <span className="text-slate-400">role</span>
-                    <span className="text-cyan-300 font-bold">"Lead AI & Automation Architect"</span>
+                    <span className="text-[#FE330A] dark:text-cyan-400 font-bold">"AI Engineer"</span>
                   </div>
-                  <div className="flex justify-between items-center pb-1.5 border-b border-white/5">
-                    <span className="text-slate-400">agency</span>
-                    <span className="text-white font-bold">"3X AI Automation"</span>
+                  <div className="flex justify-between items-center pb-1.5 border-b border-[#DBD6CF]/40 dark:border-slate-800">
+                    <span className="text-slate-400">brand</span>
+                    <span className="text-[#191919] dark:text-slate-200 font-bold">"3X AI Automation"</span>
                   </div>
-                  <div className="flex justify-between items-center pb-1.5 border-b border-white/5">
+                  <div className="flex justify-between items-center pb-1.5 border-b border-[#DBD6CF]/40 dark:border-slate-800">
                     <span className="text-slate-400">specialization</span>
-                    <span className="text-slate-300">"Autonomous Agents & n8n Systems"</span>
+                    <span className="text-slate-700 dark:text-slate-300">"AI Agents & Automation"</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">verified_stack</span>
-                    <span className="text-cyan-400 font-semibold">"Python · n8n · LangGraph · Fastify"</span>
+                    <span className="text-slate-400">core_stack</span>
+                    <span className="text-[#FE330A] dark:text-cyan-400 font-semibold">"n8n · Python · React"</span>
                   </div>
                 </div>
 
                 {/* Live Metric Badges with CountUp */}
-                <div className="mt-4 grid grid-cols-2 gap-2.5 text-center text-xs font-mono">
-                  <div className="bg-white/5 p-2.5 rounded-xl text-cyan-300 border border-white/10">
-                    <CountUp end={100} suffix="%" className="block font-bold text-base" />
-                    <span className="text-[10px] text-slate-400">Custom Built Architecture</span>
+                <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs font-mono">
+                  <div className="bg-[#EFEAE3] dark:bg-[#FE330A]/15 p-2 rounded-xl text-[#FE330A] dark:text-cyan-400 border border-transparent dark:border-[#FE330A]/20">
+                    <CountUp end={100} suffix="%" className="block font-bold text-sm" />
+                    <span className="text-[10px] text-slate-600 dark:text-slate-400">Custom Built</span>
                   </div>
-                  <div className="bg-white/5 p-2.5 rounded-xl text-white border border-white/10">
-                    <CountUp end={45} prefix="< " suffix="s" className="block font-bold text-base text-cyan-400" />
-                    <span className="text-[10px] text-slate-400">Avg Lead Qualification</span>
+                  <div className="bg-[#EFEAE3] dark:bg-slate-900 border border-[#DBD6CF] dark:border-slate-800 p-2 rounded-xl text-[#191919] dark:text-slate-200">
+                    <CountUp end={45} prefix="< " suffix="s" className="block font-bold text-sm" />
+                    <span className="text-[10px] text-slate-600 dark:text-slate-400">Avg Lead Processing</span>
                   </div>
                 </div>
               </div>
@@ -156,25 +153,25 @@ export default function About() {
           {ABOUT_CARDS.map((card, i) => {
             const Icon = card.icon;
             return (
-              <TiltCard key={i} glare={true} maxRotation={4} className="h-full">
-                <div className="bg-[#0B1325]/90 border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between group h-full backdrop-blur-xl hover:border-cyan-400/50 hover:shadow-[0_12px_36px_rgba(6,182,212,0.18)] transition-all">
+              <TiltCard key={i} glare={true} maxRotation={6} className="h-full">
+                <div className="premium-card p-6 flex flex-col justify-between group h-full">
                   <div>
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-2xl bg-white/5 text-cyan-400 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/30 transition-all duration-300 shadow-sm">
+                      <div className="w-12 h-12 rounded-xl bg-[#EFEAE3] dark:bg-[#FE330A]/15 text-[#FE330A] dark:text-cyan-400 border border-[#DBD6CF] dark:border-[#FE330A]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FE330A] group-hover:text-white transition-all duration-300 shadow-sm">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white/5 text-slate-400 border border-white/10 group-hover:border-cyan-400/50 group-hover:text-cyan-300 transition-colors">
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-[#DBD6CF] dark:border-slate-700 group-hover:border-[#FE330A] group-hover:text-[#FE330A] dark:group-hover:text-cyan-400">
                         {card.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-lg font-bold text-[#191919] dark:text-white mb-1 group-hover:text-[#FE330A] dark:group-hover:text-cyan-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs font-semibold text-cyan-400/90 mb-3 font-mono">
+                    <p className="text-xs font-semibold text-[#FE330A] dark:text-cyan-400 mb-3">
                       "{card.subtitle}"
                     </p>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
                       {card.description}
                     </p>
                   </div>

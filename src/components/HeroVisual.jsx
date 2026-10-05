@@ -2,79 +2,65 @@ import React, { useState, useEffect } from 'react';
 import { 
   Globe, 
   Bot, 
+  CheckCircle2, 
   Database, 
   Send, 
   Calendar, 
-  UserCheck, 
   Play, 
   Pause, 
   Sparkles,
   Zap,
-  ArrowRight,
-  Activity,
-  Cpu
+  ArrowRight
 } from 'lucide-react';
 
 const NODES = [
   {
     id: 1,
-    title: "Lead",
-    subtitle: "Inbound Capture",
+    label: "Website Lead",
+    sub: "Inbound webhook triggered",
     icon: Globe,
-    tech: "Website · WhatsApp · Ads",
-    metric: "Lat: 18ms",
-    status: "Triggered",
-    detail: "High-intent inquiry received via webhook. Payload validated & dispatched to AI Orchestrator."
+    metric: "Source: Form / WhatsApp",
+    detail: "Incoming inquiry: Commercial Real Estate Agency looking for automated tenant matching and agent CRM routing."
   },
   {
     id: 2,
-    title: "AI Agent",
-    subtitle: "Intent & Reasoning",
+    label: "AI Agent",
+    sub: "Understands & extracts intent",
     icon: Bot,
-    tech: "GPT-4o / Claude 3.5",
-    metric: "Conf: 99.4%",
-    status: "Reasoning",
-    detail: "Extracted: Budget $20k+, 25 team members, urgent timeline. Qualified as Tier-A VIP prospect."
+    metric: "Model: Ollama / LLaMA-3",
+    detail: "Extracted: Budget $15k, 18 agents, timeline immediate. Tool selected: RealEstateScoringEngine."
   },
   {
     id: 3,
-    title: "CRM",
-    subtitle: "Real-time Sync",
-    icon: Database,
-    tech: "HubSpot / Supabase",
-    metric: "200 Synced",
-    status: "Persisted",
-    detail: "Contact #UY-9042 created with enriched firmographics, deal stage updated to 'Qualified Opportunity'."
+    label: "Qualification",
+    sub: "Lead scored & categorized",
+    icon: CheckCircle2,
+    metric: "Score: 98/100 · Tier A",
+    detail: "Passed qualification criteria. Assigned high-priority tier. Fast-track routing triggered."
   },
   {
     id: 4,
-    title: "Follow-up",
-    subtitle: "Multichannel Dispatch",
-    icon: Send,
-    tech: "Twilio SMS & Email",
-    metric: "Sub-Second",
-    status: "Dispatched",
-    detail: "Personalized SMS with dynamic VIP booking link and custom PDF proposal sent within 45 seconds."
+    label: "CRM Sync",
+    sub: "Pipeline record created",
+    icon: Database,
+    metric: "Supabase / CRM Synced",
+    detail: "Contact #UY-8924 inserted with enriched enrichment fields, deal value and assigned broker tag."
   },
   {
     id: 5,
-    title: "Appointment",
-    subtitle: "Calendar Confirmed",
-    icon: Calendar,
-    tech: "Google Calendar API",
-    metric: "Slot Locked",
-    status: "Confirmed",
-    detail: "Strategy call confirmed for Thursday 10:30 AM EST. Calendar invite & prep brief auto-emailed."
+    label: "Follow-up",
+    sub: "Smart multichannel dispatch",
+    icon: Send,
+    metric: "SMS & Personalized Email",
+    detail: "Sent custom introduction email with verified case study PDF + SMS direct booking link."
   },
   {
     id: 6,
-    title: "Customer",
-    subtitle: "Revenue Multiply",
-    icon: UserCheck,
-    tech: "Stripe & Slack Alert",
-    metric: "ROI 3.8x",
-    status: "Onboarded",
-    detail: "Onboarding automation initialized. Slack alert broadcasted to sales team. 0 human minutes spent."
+    label: "Appointment",
+    sub: "Calendar slot confirmed",
+    icon: Calendar,
+    metric: "Meeting Booked: Google Cal",
+    detail: "Client booked 30-min strategy session for Tuesday 2:30 PM. Calendar invitations synced."
   }
 ];
 
@@ -87,7 +73,7 @@ export default function HeroVisual() {
 
     const timer = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % NODES.length);
-    }, 2400);
+    }, 2200);
 
     return () => clearInterval(timer);
   }, [isPlaying]);
@@ -95,48 +81,44 @@ export default function HeroVisual() {
   const activeNode = NODES[activeStep];
 
   return (
-    <div className="relative w-full max-w-xl mx-auto">
-      {/* Background Soft Glowing Ambient Halos */}
-      <div className="absolute -top-10 -left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute -bottom-10 -right-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div className="relative w-full max-w-2xl mx-auto">
+      {/* Background Soft Radial Glow */}
+      <div className="absolute -inset-6 bg-[radial-gradient(circle_at_center,rgba(254,51,10,0.15)_0%,rgba(254,51,10,0.02)_60%,transparent_80%)] rounded-3xl blur-2xl pointer-events-none"></div>
 
-      {/* Main Glassmorphic Lab Console Card */}
-      <div className="relative bg-[#070C18]/90 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-7 shadow-[0_0_50px_rgba(6,182,212,0.15)] transition-all">
+      {/* Main Container Card */}
+      <div className="relative bg-white border border-[#DBD6CF] rounded-3xl p-5 sm:p-7 shadow-card transition-all">
         
-        {/* Console Header Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-white/10">
+        {/* Terminal / Live Flow Header */}
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-[#DBD6CF]">
           <div className="flex items-center gap-2.5">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_#00F0FF]"></span>
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-              <span className="w-2 h-2 rounded-full bg-slate-700"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FE330A] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#191919]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#DBD6CF]"></span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-              <span className="text-xs font-mono font-bold tracking-wider uppercase text-slate-200">
-                3X Autonomous System Pipeline
-              </span>
-            </div>
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#191919]">
+              Live 3X Automation Pipeline
+            </span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
-              <Zap className="w-3 h-3 fill-current text-cyan-400" />
-              Live Stream
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[50px] text-[11px] font-mono font-bold bg-[#EFEAE3] text-[#FE330A] border border-[#DBD6CF]">
+              <Zap className="w-3 h-3 fill-current text-[#FE330A]" />
+              Active System
             </span>
             <button
               type="button"
               onClick={() => setIsPlaying(!isPlaying)}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 border border-white/10 transition-colors"
-              title={isPlaying ? "Pause automated flow" : "Resume automated flow"}
-              aria-label={isPlaying ? "Pause automated flow" : "Resume automated flow"}
+              className="p-1.5 rounded-[50px] text-[#555555] hover:text-[#FE330A] hover:bg-[#EFEAE3] border border-transparent hover:border-[#DBD6CF] transition-colors"
+              title={isPlaying ? "Pause simulation" : "Play simulation"}
+              aria-label={isPlaying ? "Pause simulation" : "Play simulation"}
             >
-              {isPlaying ? <Pause className="w-3.5 h-3.5 text-cyan-400" /> : <Play className="w-3.5 h-3.5 text-cyan-400" />}
+              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
             </button>
           </div>
         </div>
 
-        {/* Interconnected 6-Node Circuit Grid: Lead → AI Agent → CRM → Follow-up → Appointment → Customer */}
+        {/* 6 Step Nodes Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 relative">
           {NODES.map((node, idx) => {
             const Icon = node.icon;
@@ -150,57 +132,45 @@ export default function HeroVisual() {
                   setActiveStep(idx);
                   setIsPlaying(false);
                 }}
-                className={`group relative cursor-pointer p-4 rounded-2xl border transition-all duration-300 ${
+                className={`group relative cursor-pointer p-3.5 rounded-2xl border transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-b from-cyan-950/40 to-blue-950/60 border-cyan-400/80 shadow-[0_0_25px_rgba(6,182,212,0.35)] -translate-y-1'
+                    ? 'bg-[#EFEAE3] border-[#FE330A] shadow-sm -translate-y-1'
                     : isCompleted
-                    ? 'bg-[#0B1325]/80 border-cyan-500/30 text-slate-200'
-                    : 'bg-[#0B1325]/40 border-white/5 opacity-75 hover:opacity-100 hover:border-white/20'
+                    ? 'bg-white border-[#DBD6CF] text-[#191919]'
+                    : 'bg-white border-[#DBD6CF]/80 opacity-75 hover:opacity-100 hover:border-[#FE330A]'
                 }`}
               >
                 {/* Node Status Badge */}
-                <div className="flex items-center justify-between mb-2.5">
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
+                <div className="flex items-center justify-between mb-2">
+                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${
                     isActive 
-                      ? 'bg-gradient-to-br from-cyan-400 to-blue-600 text-white shadow-glow-cyan scale-105' 
+                      ? 'bg-[#FE330A] text-white shadow-sm' 
                       : isCompleted
-                      ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
-                      : 'bg-white/5 text-slate-400 group-hover:text-cyan-400'
+                      ? 'bg-[#EFEAE3] text-[#FE330A]'
+                      : 'bg-slate-100 text-slate-600 group-hover:text-[#FE330A]'
                   }`}>
                     <Icon className="w-4 h-4" />
                   </div>
 
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-[50px] ${
                     isActive 
-                      ? 'bg-cyan-400 text-slate-950 font-bold' 
-                      : isCompleted
-                      ? 'bg-cyan-950/60 text-cyan-300 border border-cyan-500/30'
-                      : 'text-slate-500 bg-white/5'
+                      ? 'bg-[#191919] text-white font-bold' 
+                      : 'text-slate-500 bg-[#EFEAE3]'
                   }`}>
                     0{node.id}
                   </span>
                 </div>
 
-                <div className="flex items-baseline gap-1">
-                  <h4 className={`text-sm font-bold transition-colors leading-tight ${
-                    isActive ? 'text-white' : 'text-slate-200 group-hover:text-cyan-300'
-                  }`}>
-                    {node.title}
-                  </h4>
-                </div>
-
-                <p className="text-[11px] text-slate-400 mt-0.5 leading-snug line-clamp-1">
-                  {node.subtitle}
+                <h4 className="text-xs sm:text-sm font-bold text-[#191919] group-hover:text-[#FE330A] transition-colors leading-tight">
+                  {node.label}
+                </h4>
+                <p className="text-[11px] text-slate-500 mt-0.5 leading-snug line-clamp-1">
+                  {node.sub}
                 </p>
 
-                {/* Sub-label */}
-                <div className="mt-2 text-[10px] font-mono text-cyan-400/80 truncate">
-                  {node.tech}
-                </div>
-
-                {/* Active Underline Glow */}
+                {/* Active Indicator Bar */}
                 {isActive && (
-                  <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 rounded-full shadow-[0_0_8px_#00F0FF]"></div>
+                  <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#FE330A] rounded-full"></div>
                 )}
               </div>
             );
@@ -208,43 +178,41 @@ export default function HeroVisual() {
         </div>
 
         {/* Live Payload Stream Inspector */}
-        <div className="mt-5 p-4 rounded-2xl bg-[#030712]/80 border border-cyan-500/20 transition-all relative overflow-hidden">
-          <div className="flex items-center justify-between mb-2">
+        <div className="mt-5 p-4 rounded-2xl bg-[#EFEAE3] border border-[#DBD6CF] transition-all">
+          <div className="flex items-center justify-between mb-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-300">
-                Active Node: {activeNode.title} · {activeNode.status}
+              <span className="w-2 h-2 rounded-full bg-[#FE330A] animate-ping"></span>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#FE330A]">
+                Step 0{activeNode.id} Telemetry · {activeNode.label}
               </span>
             </div>
-            <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 px-2.5 py-0.5 rounded-full border border-cyan-500/30">
+            <span className="text-[11px] font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-[#DBD6CF]">
               {activeNode.metric}
             </span>
           </div>
-
-          <p className="text-xs text-slate-300 leading-relaxed font-mono">
-            &gt; {activeNode.detail}
+          <p className="text-xs text-[#191919] leading-relaxed font-mono">
+            {activeNode.detail}
           </p>
         </div>
 
-        {/* Pipeline Sequence Ribbon (Lead → AI Agent → CRM → Follow-up → Appointment → Customer) */}
-        <div className="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2 pt-2 border-t border-white/5">
-          <div className="flex items-center gap-1.5 overflow-x-auto py-1 font-mono text-[11px]">
-            <span className="text-slate-500">Flow:</span>
-            <span className="text-slate-300 flex items-center gap-1 whitespace-nowrap">
-              Lead <ArrowRight className="w-3 h-3 text-cyan-400" /> AI Agent <ArrowRight className="w-3 h-3 text-cyan-400" /> CRM <ArrowRight className="w-3 h-3 text-cyan-400" /> Follow-up <ArrowRight className="w-3 h-3 text-cyan-400" /> Appointment <ArrowRight className="w-3 h-3 text-cyan-400" /> Customer
+        {/* Flow Footer Status */}
+        <div className="mt-4 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2 pt-2">
+          <div className="flex items-center gap-1.5">
+            <span className="text-slate-500">Pipeline Flow:</span>
+            <span className="font-medium text-[#191919] flex items-center gap-1">
+              Lead <ArrowRight className="w-3 h-3 text-[#FE330A]" /> AI Agent <ArrowRight className="w-3 h-3 text-[#FE330A]" /> CRM <ArrowRight className="w-3 h-3 text-[#FE330A]" /> Booking
             </span>
           </div>
-
           <button
             type="button"
             onClick={() => {
               setActiveStep(0);
               setIsPlaying(true);
             }}
-            className="text-[11px] font-bold text-cyan-400 hover:text-cyan-300 hover:underline flex items-center gap-1 shrink-0 ml-auto"
+            className="text-[11px] font-bold text-[#FE330A] hover:underline flex items-center gap-1"
           >
             <Sparkles className="w-3 h-3" />
-            Restart Sequence
+            Restart Pipeline
           </button>
         </div>
 
