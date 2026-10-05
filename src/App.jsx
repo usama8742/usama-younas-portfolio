@@ -84,7 +84,7 @@ function AppContent() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500 selection:text-[#030712] transition-colors duration-300 ease-out font-sans overflow-x-hidden">
+    <div className="relative min-h-screen bg-white text-[#191919] selection:bg-[#FE330A] selection:text-white transition-colors duration-300 ease-out font-sans overflow-x-hidden">
       <ScrollToTop />
       
       {/* Scroll Progress Bar */}
