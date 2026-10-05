@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
-import { Mail, ArrowUp, Sparkles, Shield, Send, PhoneCall, ExternalLink } from 'lucide-react';
+import { Mail, ArrowUp, Sparkles, MapPin, Building2, BookOpen } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './SocialIcons';
 
 export default function Footer() {
@@ -8,35 +9,31 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Process', href: '#process' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Case Study', href: '#case-study' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+  const serviceLinks = [
+    { label: 'AI Automation', path: '/ai-automation' },
+    { label: 'AI Agents & Multi-Agent Swarms', path: '/ai-agents' },
+    { label: 'n8n Workflow Automation', path: '/n8n-automation' },
+    { label: 'AI Chatbots & WhatsApp', path: '/ai-chatbots' },
+    { label: 'AI Voice Agents & Phone Booking', path: '/ai-voice-agents' },
+    { label: 'CRM Automation (HubSpot, GoHighLevel)', path: '/crm-automation' },
+    { label: 'Lead Generation & Qualification', path: '/lead-generation' },
+    { label: 'API Integrations & Webhooks', path: '/api-integrations' },
+    { label: 'Website Design & Development', path: '/web-design' },
   ];
 
-  const servicesList = [
-    { label: 'AI Agents & Multi-Agent Swarms', href: '#services' },
-    { label: 'n8n Workflow Automation', href: '#services' },
-    { label: 'Lead Generation Systems', href: '#services' },
-    { label: 'CRM Automation (HubSpot, GoHighLevel)', href: '#services' },
-    { label: 'AI Chatbots (RAG & Tool Calling)', href: '#services' },
-    { label: 'AI Voice Agents (Twilio + ElevenLabs)', href: '#services' },
-    { label: 'Custom API Integrations', href: '#services' },
-    { label: 'High-Performance Web Development', href: '#services' },
+  const industryLinks = [
+    { label: 'Real Estate AI', path: '/industries/real-estate' },
+    { label: 'Healthcare & Dental', path: '/industries/healthcare' },
+    { label: 'Law Firms & Legal', path: '/industries/law-firms' },
+    { label: 'Restaurants & Hospitality', path: '/industries/restaurants' },
+    { label: 'Marketing Agencies', path: '/industries/marketing-agencies' },
   ];
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const locationLinks = [
+    { label: 'AI Automation Dubai', path: '/locations/dubai' },
+    { label: 'AI Automation UAE', path: '/locations/uae' },
+    { label: 'AI Automation Pakistan', path: '/locations/pakistan' },
+  ];
 
   return (
     <footer className="bg-[#030712] text-white pt-20 pb-12 border-t border-white/10 relative overflow-hidden">
@@ -45,21 +42,20 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main Footer Row */}
+        {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-white/10">
           
-          {/* Brand Info & Mission (5 cols) */}
-          <div className="lg:col-span-5 space-y-4">
-            <a 
-              href="#home" 
-              onClick={(e) => handleNavClick(e, '#home')}
+          {/* Brand Info & Mission (4 cols) */}
+          <div className="lg:col-span-4 space-y-4">
+            <Link 
+              to="/" 
               className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
             >
               <Logo dark={true} />
-            </a>
+            </Link>
 
-            <p className="text-sm text-slate-300 max-w-sm leading-relaxed font-normal pt-2">
-              3X AI Automation designs, engineers, and deploys autonomous AI agents, enterprise workflows, and intelligent business pipelines that eliminate manual drudgery.
+            <p className="text-xs sm:text-sm text-slate-300 max-w-sm leading-relaxed font-normal pt-2">
+              3X AI Automation designs, engineers, and deploys autonomous AI agents, enterprise n8n workflows, and intelligent business pipelines that eliminate manual drudgery.
             </p>
 
             <div className="pt-2 flex items-center gap-3">
@@ -73,88 +69,120 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Core Services (4 cols) */}
-          <div className="lg:col-span-4">
+          {/* Core Services (3 cols) */}
+          <div className="lg:col-span-3">
             <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 mb-4 flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Core Automation Services</span>
+              <span>Core Services</span>
             </h5>
             <ul className="space-y-2">
-              {servicesList.map((svc) => (
-                <li key={svc.label}>
-                  <a
-                    href={svc.href}
-                    onClick={(e) => handleNavClick(e, svc.href)}
-                    className="text-xs sm:text-sm text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5 group"
+              {serviceLinks.map((svc) => (
+                <li key={svc.path}>
+                  <Link
+                    to={svc.path}
+                    className="text-xs text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5 group"
                   >
                     <span className="text-cyan-500/40 group-hover:text-cyan-400 font-mono text-[10px] transition-colors">›</span>
                     <span>{svc.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Quick Navigation & Direct Contact (3 cols) */}
+          {/* Industries & Locations (3 cols) */}
           <div className="lg:col-span-3 space-y-6">
+            <div>
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+                <Building2 className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Industry Solutions</span>
+              </h5>
+              <ul className="space-y-2">
+                {industryLinks.map((ind) => (
+                  <li key={ind.path}>
+                    <Link
+                      to={ind.path}
+                      className="text-xs text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5 group"
+                    >
+                      <span className="text-cyan-500/40 group-hover:text-cyan-400 font-mono text-[10px]">›</span>
+                      <span>{ind.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Target Locations</span>
+              </h5>
+              <ul className="space-y-2">
+                {locationLinks.map((loc) => (
+                  <li key={loc.path}>
+                    <Link
+                      to={loc.path}
+                      className="text-xs text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5 group"
+                    >
+                      <span className="text-cyan-500/40 group-hover:text-cyan-400 font-mono text-[10px]">›</span>
+                      <span>{loc.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Quick Links & Contact (2 cols) */}
+          <div className="lg:col-span-2 space-y-6">
+            <div>
+              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+                <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Knowledge</span>
+              </h5>
+              <Link to="/blog" className="text-xs text-cyan-300 hover:underline block mb-4">
+                Explore Blog & Articles →
+              </Link>
+            </div>
+
             <div>
               <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3">
                 Direct Contact
               </h5>
               <a
                 href="mailto:contactbyusama@gmail.com"
-                className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-cyan-300 font-mono transition-colors group mb-2"
+                className="inline-flex items-center gap-1.5 text-xs text-slate-200 hover:text-cyan-300 font-mono transition-colors group mb-3 block truncate"
               >
-                <Mail className="w-4 h-4 text-cyan-400" />
+                <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                 <span className="truncate">contactbyusama@gmail.com</span>
               </a>
-              <p className="text-xs text-slate-500">
-                Inquiries answered within 2 hours.
-              </p>
-            </div>
-
-            <div>
-              <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3">
-                Official Channels
-              </h5>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 <a
                   href="https://www.instagram.com/3xaiautomation/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:border-transparent flex items-center justify-center transition-all shadow-sm"
+                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] flex items-center justify-center transition-all"
                   aria-label="Instagram"
-                  title="Follow @3xaiautomation on Instagram"
                 >
-                  <InstagramIcon className="w-5 h-5" />
+                  <InstagramIcon className="w-4 h-4" />
                 </a>
                 <a
                   href="https://github.com/usama8742"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 hover:border-cyan-400/50 flex items-center justify-center transition-all"
+                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 flex items-center justify-center transition-all"
                   aria-label="GitHub"
-                  title="GitHub Profile"
                 >
-                  <GithubIcon className="w-5 h-5" />
+                  <GithubIcon className="w-4 h-4" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/usama8742/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-blue-600 hover:border-transparent flex items-center justify-center transition-all"
+                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-blue-600 flex items-center justify-center transition-all"
                   aria-label="LinkedIn"
-                  title="LinkedIn Profile"
                 >
-                  <LinkedinIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href="mailto:contactbyusama@gmail.com"
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-cyan-500 hover:text-[#030712] hover:border-transparent flex items-center justify-center transition-all"
-                  aria-label="Email Us"
-                  title="Send Email"
-                >
-                  <Mail className="w-5 h-5" />
+                  <LinkedinIcon className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -163,17 +191,17 @@ export default function Footer() {
               <button
                 type="button"
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-400 hover:text-cyan-300 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-mono text-slate-400 hover:text-cyan-300 transition-colors"
               >
                 <span>Back to Top</span>
-                <ArrowUp className="w-3.5 h-3.5" />
+                <ArrowUp className="w-3 h-3" />
               </button>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar: Copyright & Attribution */}
+        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© 2026 3X AI Automation. All rights reserved.</p>
           <div className="flex items-center gap-4 text-[11px] font-mono">

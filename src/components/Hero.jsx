@@ -46,9 +46,9 @@ export default function Hero({ onOpenContact }) {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-6">
-              Automate Your Business. <br />
+              AI Automation Solutions That <br />
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-200 bg-clip-text text-transparent">
-                Multiply Your Growth.
+                Help Your Business Grow
               </span>
             </h1>
 

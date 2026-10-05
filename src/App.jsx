@@ -1,30 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import AiPlatformPillars from './components/AiPlatformPillars';
-import AiCourseAcademy from './components/AiCourseAcademy';
-import AiAgentsShowcase from './components/AiAgentsShowcase';
-import AutomationCompare from './components/AutomationCompare';
-import Projects from './components/Projects';
-import CaseStudy from './components/CaseStudy';
-import TechStack from './components/TechStack';
-import KnowledgeHub from './components/KnowledgeHub';
-import Industries from './components/Industries';
-import WhyWorkWithMe from './components/WhyWorkWithMe';
-import Process from './components/Process';
-import InteractiveSandbox from './components/InteractiveSandbox';
-import RoiCalculator from './components/RoiCalculator';
-import FinalCTA from './components/FinalCTA';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ParticleCanvas from './components/ParticleCanvas';
 import LiveSystemStatus from './components/LiveSystemStatus';
 import AuroraGlow from './components/AuroraGlow';
-import MotionReveal from './components/MotionReveal';
 import ScrollProgress from './components/ScrollProgress';
+
+// Pages
+import HomePage from './pages/HomePage';
+import ServicesIndexPage from './pages/ServicesIndexPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
+import IndustriesIndexPage from './pages/IndustriesIndexPage';
+import IndustryDetailPage from './pages/IndustryDetailPage';
+import LocationsIndexPage from './pages/LocationsIndexPage';
+import LocationDetailPage from './pages/LocationDetailPage';
+import BlogIndexPage from './pages/BlogIndexPage';
+import BlogArticlePage from './pages/BlogArticlePage';
+import NotFoundPage from './pages/NotFoundPage';
+
+// Helper component to handle scroll position on route change
+function ScrollToTop() {
+  const { pathname, state } = useLocation();
+
+  useEffect(() => {
+    if (state?.scrollToContact || state?.scrollTo) {
+      const targetId = state.scrollToContact ? 'contact' : state.scrollTo;
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, state]);
+
+  return null;
+}
 
 function AppContent() {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -32,7 +45,6 @@ function AppContent() {
   const [contactGoal, setContactGoal] = useState('');
 
   useEffect(() => {
-    // Only enable cursor glow on non-touch desktop screens
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 1024 && !window.matchMedia('(hover: none)').matches);
     };
@@ -73,13 +85,15 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500 selection:text-[#030712] transition-colors duration-300 ease-out font-sans overflow-x-hidden">
-      {/* Scroll-Linked Global Progress Indicator (Powered by motion: animate & scroll) */}
+      <ScrollToTop />
+      
+      {/* Scroll Progress Bar */}
       <ScrollProgress />
 
-      {/* Dynamic Ambient Aurora Motion Glow */}
+      {/* Dynamic Ambient Aurora Glow */}
       <AuroraGlow />
 
-      {/* Interactive Ambient Particle Constellation Canvas */}
+      {/* Interactive Ambient Particle Constellation */}
       <ParticleCanvas />
 
       {/* Desktop Spotlight Cursor Glow */}
@@ -96,101 +110,43 @@ function AppContent() {
       {/* Navigation Bar */}
       <Navbar onOpenContact={handleOpenContact} />
 
-      {/* Main Content Sections with Motion Reveals */}
-      <main className="relative z-10">
-        {/* 1. Hero Section */}
-        <Hero onOpenContact={handleOpenContact} />
+      {/* Routes */}
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <HomePage 
+              onOpenContact={handleOpenContact} 
+              onAutomateFromCalculator={handleAutomateFromCalculator}
+              contactGoal={contactGoal}
+            />
+          } 
+        />
+        
+        {/* Services Routes */}
+        <Route path="/services" element={<ServicesIndexPage />} />
+        <Route path="/:slug" element={<ServiceDetailPage />} />
 
-        {/* 2. About Section */}
-        <MotionReveal direction="up" distance={35}>
-          <About />
-        </MotionReveal>
+        {/* Industries Routes */}
+        <Route path="/industries" element={<IndustriesIndexPage />} />
+        <Route path="/industries/:slug" element={<IndustryDetailPage />} />
 
-        {/* 3. Services Section */}
-        <MotionReveal direction="up" distance={40}>
-          <Services />
-        </MotionReveal>
+        {/* Locations Routes */}
+        <Route path="/locations" element={<LocationsIndexPage />} />
+        <Route path="/locations/:slug" element={<LocationDetailPage />} />
 
-        {/* 3.1 AI Platform Architecture (CloudFactory Style in Simple Words) */}
-        <MotionReveal direction="up" distance={40}>
-          <AiPlatformPillars onOpenContact={handleOpenContact} />
-        </MotionReveal>
+        {/* Blog Routes */}
+        <Route path="/blog" element={<BlogIndexPage />} />
+        <Route path="/blog/:slug" element={<BlogArticlePage />} />
 
-        {/* 3.2 Full-by-Full AI Masterclass Academy & Course */}
-        <MotionReveal direction="up" distance={40}>
-          <AiCourseAcademy onOpenContact={handleOpenContact} />
-        </MotionReveal>
+        {/* 404 Handler */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
 
-        {/* 3.3 AI Agents Showcase (Phone, SMS, Webchat) */}
-        <MotionReveal direction="up" distance={40}>
-          <AiAgentsShowcase onOpenContact={handleOpenContact} />
-        </MotionReveal>
-
-        {/* 4. Automation Section (Before & After Comparison) */}
-        <MotionReveal direction="up" distance={40}>
-          <AutomationCompare />
-        </MotionReveal>
-
-        {/* 5. Projects Section (6 Production Systems with Real Mockups) */}
-        <MotionReveal direction="up" distance={40}>
-          <Projects />
-        </MotionReveal>
-
-        {/* 6. Case Study Section (Real Estate Lead Automation Blueprint) */}
-        <MotionReveal direction="up" distance={40}>
-          <CaseStudy />
-        </MotionReveal>
-
-        {/* 7. Technology Stack Section (Master Architecture Blueprint & Interactive Inspector) */}
-        <MotionReveal direction="up" distance={40}>
-          <TechStack />
-        </MotionReveal>
-
-        {/* 7.1 Interactive AI & ML Knowledge Hub (Beginner to Expert) */}
-        <MotionReveal direction="up" distance={40}>
-          <KnowledgeHub onOpenContact={handleOpenContact} />
-        </MotionReveal>
-
-        {/* 8. Industries Section (6 Visual Industry Deployments) */}
-        <MotionReveal direction="up" distance={40}>
-          <Industries />
-        </MotionReveal>
-
-        {/* 9. Interactive Business ROI & Automation Savings Calculator */}
-        <MotionReveal direction="up" distance={40}>
-          <RoiCalculator onAutomate={handleAutomateFromCalculator} />
-        </MotionReveal>
-
-        {/* 10. Why Work With Me Section */}
-        <MotionReveal direction="up" distance={40}>
-          <WhyWorkWithMe />
-        </MotionReveal>
-
-        {/* 11. Process Section (From Idea to Automation) */}
-        <MotionReveal direction="up" distance={40}>
-          <Process />
-        </MotionReveal>
-
-        {/* 12. Interactive Live Sandbox */}
-        <MotionReveal direction="up" distance={40}>
-          <InteractiveSandbox />
-        </MotionReveal>
-
-        {/* 13. Final CTA Section */}
-        <MotionReveal direction="up" distance={40}>
-          <FinalCTA onOpenContact={handleOpenContact} />
-        </MotionReveal>
-
-        {/* 14. Contact Section */}
-        <MotionReveal direction="up" distance={40}>
-          <Contact prefillGoal={contactGoal} />
-        </MotionReveal>
-      </main>
-
-      {/* 15. Footer */}
+      {/* Global Footer */}
       <Footer />
 
-      {/* 16. Floating Live System Telemetry Status Pill & Diagnostic Modal */}
+      {/* Live Status Pill & Modal */}
       <LiveSystemStatus />
     </div>
   );
@@ -199,7 +155,9 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

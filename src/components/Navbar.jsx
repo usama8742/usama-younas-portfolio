@@ -1,62 +1,53 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ChevronDown } from 'lucide-react';
 import { InstagramIcon } from './SocialIcons';
 
 export default function Navbar({ onOpenContact }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      const sections = ['home', 'services', 'solutions', 'process', 'knowledge-hub', 'about', 'contact'];
-      const scrollPos = window.scrollY + 180;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          if (scrollPos >= top) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Home', href: '#home', id: 'home' },
-    { label: 'Services', href: '#services', id: 'services' },
-    { label: 'Solutions', href: '#solutions', id: 'solutions' },
-    { label: 'Process', href: '#process', id: 'process' },
-    { label: 'Knowledge Hub', href: '#knowledge-hub', id: 'knowledge-hub' },
-    { label: 'About', href: '#about', id: 'about' },
-    { label: 'Contact', href: '#contact', id: 'contact' },
-  ];
+  const isHome = location.pathname === '/';
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
+  const handleNavClick = (e, targetId, path = '/') => {
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (isHome && targetId) {
+      e.preventDefault();
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (targetId) {
+      e.preventDefault();
+      navigate(path, { state: { scrollTo: targetId } });
     }
   };
+
+  const navItems = [
+    { label: 'Home', path: '/', isHash: true, id: 'home' },
+    { label: 'Services', path: '/services' },
+    { label: 'Industries', path: '/industries' },
+    { label: 'Locations', path: '/locations' },
+    { label: 'Blog', path: '/blog' },
+    { label: 'About', path: '/#about', isHash: true, id: 'about' },
+  ];
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#070C18]/85 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5)] border-b border-white/[0.08]' 
+          ? 'bg-[#070C18]/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5)] border-b border-white/[0.08]' 
           : 'bg-[#070C18]/60 backdrop-blur-md border-b border-white/[0.05]'
       }`}
     >
@@ -64,39 +55,48 @@ export default function Navbar({ onOpenContact }) {
         <div className="flex items-center justify-between h-16 sm:h-[68px]">
           
           {/* Logo on Left */}
-          <a 
-            href="#home" 
-            onClick={(e) => handleNavClick(e, '#home')}
+          <Link 
+            to="/" 
             className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg group shrink-0"
             aria-label="3X AI Automation Home"
           >
             <Logo dark={true} />
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Primary Navigation">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.id;
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path || (item.path === '/' && location.pathname === '/');
+              if (item.isHash) {
+                return (
+                  <a
+                    key={item.label}
+                    href={item.path}
+                    onClick={(e) => handleNavClick(e, item.id, '/')}
+                    className="px-3 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all border border-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
               return (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                <Link
+                  key={item.label}
+                  to={item.path}
                   className={`px-3 py-1.5 rounded-full text-xs xl:text-[13px] font-medium whitespace-nowrap transition-all duration-200 border ${
                     isActive 
                       ? 'text-cyan-300 bg-white/[0.08] border-cyan-400/25 shadow-[0_0_12px_rgba(6,182,212,0.15)] font-semibold' 
                       : 'text-slate-300 hover:text-white hover:bg-white/[0.05] border-transparent'
                   } focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400`}
                 >
-                  {link.label}
-                </a>
+                  {item.label}
+                </Link>
               );
             })}
           </nav>
 
           {/* Desktop Right Group: Instagram + CTA Button */}
           <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 shrink-0">
-            {/* Instagram Profile Link */}
             <a
               href="https://www.instagram.com/3xaiautomation/"
               target="_blank"
@@ -109,15 +109,16 @@ export default function Navbar({ onOpenContact }) {
               <span className="hidden xl:inline">Instagram</span>
             </a>
 
-            {/* Primary Action Button - Modern Blue/Cyan Gradient with subtle glow */}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={(e) => {
-                if (onOpenContact) {
-                  e.preventDefault();
-                  onOpenContact();
+                e.preventDefault();
+                if (isHome) {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  if (onOpenContact) onOpenContact();
                 } else {
-                  handleNavClick(e, '#contact');
+                  navigate('/', { state: { scrollToContact: true } });
                 }
               }}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 hover:from-cyan-400 hover:to-blue-600 shadow-[0_0_18px_rgba(6,182,212,0.3)] hover:shadow-[0_0_24px_rgba(6,182,212,0.5)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap"
@@ -127,7 +128,7 @@ export default function Navbar({ onOpenContact }) {
             </a>
           </div>
 
-          {/* Mobile Right Controls: Menu Button */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center lg:hidden">
             <button
               type="button"
@@ -142,25 +143,32 @@ export default function Navbar({ onOpenContact }) {
         </div>
       </div>
 
-      {/* Mobile Slide-down Glass Drawer */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-white/10 bg-[#070C18]/95 backdrop-blur-2xl px-5 pt-3 pb-6 shadow-2xl animate-fadeIn">
           <nav className="flex flex-col space-y-1">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.id;
+            {navItems.map((item) => {
+              if (item.isHash) {
+                return (
+                  <a
+                    key={item.label}
+                    href={item.path}
+                    onClick={(e) => handleNavClick(e, item.id, '/')}
+                    className="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5"
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
               return (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'text-cyan-300 bg-white/[0.08] font-semibold border border-cyan-500/20'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
-                  }`}
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5"
                 >
-                  {link.label}
-                </a>
+                  {item.label}
+                </Link>
               );
             })}
             <div className="pt-4 flex flex-col gap-2.5 border-t border-white/10 mt-2">
@@ -174,14 +182,15 @@ export default function Navbar({ onOpenContact }) {
                 <span>Follow @3xaiautomation on Instagram</span>
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={(e) => {
+                  e.preventDefault();
                   setMobileMenuOpen(false);
-                  if (onOpenContact) {
-                    e.preventDefault();
-                    onOpenContact();
+                  if (isHome) {
+                    const el = document.getElementById('contact');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
                   } else {
-                    handleNavClick(e, '#contact');
+                    navigate('/', { state: { scrollToContact: true } });
                   }
                 }}
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 shadow-glow-cyan"

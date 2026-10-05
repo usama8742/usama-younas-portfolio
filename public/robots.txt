@@ -1,0 +1,6 @@
+# Robots.txt for 3X AI Automation
+User-agent: *
+Allow: /
+
+# Sitemap Index Link
+Sitemap: https://usama-ai-portfolio.vercel.app/sitemap.xml
