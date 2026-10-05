@@ -32,15 +32,25 @@ export default function Navbar({ onOpenContact }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const primaryNavLinks = [
+    { label: 'Home', href: '#home', id: 'home' },
+    { label: 'Services', href: '#services', id: 'services' },
+    { label: 'AI Agents', href: '#ai-agents-suite', id: 'ai-agents-suite' },
+    { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Tech Stack', href: '#tech-stack', id: 'tech-stack' },
+    { label: 'ROI Calculator', href: '#roi-calculator', id: 'roi-calculator' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
+  ];
+
+  const allNavLinks = [
     { label: 'Home', href: '#home', id: 'home' },
     { label: 'Services', href: '#services', id: 'services' },
     { label: 'AI Platform', href: '#ai-platform', id: 'ai-platform' },
     { label: 'AI Course', href: '#ai-academy', id: 'ai-academy' },
     { label: 'AI Agents', href: '#ai-agents-suite', id: 'ai-agents-suite' },
+    { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'Tech Stack', href: '#tech-stack', id: 'tech-stack' },
     { label: 'Knowledge Hub', href: '#knowledge-hub', id: 'knowledge-hub' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'ROI Calculator', href: '#roi-calculator', id: 'roi-calculator' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -59,34 +69,34 @@ export default function Navbar({ onOpenContact }) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#DBD6CF]' 
-          : 'bg-white/85 backdrop-blur-sm border-b border-transparent'
+          : 'bg-white/90 backdrop-blur-sm border-b border-[#DBD6CF]/40'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-18 sm:h-20">
           
           {/* Logo on Left (Clean Light Mode) */}
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A] rounded-lg"
+            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A] rounded-lg shrink-0"
             aria-label="3X AI Automation Home"
           >
             <Logo dark={false} />
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Primary Navigation">
-            {navLinks.map((link) => {
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5" aria-label="Primary Navigation">
+            {primaryNavLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <a
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3.5 py-1.5 rounded-[50px] text-xs xl:text-sm font-semibold transition-all ${
+                  className={`px-3 py-1.5 xl:px-3.5 xl:py-2 rounded-[50px] text-xs xl:text-sm font-bold transition-all whitespace-nowrap ${
                     isActive 
-                      ? 'text-white bg-black' 
+                      ? 'text-white bg-[#191919] shadow-sm' 
                       : 'text-[#191919] hover:text-[#FE330A] hover:bg-[#EFEAE3]'
                   } focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FE330A]`}
                 >
@@ -97,18 +107,18 @@ export default function Navbar({ onOpenContact }) {
           </nav>
 
           {/* Desktop Right Group: Instagram + CTA Button */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 shrink-0">
             {/* Instagram Profile Link */}
             <a
               href="https://www.instagram.com/3xaiautomation/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-[50px] border text-xs font-bold transition-all group duration-300 bg-white text-[#191919] border-[#DBD6CF] hover:border-[#FE330A] hover:text-[#FE330A] shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-[50px] border text-xs font-bold transition-all group duration-300 bg-white text-[#191919] border-[#DBD6CF] hover:border-[#FE330A] hover:text-[#FE330A] shadow-sm whitespace-nowrap"
               title="Follow @3xaiautomation on Instagram"
               aria-label="Instagram Profile"
             >
               <InstagramIcon className="w-3.5 h-3.5 text-[#FE330A] group-hover:scale-110 transition-transform" />
-              <span>Instagram</span>
+              <span className="hidden xl:inline">Instagram</span>
             </a>
 
             {/* Let's Talk CTA - Azzle Signature Pill Button */}
@@ -122,7 +132,7 @@ export default function Navbar({ onOpenContact }) {
                   handleNavClick(e, '#contact');
                 }
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-[50px] border-2 border-black bg-black text-white hover:bg-[#FE330A] hover:border-[#FE330A] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider shadow-sm"
+              className="inline-flex items-center justify-center gap-1.5 px-5 xl:px-6 py-2.5 rounded-[50px] border-2 border-black bg-black text-white hover:bg-[#FE330A] hover:border-[#FE330A] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider shadow-sm whitespace-nowrap"
             >
               <span>Let's Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -146,19 +156,19 @@ export default function Navbar({ onOpenContact }) {
 
       {/* Mobile Slide-down Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#C9DFFF] bg-white px-4 pt-3 pb-6 shadow-xl animate-fadeIn">
+        <div className="lg:hidden border-b border-[#DBD6CF] bg-white px-4 pt-3 pb-6 shadow-xl animate-fadeIn">
           <nav className="flex flex-col space-y-1">
-            {navLinks.map((link) => {
+            {allNavLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <a
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-xl text-base font-bold transition-colors ${
                     isActive
-                      ? 'text-[#0878FE] bg-[#EAF3FF] font-semibold'
-                      : 'text-[#111827] hover:text-[#0878FE] hover:bg-[#F8FAFE]'
+                      ? 'text-[#FE330A] bg-[#EFEAE3]'
+                      : 'text-[#191919] hover:text-[#FE330A] hover:bg-[#EFEAE3]'
                   }`}
                 >
                   {link.label}
@@ -170,9 +180,9 @@ export default function Navbar({ onOpenContact }) {
                 href="https://www.instagram.com/3xaiautomation/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-[#111827] bg-[#F8FAFE] border border-[#C9DFFF] hover:border-[#0878FE] transition-all"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-xs text-[#191919] bg-[#EFEAE3] border border-[#DBD6CF] hover:border-[#FE330A] transition-all"
               >
-                <InstagramIcon className="w-4 h-4 text-[#dc2743]" />
+                <InstagramIcon className="w-4 h-4 text-[#FE330A]" />
                 <span>Follow @3xaiautomation on Instagram</span>
               </a>
               <a
@@ -181,7 +191,7 @@ export default function Navbar({ onOpenContact }) {
                   setMobileMenuOpen(false);
                   handleNavClick(e, '#contact');
                 }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#0878FE] to-[#0255FD] shadow-md hover:shadow-glow transition-all"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-xs uppercase tracking-wider text-white bg-black hover:bg-[#FE330A] transition-all shadow-md"
               >
                 <span>Let's Talk</span>
                 <ArrowUpRight className="w-4 h-4" />
